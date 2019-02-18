@@ -22,11 +22,6 @@
     margin-right: 15px;
 }
 
- .img {
-      width: 500%; 
-      height: 500%;
-}
-
 @media only screen and (max-width: 800px) {
     .Login__content {
         width: 100%;
