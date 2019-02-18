@@ -52,12 +52,9 @@ class Login extends Component {
 
             <Button color="dark">
               Register
-            </Button>
-          
+            </Button>       
             </div>
-       
           </form>
-
          </div>
       </div>
     );
