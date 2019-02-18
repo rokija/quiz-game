@@ -4,7 +4,6 @@ import {NavLink} from 'react-router-dom';
 import './Header.css';
 
 
-
 class Header extends Component {
     // construcotr(){
     //     super();
