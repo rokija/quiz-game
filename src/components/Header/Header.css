@@ -1,0 +1,13 @@
+.Header{
+    display:flex;
+}
+.Header__content{
+    align-content: space-between;
+}
+/* .Header__link{
+
+  
+} */
+/* .Header__links{
+
+} */
