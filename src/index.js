@@ -13,7 +13,7 @@ class Root extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
-          <Route exact path="/login" component={Login}/>
+          <Route exact path="/login" component={Login} />
         </Switch>
       </BrowserRouter>
     );
@@ -21,3 +21,8 @@ class Root extends Component {
 }
 
 ReactDOM.render(<Root />, document.getElementById("root"));
+
+// If you want your app to work offline and load faster, you can change
+// unregister() to register() below. Note this comes with some pitfalls.
+// Learn more about service workers: http://bit.ly/CRA-PWA
+serviceWorker.unregister();
