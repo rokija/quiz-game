@@ -9,7 +9,7 @@ class AnswerContainer extends Component {
         this.props.getAnswers();
     }
     render() {
-        const { values like answers } = this.props;
+        const { answers } = this.props;
 
         if (!answers) {
             return <div>
@@ -20,10 +20,11 @@ class AnswerContainer extends Component {
     }
 }
 
+
+// Returns the state of answers to props so they can be accessed from elsewhere
 const mapStateToProps = state => {
     return {
-        answers: state.
-    }
+        answers: state
+    };
 }
-
-export default AnserwContainer;
+export default AnswerContainer;

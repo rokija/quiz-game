@@ -11,20 +11,20 @@ class QuestionCard extends Component {
                 <Card>
                     <CardBody>
                         <CardTitle className="QuestionCard__card-title">{question}</CardTitle>
-                            {answers.map((el, index) => (
-                                <FormGroup key={index} check>
-                                    <Label check>
-                                    <Input type="checkbox" />{' '}
+                        {answers.map((el, index) => (
+                            <FormGroup key={index} check>
+                                <Label check>
+                                    <input type="checkbox" />{' '}
                                     {el}
-                                    </Label>
-                                </FormGroup>
-                            ))}
-                            
+                                </Label>
+                            </FormGroup>
+                        ))}
+
                         <CardText></CardText>
                         <Button>Go Back</Button>
                         <Button
-                        onClick={onAnswerSubmit}>
-                        Submit
+                            onClick={onAnswerSubmit}>
+                            Submit
                         </Button>
                     </CardBody>
                 </Card>

@@ -2,14 +2,14 @@ export const API = {
     LOGIN: "auth/session",
     REGISTER: "auth/users",
     USER_INFO: "users/self",
-    POST_CAPTION: "media",
-    POST_IMAGE: "media/content/image",
-    POST_DESCRIPTION: "",
     GET_QUESTIONS: "path",
-    GET_POSTS: "path",
+    GET_ANSWERS: "path",
     SUBMIT_ANSWER: "path",
-    GET_CORRECT_ANSWER: "path",
     GET_USERS: "path",
+    NEXT_QUESTION_SUCCESS: "path",
+    NEXT_QUESTION_FAILED: "path",
+    SHOW_CORRECT_ANSWER_FAILED: "path",
+    SHOW_CORRECT_ANSWER_SUCESS: "path"
 };
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
@@ -24,3 +24,8 @@ export const GET_USERS_ERROR = "GET_USERS_ERROR";
 export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
 export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
 
+export const NEXT_QUESTION_SUCCESS = "NEXT_QUESTION_SUCCESS";
+export const NEXT_QUESTION_ERROR = "NEXT_QUESTION_ERROR";
+
+export const SHOW_CORRECT_ANSWER_FAILED = "SHOW_CORRECT_ANSWER_FAILED";
+export const SHOW_CORRECT_ANSWER_SUCCESS = "SHOW_CORRECT_ANSWER_SUCCESS";
