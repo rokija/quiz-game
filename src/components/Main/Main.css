@@ -1,29 +1,25 @@
 /* // CSS styling. Should decide what goes there (Background, colors etc) */
+.divMain {
+    margin-top: 10em;
+}
+
 .Layout {
     background-color: #8b9dc3;
+    
     
     }
 
 .positioning {
     margin:auto;
+    
 }
 
 .paddingBottom {
     margin-bottom: 3em;
 }
 
-.blockBackground {
+/* .blockBackground {
     background-color: #bdcbe7;
     padding: 10px;
-}
+} */
 
-.headerContent {
-    background-color: #84eba6;
-    margin: 20px;
-}
-
-.footerContent{
-   background-color: coral;;
-  
-
-}

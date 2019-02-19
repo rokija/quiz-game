@@ -1,20 +1,16 @@
 import React, { Component } from "react";
-import   "./Layout.css"
+import   "./Main.css"
 // import Registration from "../Registration/Registration"
 import { Container, Row, Col } from 'reactstrap';
 import { Card, Button, CardTitle, CardText } from 'reactstrap';
 
- class Layout extends Component {
+ class Main extends Component {
    render() {
      return(
-       
+        <div className="divMain">
        <Container>
-        <Row className="headerContent">
-          <Col>Header content goes there</Col>
-        </Row>
-       
-      
-      
+           
+        
           <div className="blockBackground">
             <Card body className="paddingBottom">
             <Row > 
@@ -36,25 +32,13 @@ import { Card, Button, CardTitle, CardText } from 'reactstrap';
               
             </Card>
 
-            <Card body className="paddingBottom">
-            <Row>
-            <Col xs="auto" className="positioning">
-              <CardTitle>Special Title Treatment</CardTitle>
-              <CardText>With supporting text below as a natural lead-in to additional content.</CardText>
-              <Button>Go somewhere</Button>
-              </Col>
-              </Row>
-              
-            </Card>
             </div>
 
-            <Row className="footerContent">
-          <Col>Footer content goes here</Col>
-        </Row>
+           
             </Container>
-
+            </div>
      );
    }
  }
 
-export default Layout;
+export default Main;

@@ -1,0 +1,8 @@
+.footerComponent{
+    width:100%;
+    position:fixed;
+    left:0;
+    bottom:0;
+    text-align: center;
+    background: #8b9dc3;
+}
