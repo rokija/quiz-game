@@ -11,6 +11,7 @@
     height: 60px;
     padding: 0.8em 3em;
     border-bottom: 2px solid black;
+ 
 }
 .Header__link{
     background-color: white;
@@ -22,4 +23,8 @@
     background-color: grey;
     color:black;
     cursor: pointer;
+}
+.Header__link.active{
+    background-color: black;
+    color:white;
 }
