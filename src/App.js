@@ -1,9 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
+
 // import Layout from "./components/Layout/Layout"
 // import Registration from "./components/Registration/Registration"
 import Footer from "./components/Footer/Footer"
 import Main from './components/Main/Main';
+import Header from "./components/Header/Header";
 
 
 class App extends Component {
@@ -12,7 +14,9 @@ class App extends Component {
           <div className="appSite">
               <div className="siteContent">
                   <div className="appHeader">
-                     {/* <Header /> */}
+                  <React.Fragment>
+                     <Header />
+                   </React.Fragment>
                   </div>
                   <div className="main">
                       <Main />
@@ -21,8 +25,8 @@ class App extends Component {
               <Footer />
           </div>
       );
+
   }
 }
 
 export default App;
-
