@@ -1,0 +1,29 @@
+.Results{
+    display: flex;
+    background-image: url("../../assets/photo-pic.jpg");
+    border-color: grey;
+    width: 100vw;
+    align-content: center;
+
+}
+
+.Results__body{
+    background-color: lightgray;
+    opacity: 0.98;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 20px 0px;
+    width: 80%;
+    border-radius: 10px;
+}
+
+.Results__group{
+    /* border: 1px solid grey; */
+    box-shadow: 3px 3px 20px grey;
+    border-radius: 5px;
+    width: 90%;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
