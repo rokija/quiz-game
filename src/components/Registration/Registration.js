@@ -68,7 +68,7 @@ class Registration extends Component {
             <div className="form-group">
               <label>Please enter your email</label>
               <input
-                onChange={this.onInputChange}
+                // onChange={this.onInputChange}
                 className="form-control"
                 type="email"
                 name="email"
