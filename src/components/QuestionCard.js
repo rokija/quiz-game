@@ -1,3 +1,4 @@
+
 import React, { Component } from "react";
 import {
     Card, CardText, CardBody,
@@ -16,15 +17,16 @@ class QuizContainer extends Component {
         const { add values } = this.props;
         return (
 
+            // AnswerBox gives a box for quizzes
+            // ShowQuestion has the module questions, the module has the quiz id and questions are cycled through indexes +1
+            // Answers are displayed automatically by question id or index
 
             <div>
-                <Card className="QuizContainerBox">
-                    <CardTitle className="ShowQuizTitle">
-                        <CardSubtitle className="ShowQuestions">
-                            <CardText className="ShowAnswers">
+                <Card className="AnswerBox">
+                    <CardTitle className="ShowQuestion">
+                        <CardText className="ShowAnswers">
 
-                            </CardText>
-                        </CardSubtitle>
+                        </CardText>
                     </CardTitle>
                 </Card>
             </div>
@@ -33,5 +35,4 @@ class QuizContainer extends Component {
 
     }
 }
-
 export default QuizContainer;
