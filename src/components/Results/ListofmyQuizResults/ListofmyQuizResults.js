@@ -28,7 +28,6 @@ const ListofmyQuizzes = [
 export class ListofmyQuizResults extends Component {
     render() {
         return (
-
             <div className="ListofmyQuizResults">
                 <h1 className="ListofmyQuizResults_h1">My quizzes results</h1>
                 {ListofmyQuizzes.map(function (quiz) {
@@ -41,11 +40,8 @@ export class ListofmyQuizResults extends Component {
                             usersNumber={quiz.usersNumber}
                         />
                     )
-
-                    // {onclick="GotoQuizStatistics(resultId)"}
                 })}
             </div>
-
         );
     }
 }

@@ -6,13 +6,11 @@ import ListofmyQuizResults from './ListofmyQuizResults/ListofmyQuizResults';
 export class Results extends Component {
     render() {
         return (
-
             <div className="Results" >
                 <div className="Results__body">
                     <div className="Results__group" >
                         <ListofResults />
                     </div>
-
                     <div className="Results__group" >
                         <ListofmyQuizResults />
                     </div>
