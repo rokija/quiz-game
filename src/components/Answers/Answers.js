@@ -1,10 +1,10 @@
 import React from "react";
-import AnserwsCard from '../AnserwsCard';
+import AnswersCard from '../AnswersCard';
 
-export const Answers = ({ answers }) => (
+export const answers = ({ answers }) => (
     <div className="Answers">
-        {posts.map((answers, index) => (
-            <AnserwsCard
+        {answers.map((answers, index) => (
+            <AnswersCard
                 key={index}
                 // add values in such a way that is displayed 
                 // under
