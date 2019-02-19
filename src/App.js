@@ -1,14 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
 import Quizzes from "./components/Quizzes/Quizzes";
+import Header from "./components/Header/Header";
 
 class App extends Component {
   render() {
-    return <div className="App">
-    <Quizzes/>
-    </div>;
+    return (
+      <React.Fragment>
+        <Header />
+        <Quizzes/>
+      </React.Fragment>
+    )
   }
 }
 
 export default App;
-

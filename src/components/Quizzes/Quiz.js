@@ -24,10 +24,10 @@ class Quiz extends Component {
               <div className="Quiz__content">
             <div className="Quiz__content__description">{description }</div>
               {isAdmin && <div  className="Quiz__content__buttons">
-               <Button color="primary" className="Quiz__content__buttons__edit-button">Edit quiz</Button>
-               <Button color="primary">Add question</Button></div>} 
+               <Button color="secondary" className="Quiz__content__buttons__edit-button">Edit quiz</Button>
+               <Button color="secondary">Add question</Button></div>} 
               {!isAdmin && <div className="Quiz__content__buttons">
-               <Button color="primary">Start quiz</Button></div>}
+               <Button color="secondary">Start quiz</Button></div>}
              </div>}
           </div>
       )}
