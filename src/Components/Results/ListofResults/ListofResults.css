@@ -1,0 +1,13 @@
+
+.ListOfResults{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 0px;
+}
+
+.ListofResults__h1{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
+

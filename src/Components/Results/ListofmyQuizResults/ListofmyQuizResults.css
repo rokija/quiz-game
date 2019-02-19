@@ -1,0 +1,23 @@
+.ListofmyQuizResults__item{
+    display: block;
+    padding: 5px 0px 5px 20px;
+    font-size: 20pt;
+    border: 1px solid grey;
+    margin: auto;
+    margin-bottom: 5px;
+    margin-top: 5px;
+    width: 80%;
+
+}
+
+.ListofmyQuizResults{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 0px;
+}
+
+.ListofmyQuizResults_h1{
+    padding-left: 20px;
+    margin-bottom: 20px;
+}
