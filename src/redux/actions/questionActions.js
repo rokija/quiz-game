@@ -2,27 +2,29 @@ import CryptoJS from "crypto-js";
 import Bootcamp API from "../../helpers/BootcampAPI";
 import {
     API,
-    LOGIN_ERROR,
-    LOGIN_SUCCESS,
+    NEXT_QUESTION_SUCCESS,
+    NEXT_QUESTION_FAILED,
 
 } from "../../constants";
 
 /* Define actions here */
 
-const loginSuccess = token => {
-    return {
-        type: LOGIN_SUCCESS,
-        token
-    };
-};
+const nextQuestionSucces = () => {
+    type: NEXT_QUESTION_SUCCESS
+}
 
-const loginerror = () => {
-    return {
-        type: LOGIN_ERROR
-    };
-};
+const nextQuestionFailed = () => {
+    type: NEXT_QUESTION_FAILED
+}
+
 
 /* Define action creaters here */
+
+export const nextQuestion = (questionindex) => {
+    return dispatch => {
+
+    }
+}
 
 export const login = (email, password) => {
     return dispatch => {
