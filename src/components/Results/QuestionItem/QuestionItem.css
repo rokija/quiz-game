@@ -1,0 +1,11 @@
+.QuestionItem__correct{
+    background-color: lightgreen;
+}
+.QuestionItem__incorrect{
+    background-color: lightpink;
+}
+
+.QuestionItem__label{
+    font-weight: bold;
+    margin-top: 5px;
+}
