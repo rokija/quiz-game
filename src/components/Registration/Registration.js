@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "./Registration.css";
 
 
@@ -161,7 +161,7 @@ class Registration extends Component {
             </Button>
           </form>
           <div className="Register__content__link">
-            {/* <Link to="/login">already registered? login</Link> */}
+            <Link to="/login">Already registered?</Link>
           </div>
         </div>
       </div>
