@@ -1,13 +1,25 @@
+/* Fix me */
 .Header{
-    display:flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    background: white;
+    height: 60px;
+    padding: 0.8em 3em;
+    border-bottom: 2px solid black;
 }
-.Header__content{
-    align-content: space-between;
+.Header__link{
+    background-color: white;
+    color: black;
+    padding: 1.1em 1.5em;
+    box-shadow: 0 5px 0 grey;
 }
-/* .Header__link{
-
-  
-} */
-/* .Header__links{
-
-} */
+.Header__link:hover{
+    background-color: grey;
+    color:black;
+    cursor: pointer;
+}
