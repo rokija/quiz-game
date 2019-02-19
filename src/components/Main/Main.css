@@ -1,25 +1,16 @@
 /* // CSS styling. Should decide what goes there (Background, colors etc) */
-.divMain {
+.Main {
     margin-top: 10em;
 }
 
 .Layout {
     background-color: #8b9dc3;
-    
-    
-    }
+}
 
 .positioning {
-    margin:auto;
-    
+    margin:auto; 
 }
 
 .paddingBottom {
     margin-bottom: 3em;
 }
-
-/* .blockBackground {
-    background-color: #bdcbe7;
-    padding: 10px;
-} */
-
