@@ -15,9 +15,11 @@ class Root extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
+
           <Route exact path="/login" component={Login}/>
           <Route exact path="/register" component={Registration}/>
           
+
         </Switch>
       </BrowserRouter>
     );

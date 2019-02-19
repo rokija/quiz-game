@@ -1,13 +1,16 @@
 import React from "react";
 import "./App.css";
+import Header from "./components/Header/Header";
 
 class App extends React.Component {
   render() {
-    return <div className="App">
-   react App
-    </div>;
+    return (
+      <React.Fragment>
+        <Header />
+      </React.Fragment>
+
+    )
   }
 }
 
 export default App;
-
