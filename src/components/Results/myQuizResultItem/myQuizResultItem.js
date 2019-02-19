@@ -4,7 +4,6 @@ import './myQuizResultItem.css';
 class MyQuizResultItem extends Component {
     render() {
         const { name, description, averageScore, usersNumber } = this.props;
-
         return (
             <div>
                 <div className="myQuizResultItem">
