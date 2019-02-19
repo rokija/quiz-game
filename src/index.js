@@ -5,6 +5,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
+import Login from "./components/Login/Login";
 
 class Root extends Component {
   render() {
@@ -12,6 +13,7 @@ class Root extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/" component={App} />
+          <Route exact path="/login"component={Login} />
         </Switch>
       </BrowserRouter>
     );
