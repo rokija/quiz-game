@@ -4,6 +4,8 @@ import {
     API,
     NEXT_QUESTION_SUCCESS,
     NEXT_QUESTION_FAILED,
+    SHOW_CORRECT_ANSWER_FAILED,
+    SHOW_CORRECT_ANSWER_SUCESS
 
 } from "../../constants";
 
@@ -17,10 +19,24 @@ const nextQuestionFailed = () => {
     type: NEXT_QUESTION_FAILED
 }
 
+const onShowCorrectAnswer = () => {
+    type: SHOW_CORRECT_ANSWER_SUCESS
+}
+
+const onShowCorrectAnswer = () => {
+    type: SHOW_CORRECT_ANSWER_FAILED
+}
+
 
 /* Define action creaters here */
-
+// question indexes are defined by .map 
 export const nextQuestion = (questionindex) => {
+    return dispatch => {
+
+    }
+}
+// correct answers value from database
+export const correctAnswer = (correctanswers) => {
     return dispatch => {
 
     }

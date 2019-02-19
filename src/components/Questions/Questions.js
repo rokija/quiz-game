@@ -1,15 +1,14 @@
 import React from "react";
 import QuestionCard from '../QuestionCard';
 
+/* A constant value of questions is assigned
+where a value of question is passed by indexing it */
 export const questions = ({ questions }) => (
     <div className="Answers">
-        {questions.map((questions, index) => (
+        {questions.map((question, index) => (
             <QuestionCard
                 key={index}
-                // add values in such a way that is displayed 
-                // under
                 title={questions.title}
-                questions={questions}
 
             />
         ))}

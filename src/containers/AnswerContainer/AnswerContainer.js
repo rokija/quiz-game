@@ -5,10 +5,9 @@ import Answers from "../../components/Answers/Answers";
 // Will need to import answers and method getAnswers from database
 
 class AnswerContainer extends Component {
-    // if component mounts add method
-    /* componentDidMount() {
-        this.props.getAnswer() when they are done;
-    } */
+    componentDidMount() {
+        this.props.getAnswers();
+    }
     render() {
         const { values like answers } = this.props;
 
@@ -17,15 +16,14 @@ class AnswerContainer extends Component {
                 <Spinner color="primary" />
             </div>
         }
-        return <Answers />
+        return <Answers answers={answers} />
     }
 }
 
-// add statetopros with getanswer reducer
-
-// insert dispatchtoprops
-
-// export container with 
-// connect and statetopros and dispatch
+const mapStateToProps = state => {
+    return {
+        answers: state.
+    }
+}
 
 export default AnserwContainer;
