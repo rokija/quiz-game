@@ -1,17 +1,16 @@
-import React from 'react';
-import { Progress } from 'reactstrap';
+import React from "react";
+import { Progress } from "reactstrap";
+import "./ProgressBar.css";
 
+const ProgressBar = ({ currentQuestion, totalQuestions }) => {
+  return (
+    <div className="ProgressBar">
+      <Progress value={currentQuestion} max={totalQuestions} />
+      <p className="ProgressBar__text">
+        {currentQuestion} of {totalQuestions}
+      </p>
+    </div>
+  );
+};
 
-
-const ProgressBar = (props) => {
-    return (
-      <div>
-        <div className="text-center">1 of 5</div>
-        <Progress value="1" max="5" />
-         
-      </div>
-    );
-  };
-  
-  export default ProgressBar;
-  
+export default ProgressBar;
