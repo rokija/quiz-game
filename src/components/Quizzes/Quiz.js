@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "./Quiz.css";
 import { Button } from "reactstrap";
+import { hasAccessLevel, MODERATOR, USER } from "../../constants";
 
 class Quiz extends Component {
   constructor() {
@@ -12,9 +13,14 @@ class Quiz extends Component {
   }
 
   toggleContent = () => this.setState({ showContent: !this.state.showContent });
+  onButtonClick = () => console.log("i click a button");
+  onEdittQuiz = () => console.log("Edit quiz");
+  onAddtQuiz = () => console.log("Add quiz");
+  onDeletetQuiz = () => console.log("Delete quiz");
+  onStartQuiz = () => console.log("Start quiz");
 
   render() {
-    const { title, description, isAdmin } = this.props;
+    const { title, description, user, ownerId } = this.props;
     const { showContent } = this.state;
 
     return (
@@ -25,20 +31,36 @@ class Quiz extends Component {
         {showContent && (
           <div className="Quiz__content">
             <div className="Quiz__content__description">{description}</div>
-            {isAdmin && (
+            {(hasAccessLevel(user, MODERATOR) || user.id === ownerId) && (
               <div className="Quiz__content__buttons">
                 <Button
+                  onClick={() => this.onEdittQuiz()}
                   color="secondary"
                   className="Quiz__content__buttons__edit-button"
                 >
                   Edit quiz
                 </Button>
-                <Button color="secondary">Add question</Button>
+                <Button
+                  className="Quiz__content__buttons__add-button"
+                  onClick={() => this.onAddtQuiz()}
+                  color="secondary"
+                >
+                  Add question
+                </Button>
+                <Button
+                  className="Quiz__content__buttons__delete-button"
+                  onClick={() => this.onDeletetQuiz()}
+                  color="secondary"
+                >
+                  Delete quiz
+                </Button>
               </div>
             )}
-            {!isAdmin && (
+            {hasAccessLevel(user, USER) && (
               <div className="Quiz__content__buttons">
-                <Button color="secondary">Start quiz</Button>
+                <Button onClick={() => this.onStartQuiz()} color="secondary">
+                  Start quiz
+                </Button>
               </div>
             )}
           </div>

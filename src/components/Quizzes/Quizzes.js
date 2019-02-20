@@ -27,6 +27,17 @@ const quizzes = [
   { title: "Fifth Quiz", description: "Description about quiz", isAdmin: false }
 ];
 
+const user = {
+  username: "lalal",
+  email: "emai",
+  hashedPassword: "string",
+  name: "string",
+  surname: "string",
+  dateOfBirth: "2019-02-20",
+  level: "admin",
+  id: 0
+};
+
 class Quizzes extends Component {
   render() {
     return (
@@ -38,7 +49,7 @@ class Quizzes extends Component {
                 key={i}
                 title={quiz.title}
                 description={quiz.description}
-                isAdmin={quiz.isAdmin}
+                user={user}
               />
             ))}
           </div>

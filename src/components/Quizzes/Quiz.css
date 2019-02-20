@@ -34,3 +34,7 @@
 .Quiz__content__description{
     font-size: 20px;
 }
+
+.Quiz__content__buttons__add-button{
+    margin-right: 15px;
+}
