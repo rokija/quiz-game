@@ -8,4 +8,13 @@
 .QuestionItem__label{
     font-weight: bold;
     margin-top: 5px;
+    padding-top: 5px;
+}
+
+.QuestionItem__title{
+    padding: 15px 0px 10px 0px;
+}
+
+.QuestionItem__name{
+    text-align: center;
 }

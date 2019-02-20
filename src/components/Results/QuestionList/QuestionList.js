@@ -27,10 +27,17 @@ const Questions = [
 ]
 
 class QuestionList extends Component {
+    constructor() {
+        super();
+        this.state = { name: "TestYour knowledge" };
+    }
     render() {
         return (
-            <div className="QuestionList" >
+            < div className="QuestionList" >
                 <div className="QuestionList__body">
+                    <div className="QuestionItem__name">
+                        <h1>{this.state.name}</h1>
+                    </div>
                     <div className="QuestionList__item" >
                         {Questions.map((questionItem, number) => {
                             return (<QuestionItem
