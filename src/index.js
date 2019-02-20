@@ -6,14 +6,14 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import ManageUserContainer from "./containers/ManageUserContainer";
-import Login from "./components/Login/Login";
+import LoginContainer from "./containers/LoginContainer";
 
 class Root extends Component {
   render() {
     return (
       <BrowserRouter>
         <Switch>
-            <Route exact path="/login" component={Login} />
+            <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/register" component={ManageUserContainer} />
             <ProtectedRoute path="/*" component={App} />
         </Switch>
