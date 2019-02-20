@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import "./AddQuizz.css";
-import MainLayout from '../MainLayout/MainLayout';
 
 class AddQuizz extends Component {
     render() {
