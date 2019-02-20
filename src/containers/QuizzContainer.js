@@ -11,7 +11,7 @@ class QuizzContainer extends Component {
     }
     onTitleInputChange = (e) => this.setState({ title: e.target.value });
 
-    descriptionInputChange = (e) => this.setState({ description: e.target.value });
+    onDescriptionInputChange = (e) => this.setState({ description: e.target.value });
 
     submitForm = () => {
         //This will be used with Redux, when integrated.
