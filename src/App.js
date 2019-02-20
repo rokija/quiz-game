@@ -15,6 +15,9 @@ class App extends Component {
           <li>
             <Link to="/login">Login</Link>
           </li>
+          <li>
+              <Link to="/quizzes/create">AddQuiz</Link>
+          </li>
         </ul>
         </MainLayout>
       </div>
