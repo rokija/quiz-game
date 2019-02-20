@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import Quiz from "./Quiz";
-import MainLayout from "../MainLayout/MainLayout";
 import "./Quizzes.css";
 
 const quizzes = [
@@ -30,7 +29,6 @@ const quizzes = [
 class Quizzes extends Component {
   render() {
     return (
-      <MainLayout>
         <div className="Quizzes">
           <div className="Quizzes__content">
             {quizzes.map((quiz, i) => (
@@ -43,7 +41,6 @@ class Quizzes extends Component {
             ))}
           </div>
         </div>
-      </MainLayout>
     );
   }
 }
