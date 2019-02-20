@@ -1,0 +1,23 @@
+.UserCard {
+  align-items: left;
+  padding-top: 1%;
+  border-bottom: 1px solid rgb(230, 227, 227);
+}
+
+.UserCard__head {
+  display: flex;
+}
+
+.UserCard__username {
+  margin-right: 10px;
+  font-size: 1rem;
+}
+
+.UserCard__content {
+  font-size: 12px;
+}
+
+.UserCard__edit-button {
+  font-size: 10px;
+  padding: 0.075rem 0.35rem;
+}
