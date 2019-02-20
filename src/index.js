@@ -6,6 +6,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Login from "./components/Login/Login";
 import * as serviceWorker from "./serviceWorker";
+import AddQuizz from "./components/AddQuizz/AddQuizz";
 
 class Root extends Component {
   render() {
@@ -14,6 +15,7 @@ class Root extends Component {
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/quizzes/create" component={AddQuizz} />
         </Switch>
       </BrowserRouter>
     );

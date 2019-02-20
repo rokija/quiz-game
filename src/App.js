@@ -1,13 +1,17 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
+import { Link } from "react-router-dom"
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Header />
-      </React.Fragment>
+      <div>
+        <ul>
+          <li>
+            <Link to="/quizzes/create">AddQuiz</Link>
+          </li>
+        </ul>
+      </div>
 
     )
   }

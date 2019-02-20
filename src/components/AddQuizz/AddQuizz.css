@@ -1,0 +1,12 @@
+.AddQuizz{
+    margin: 30px;
+}
+
+.AddQuizz__title{
+margin-bottom: 20px;
+}
+
+.AddQuizz__btn{
+    margin-right: 10px;
+    margin-top: 20px;
+}
