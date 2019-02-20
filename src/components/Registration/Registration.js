@@ -118,20 +118,7 @@ class Registration extends Component {
                 />
               </div>
             </div>
-            <Button type="submit"
-              // onClick={() =>
-              //   this.props.onRegister(
-              //     this.state.username,
-              //     this.state.email,
-              //     this.state.password,
-              //     this.state.passwordVerification,
-              //     this.state.name,
-              //     this.state.surname,
-              //     this.state.dateOfBirth
-              //   )
-              // }
-              color="dark"
-            >
+            <Button type="submit" color="dark">
               Register
             </Button>
           </form>
@@ -143,5 +130,4 @@ class Registration extends Component {
     );
   }
 }
-
 export default Registration;
