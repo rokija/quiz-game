@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import MainLayout from "./components/MainLayout/MainLayout";
-import UserListContainer from "./containers/UsersListContainer";
+import UsersListContainer from "./containers/UsersListContainer";
 import AddQuizContainer from "./containers/AddQuizContainer";
 import QuizContainer from "./containers/QuizContainer";
 import QuizStatisticsContainer from "./containers/QuizStatisticsContainer";
@@ -30,7 +30,7 @@ class App extends Component {
               <Route exact path="/results/statistics" component={QuizStatisticsContainer} /> 
               <Route exact path="/results" component={ResultsContainer} />
               <Route exact path="/users/:userId" component={ManageUserContainer} />
-              <Route exact path="/users" component={UserListContainer} />
+              <Route exact path="/users" component={UsersListContainer} />
               <Route exact path="/profile" component={ManageUserContainer} />
         </Switch>
       </MainLayout>  
