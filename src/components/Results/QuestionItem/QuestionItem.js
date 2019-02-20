@@ -29,7 +29,6 @@ class QuestionItem extends Component {
                                             } else if ({ type }) { index = 0 }
                                         })
                                     })
-                                    console.log("test")
                                     switch (index) {
                                         case 0: return <div><input type={type} /><label>{answer}</label></div>
                                         case 1: return <div><input type={type} checked /><label className="QuestionItem__incorrect">{answer}</label></div>

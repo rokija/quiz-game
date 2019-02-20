@@ -46,16 +46,16 @@ class Login extends Component {
               />
             </div>
             <div className="buttons">
-            <Button className="Login-button" color="dark">
-              Login
+              <Button className="Login-button" color="dark">
+                Login
             </Button>
 
-            <Button color="dark">
-              Register
-            </Button>       
+              <Button color="dark">
+                Register
+            </Button>
             </div>
           </form>
-         </div>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,12 @@
+.MainLayout{
+    padding-top: 60px;
+    padding-bottom: 90px;
+    margin-top: 50px;   
+}
+
+.MainLayout__content{
+  width: 80%;
+  max-width: 1000px;
+  border: 3px solid #b3b7c0;
+  margin: auto;
+}

@@ -1,16 +1,24 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
-import Header from "./components/Header/Header";
+import MainLayout from "./components/MainLayout/MainLayout";
 
 class App extends Component {
   render() {
-    return (
-      <React.Fragment>
-        <Header />
-      </React.Fragment>
-
-    )
+    return ( 
+      <div className="App">
+        <MainLayout >
+        <ul>
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        </ul>
+        </MainLayout>
+      </div>
+    );
   }
 }
-
 export default App;
