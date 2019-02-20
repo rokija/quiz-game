@@ -18,7 +18,7 @@ class Login extends Component {
 
   render() {
     const { email, password } = this.state;
-
+    const { onLogin } = this.props;
     return (
       <div className="Login">
         <div className="Login__content">
@@ -46,13 +46,13 @@ class Login extends Component {
               />
             </div>
             <div className="buttons">
-              <Button className="Login-button" color="dark">
+              <Button onClick={() => { onLogin(email, password) }} className="Login-button" color="dark"  >
                 Login
-            </Button>
+              </Button>
 
-              <Button color="dark">
+              <Button onClick={() => { this.props.history.push("/register") }} color="dark">
                 Register
-            </Button>
+              </Button>
             </div>
           </form>
         </div>
