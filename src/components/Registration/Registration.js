@@ -23,14 +23,6 @@ class Registration extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  inputPassword = event => {
-    this.setState({ password: event.target.value });
-  };
-
-  confirmPassword = event => {
-    this.setState({ passwordVerification: event.target.value });
-  };
-
   submitData = (event) => {
     event.preventDefault();
     const { password, passwordVerification } = this.state;
@@ -49,6 +41,7 @@ class Registration extends Component {
             <div className="form-group">
               <label>Please enter your username</label>
               <input
+
                 onChange={this.onInputChange}
                 className="form-control"
                 type="text"
@@ -70,7 +63,7 @@ class Registration extends Component {
                 className="form-control"
                 type="password"
                 name="password"
-                onChange={this.inputPassword}
+                onChange={this.onInputChange}
                 maxlength="12"
                 required
                 value={password}
@@ -84,7 +77,7 @@ class Registration extends Component {
                 maxlength="12"
                 required
                 name="passwordVerification"
-                onChange={this.confirmPassword}
+                onChange={this.onInputChange}
                 value={passwordVerification}
               />
             </div>
@@ -119,17 +112,7 @@ class Registration extends Component {
               </div>
             </div>
             <Button type="submit"
-              // onClick={() =>
-              //   this.props.onRegister(
-              //     this.state.username,
-              //     this.state.email,
-              //     this.state.password,
-              //     this.state.passwordVerification,
-              //     this.state.name,
-              //     this.state.surname,
-              //     this.state.dateOfBirth
-              //   )
-              // }
+
               color="dark"
             >
               Register

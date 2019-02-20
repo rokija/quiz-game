@@ -1,7 +1,19 @@
 import React from 'react';
 import { Col, Button, Form, FormGroup, Label, Input } from 'reactstrap';
 import "./UserEdit.css"
-export default class Example extends React.Component {
+
+
+const users = [
+  {
+    name: "",
+    surname: "",
+    email: "",
+    dateOfBirth: "",
+    level: [],
+  }
+]
+
+class UserEdit extends React.Component {
   render() {
     return (
 
@@ -9,34 +21,34 @@ export default class Example extends React.Component {
       <Form className="wholeBlock">
         <h2>Change User Data</h2>
         <FormGroup row className="">
-          <Label for="exampleEmail" sm={2}>Name</Label>
+          <Label for="name" sm={2}>Name</Label>
           <Col sm={3}>
-            <Input type="text" name="userName" id="userName" />
+            <Input type="text" name="name" id="name" />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="exampleEmail" sm={2}>Surname</Label>
+          <Label for="sname" sm={2}>Surname</Label>
           <Col sm={3}>
-            <Input type="text" name="userSurname" id="userSurname" />
+            <Input type="text" name="surname" id="surname" />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="exampleEmail" sm={2}>Email</Label>
+          <Label for="mail" sm={2}>Email</Label>
           <Col sm={3}>
-            <Input type="email" name="userEmail" id="userEmail" />
+            <Input type="email" name="email" id="email" />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="exampleEmail" sm={2}>Date of Birth</Label>
+          <Label for="date" sm={2}>Date of Birth</Label>
           <Col sm={3}>
-            <Input type="date" name="eserDateOfBirth" id="ueserDateOfBirth" />
+            <Input type="date" name="dateOfBirth" id="dateOfBirth" />
           </Col>
         </FormGroup>
         <FormGroup row>
-          <Label for="exampleSelect" sm={2}>Level</Label>
-          <option>1</option>
+          <Label for="select" sm={2}>Level</Label>
           <Col sm={3}>
-            <Input type="select" name="userLevel" id="userLevel" />
+            <Input type="select" name="level" id="level" />
+
           </Col>
         </FormGroup>
         <FormGroup check row>
@@ -46,5 +58,7 @@ export default class Example extends React.Component {
         </FormGroup>
       </Form>
     );
-  }
-}
+  };
+};
+
+export default UserEdit
