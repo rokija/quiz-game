@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import "./App.css";
-import { Link } from "react-router-dom"
 import MainLayout from './components/MainLayout/MainLayout';
 
 class App extends Component {

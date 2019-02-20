@@ -9,7 +9,7 @@ class QuizzContainer extends Component {
             description: '',
         };
     }
-    titleInputChange = (e) => this.setState({ title: e.target.value });
+    onTitleInputChange = (e) => this.setState({ title: e.target.value });
 
     descriptionInputChange = (e) => this.setState({ description: e.target.value });
 
@@ -23,12 +23,9 @@ class QuizzContainer extends Component {
     goHome = () => this.props.history.push("/quizzes");
 
     render() {
-        const { title, description } = this.state;
         return <AddQuizz
-            title={title}
-            description={description}
-            titleInputChange={this.titleInputChange}
-            descriptionInputChange={this.descriptionInputChange}
+            onTitleInputChange={this.onTitleInputChange}
+            onDescriptionInputChange={this.onDescriptionInputChange}
             submitForm={this.submitForm}
             goHome={this.goHome}
         />
