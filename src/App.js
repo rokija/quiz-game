@@ -1,18 +1,25 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./App.css";
 import { Link } from "react-router-dom"
 import MainLayout from './components/MainLayout/MainLayout';
 
 class App extends Component {
   render() {
-    return (
+    return ( 
       <div className="App">
         <MainLayout >
-          <ul>
-            <li>
+        <ul>
+          <li>
+            <Link to="/users">Users</Link>
+          </li>
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
               <Link to="/quizzes/create">AddQuiz</Link>
-            </li>
-          </ul>
+          </li>
+        </ul>
         </MainLayout>
       </div>
     );

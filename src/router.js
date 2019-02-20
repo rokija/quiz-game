@@ -6,7 +6,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-
 class Root extends Component {
   render() {
     return (
