@@ -12,7 +12,7 @@ class Header extends Component {
                 <div className="Header__links">
                     <NavLink className="Header__link" activeClassName="active" exact to="/"  >QUIZZES</NavLink>
                     <NavLink className="Header__link" activeClassName="active" exact to="/results" >RESULTS</NavLink>
-                    <NavLink className="Header__link" activeClassName="active" exact to="/LogIn">LOG OUTS</NavLink>
+                    <NavLink className="Header__link" activeClassName="active" exact to="/LogIn">LOG OUT</NavLink>
                 </div>
             </div>
         )
