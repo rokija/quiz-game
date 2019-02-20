@@ -23,13 +23,7 @@ class Registration extends Component {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  inputPassword = event => {
-    this.setState({ password: event.target.value });
-  };
 
-  confirmPassword = event => {
-    this.setState({ passwordVerification: event.target.value });
-  };
 
   submitData = (event) => {
     event.preventDefault();
@@ -70,7 +64,7 @@ class Registration extends Component {
                 className="form-control"
                 type="password"
                 name="password"
-                onChange={this.inputPassword}
+                onChange={this.onInputChange}
                 maxlength="12"
                 required
                 value={password}
@@ -84,7 +78,7 @@ class Registration extends Component {
                 maxlength="12"
                 required
                 name="passwordVerification"
-                onChange={this.confirmPassword}
+                onChange={this.onInputChange}
                 value={passwordVerification}
               />
             </div>
