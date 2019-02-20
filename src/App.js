@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import "./App.css";
-import MainLayout from './components/MainLayout/MainLayout';
+import MainLayout from "./components/MainLayout/MainLayout";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <MainLayout >
+        <MainLayout>
           {/* --------------------------------
           There goes a content!
           -------------------------------- */}

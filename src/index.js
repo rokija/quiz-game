@@ -5,6 +5,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Login from "./components/Login/Login";
+import Quizzes from "./components/Quizzes/Quizzes";
 
 class Root extends Component {
   render() {
@@ -17,7 +18,7 @@ class Root extends Component {
           <Route exact path="/quizzes/:quizId/questions/:questionId" component={App} />
           <Route exact path="/quizzes/:quizId/edit/" component={App} />
           <Route exact path="/quizzes/create" component={App} />
-          <Route exact path="/quizzes" component={App} />
+          <Route exact path="/quizzes" component={Quizzes} />
           <Route exact path="/results/statistics/quizzes/:quizId" component={App} />
           <Route exact path="/results/my/quizzes/:quizId" component={App} />
           <Route exact path="/results/statistics" component={App} />
@@ -33,4 +34,5 @@ class Root extends Component {
     );
   }
 }
+
 ReactDOM.render(<Root />, document.getElementById("root"));
