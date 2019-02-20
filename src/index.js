@@ -5,6 +5,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Login from "./components/Login/Login";
+import QuizzContainer from "./containers/QuizzContainer";
 import UserList from "./components/UserList/UserList";
 import Quizzes from "./components/Quizzes/Quizzes";
 
@@ -18,7 +19,7 @@ class Root extends Component {
           <Route exact path="/quizzes/:quizId/edit/questions" component={App} />
           <Route exact path="/quizzes/:quizId/questions/:questionId" component={App} />
           <Route exact path="/quizzes/:quizId/edit/" component={App} />
-          <Route exact path="/quizzes/create" component={App} />
+          <Route exact path="/quizzes/create" component={QuizzContainer} />
           <Route exact path="/quizzes" component={Quizzes} />
           <Route exact path="/results/statistics/quizzes/:quizId" component={App} />
           <Route exact path="/results/my/quizzes/:quizId" component={App} />
