@@ -5,6 +5,7 @@ import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import Login from "./components/Login/Login";
+import Quizzes from "./components/Quizzes/Quizzes";
 
 class Root extends Component {
   render() {
@@ -13,9 +14,11 @@ class Root extends Component {
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
+          <Route exact path="/quizzes" component={Quizzes} />
         </Switch>
       </BrowserRouter>
     );
   }
 }
+
 ReactDOM.render(<Root />, document.getElementById("root"));

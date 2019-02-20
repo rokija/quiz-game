@@ -1,0 +1,13 @@
+.Quizzes{
+    padding-top: 100px;
+    background-color: rgb(218, 211, 211);
+    height: 100vh;
+    background-size: cover;
+}
+
+.Quizzes__content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
