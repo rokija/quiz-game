@@ -13,6 +13,20 @@ class Root extends Component {
         <Switch>
           <Route exact path="/" component={App} />
           <Route exact path="/login" component={Login} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
+          <Route path="/" component={} />
         </Switch>
       </BrowserRouter>
     );
