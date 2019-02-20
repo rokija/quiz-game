@@ -1,16 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
+import MainLayout from './components/MainLayout/MainLayout';
 
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <Header />
-      </React.Fragment>
-
-    )
+      <div className="App">
+        <MainLayout >
+          {/* --------------------------------
+          There goes a content!
+          -------------------------------- */}
+        </MainLayout>
+      </div>
+    );
   }
 }
-
 export default App;
