@@ -1,10 +1,16 @@
-.block{
-   
-  
-    
-}
 
 .block h2 {
     padding-bottom: 2em;
 }
 
+.wholeBlock{
+    margin-left: 30%;
+    margin-top: 10%;
+    
+
+}
+
+.wholeBlock h2 {
+    padding-bottom: 1em;
+    padding-left: 10%;
+}
