@@ -1,31 +1,54 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Spinner } from "reactstrap";
-import Questions from "../../components/Questions/Questions";
-// Will need to import answers and method getAnswers from database
+import { getQuestions, nextQuestion } from "../../redux/actions/questionActions";
+import Question from "../../components/Questions/Question";
+import {Spinner} from "reactstrap";
+import {Redirect} from "react-router-dom";
 
-class AnswerContainer extends Component {
-    // if component mounts add method
-    /* componentDidMount() {
-        this.props.getAnswer() when they are done;
-    } */
-    render() {
-        const { values like questions } = this.props;
 
-        if (!questions) {
-            return <div>
-                <Spinner color="primary" />
-            </div>
-        }
-        return <Answers />
+class QuestionContainer extends Component {
+
+    onAnswerSubmit = () =>{
+        console.log("nextQuestion")
     }
+    
+    
+    componentDidMount() {
+
+        this.props.getQuestions();
+    }
+    render(){
+    const {question} = this.props
+    
+    return question.forEach((question, index) => {
+        if (index===0){
+            return <Question question={question.question}/>
+        }
+        else if(index===question.length()){
+            return <Question question={question.question}/>
+        }
+        else{
+            return <Question question={question.question}/>
+        }
+      });
+        
+
+    }  
+
+  
 }
 
-// add statetopros with getanswer reducer
+const mapStateToProps = state => {
+    return {
+      questions: state.getQuestionsReducer.questions
+    };
+  };
 
-// insert dispatchtoprops
+const mapDispatchToProps = {
+  getQuestions
+};
 
-// export container with 
-// connect and statetopros and dispatch
-
-export default QuestionContainer;
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionContainer);

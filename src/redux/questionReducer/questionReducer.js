@@ -8,8 +8,8 @@ import {
 } from "../../constants";
 
 const defaultState = {
-    isQuestionSelected: false,
-    isQuizFilled: false,
+    isSelected: false,
+    questions: null,
 };
 
 // If question is selected set flag to true so we can
@@ -17,32 +17,22 @@ const defaultState = {
 export const nextQuestionReducer = (state = defaultState, action) => {
     switch (action.type) {
         case NEXT_QUESTION_SUCCESSFUL:
-            return { ...state, isQuestionSelected: true };
+            return { ...state, isSelected: true };
         case NEXT_QUESTION_FAILED:
-            return { ...state, isQuestionSelected: false };
+            return { ...state, isSelected: false };
         default:
             return state;
     }
 };
 
-export const quizFilledReducer = (state = defaultState, action) => {
+
+export const getQuestionsReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case QUIZ_FILLED_SUCCESS:
-            return { ...state, isQuizFilled: true };
-        case QUIZ_FILLED_ERROR:
-            return { ...state, isQuizFilled: false };
+        case GET_QUESTIONS_SUCCESS:
+            return { ...state, questions: action.payload };
+        case GET_QUESTIONS_ERROR:
         default:
             return state;
     }
 }
 
-export const getQuestionsReducer = (state = defaultState, action) => {
-    switch (action.type) {
-        case GET_QUESTIONS_SUCCESS:
-            return { ...state, isQuizFilled: true };
-        case GET_QUESTIONS_ERROR:
-            return { ...state, isQuizFilled: false };
-        default:
-            return state;
-    }
-}

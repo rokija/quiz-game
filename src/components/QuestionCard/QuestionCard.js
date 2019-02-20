@@ -18,7 +18,7 @@ class QuestionCard extends Component {
                         {this.props.children}
                         <Button>Go Back</Button>
                         <Button className="Submit_button"
-                        onClick={onAnswerSubmit}>
+                        onClick={() => console.log("Next question")}>
                         Next
                         </Button>
                     </CardBody>
