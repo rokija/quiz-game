@@ -4,7 +4,6 @@ import './QuestionItem.css';
 class QuestionItem extends Component {
     render() {
         const { question, type, answers, correctAnswers, userAnswers, number } = this.props;
-        console.log(answers)
         return (
             <div className="QuestionItem container-fluid">
                 <div className="row">
@@ -15,7 +14,7 @@ class QuestionItem extends Component {
                                 {type !== "text" && <div><label className="QuestionItem__label">Answers:</label></div>}
                                 {answers.map(answer => {
                                     let isChecked = false
-                                    let index = 10
+                                    let index = null
                                     if (type === "checkbox" || type === "radio") {
                                         isChecked = true
                                     }
@@ -28,7 +27,6 @@ class QuestionItem extends Component {
                                             } else if (answer === userAnswer && userAnswer !== correctAnswer) {
                                                 index = 1
                                             } else if ({ type }) { index = 0 }
-
                                         })
                                     })
                                     switch (index) {
