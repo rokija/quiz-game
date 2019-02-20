@@ -13,25 +13,19 @@ class Root extends Component {
     return (
       <BrowserRouter>
         <Switch>
-<<<<<<< HEAD
           <Route exact path="/quizzes/:quizId/edit/questions/:questionId" component={App} />
           <Route exact path="/quizzes/:quizId/edit/questions/create" component={App} />
           <Route exact path="/quizzes/:quizId/edit/questions" component={App} />
           <Route exact path="/quizzes/:quizId/questions/:questionId" component={App} />
           <Route exact path="/quizzes/:quizId/edit/" component={App} />
           <Route exact path="/quizzes/create" component={App} />
-=======
-          <Route exact path="/" component={App} />
-          <Route exact path="/login" component={Login} />
-          <Route exact path="/users" component={UserList} />
->>>>>>> 43014e16bc0b2e15ec6e2906e00fba4b1188ffb7
           <Route exact path="/quizzes" component={Quizzes} />
           <Route exact path="/results/statistics/quizzes/:quizId" component={App} />
           <Route exact path="/results/my/quizzes/:quizId" component={App} />
           <Route exact path="/results/statistics" component={App} />
           <Route exact path="/results" component={App} />
           <Route exact path="/users/:userId" component={App} />
-          <Route exact path="/users" component={App} />
+          <Route exact path="/users" component={UserList} />
           <Route exact path="/profile" component={App} />
           <Route exact path="/register" component={App} />
           <Route exact path="/login" component={Login} />
