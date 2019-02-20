@@ -28,8 +28,8 @@ class AddQuizz extends Component {
                                 placeholder="Quizz description here..."
                                 onChange={onDescriptionInputChange}
                             />
-                            <Button className="AddQuizz__btn" onClick={goHome} outline color="primary">Cancel</Button>
-                            <Button className="AddQuizz__btn" onClick={submitForm} color="success">Add</Button>
+                            <Button className="AddQuizz__btn" onClick={submitForm} color="success">ADD </Button>
+                            <Button className="AddQuizz__btn" onClick={goHome} outline color="primary">CANCEL</Button>
                         </FormGroup>
                     </Form>
                 </div>
