@@ -22,8 +22,8 @@ class Root extends Component {
           <Route exact path="/quizzes/:quizId/edit/" component={App} />
           <Route exact path="/quizzes/create" component={App} />
           <Route exact path="/quizzes" component={Quizzes} />
-          <Route exact path="/results/statistics/quizzes/:quizId" component={QuestionList} />
-          <Route exact path="/results/my/quizzes/:quizId" component={App} />
+          <Route exact path="/results/statistics/quizzes/:quizId" component={App} />
+          <Route exact path="/results/my/quizzes/:quizId" component={QuestionList} />
           <Route exact path="/results/statistics" component={App} />
           <Route exact path="/results" component={Results} />
           <Route exact path="/users/:userId" component={App} />

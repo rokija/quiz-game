@@ -29,7 +29,7 @@ const Questions = [
 class QuestionList extends Component {
     constructor() {
         super();
-        this.state = { name: "TestYour knowledge" };
+        this.state = { name: "Test Your knowledge" };
     }
     render() {
         return (
