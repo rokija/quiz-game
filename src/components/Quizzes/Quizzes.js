@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Quiz from "./Quiz";
+import MainLayout from "../MainLayout/MainLayout";
 import "./Quizzes.css";
 
 const quizzes = [
@@ -29,18 +30,20 @@ const quizzes = [
 class Quizzes extends Component {
   render() {
     return (
-      <div className="Quizzes">
-        <div className="Quizzes__content">
-          {quizzes.map((quiz, i) => (
-            <Quiz
-              key={i}
-              title={quiz.title}
-              description={quiz.description}
-              isAdmin={quiz.isAdmin}
-            />
-          ))}
+      <MainLayout>
+        <div className="Quizzes">
+          <div className="Quizzes__content">
+            {quizzes.map((quiz, i) => (
+              <Quiz
+                key={i}
+                title={quiz.title}
+                description={quiz.description}
+                isAdmin={quiz.isAdmin}
+              />
+            ))}
+          </div>
         </div>
-      </div>
+      </MainLayout>
     );
   }
 }
