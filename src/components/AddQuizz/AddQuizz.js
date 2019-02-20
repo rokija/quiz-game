@@ -7,7 +7,6 @@ class AddQuizz extends Component {
     render() {
         const { onTitleInputChange, onDescriptionInputChange, goHome, submitForm } = this.props;
         return (
-            <MainLayout>
                 <div className="AddQuizz">
                     <h1 className="AddQuizz__title">Add quizz</h1>
                     <Form className="AddQuizz__Form">
@@ -35,7 +34,6 @@ class AddQuizz extends Component {
                         </FormGroup>
                     </Form>
                 </div>
-            </MainLayout>
         )
     }
 }
