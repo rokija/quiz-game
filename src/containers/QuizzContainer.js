@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import AddQuizz from "../components/AddQuizz/AddQuizz";
 
-class AddQuizzContainer extends Component {
+class QuizzContainer extends Component {
     constructor() {
         super();
         this.state = {
@@ -35,6 +35,4 @@ class AddQuizzContainer extends Component {
     }
 }
 
-
-
-export default AddQuizzContainer;
+export default QuizzContainer;
