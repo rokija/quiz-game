@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import UserCard from "../UserCard/UserCard";
-import MainLayout from "../MainLayout/MainLayout";
-
 
 class UserList extends Component {
   constructor() {
@@ -47,7 +45,6 @@ class UserList extends Component {
   render() {
     const { users } = this.state;
     return (
-      <MainLayout>
       <div className="UserList">
         <h2> Users</h2>
         {users.map((user, index) => (
@@ -62,7 +59,6 @@ class UserList extends Component {
           />
         ))}
       </div>
-      </MainLayout>
     );
   }
 }
