@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import { withRouter } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import "./Login.css";
 
 
@@ -52,9 +52,11 @@ class Login extends Component {
                 Login
               </Button>
 
-              <Button onClick={() => { this.props.history.push("/register") }} color="dark">
-                Register
-              </Button>
+              <NavLink to="/register">
+                <Button color="dark">
+                  Register
+                </Button>
+              </NavLink>
             </div>
           </form>
         </div>
@@ -63,4 +65,4 @@ class Login extends Component {
   }
 }
 
-export default withRouter(Login)
+export default Login;

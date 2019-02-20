@@ -15,4 +15,4 @@ export class LoginContainer extends Component {
   }
 }
 
-export default LoginContainer
+export default LoginContainer;
