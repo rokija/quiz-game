@@ -4,18 +4,18 @@ import "./UserEdit.css"
 export default class Example extends React.Component {
   render() {
     return (
-      
-        
-<Form className="wholeBlock">
-  <h2>Change User Data</h2>
-    <FormGroup row className="">
-        <Label for="exampleEmail" sm={2}>Name</Label>
+
+
+      <Form className="wholeBlock">
+        <h2>Change User Data</h2>
+        <FormGroup row className="">
+          <Label for="exampleEmail" sm={2}>Name</Label>
           <Col sm={3}>
-            <Input type="text" name="userName" id="userName"  />
+            <Input type="text" name="userName" id="userName" />
           </Col>
         </FormGroup>
         <FormGroup row>
-        <Label for="exampleEmail" sm={2}>Surname</Label>
+          <Label for="exampleEmail" sm={2}>Surname</Label>
           <Col sm={3}>
             <Input type="text" name="userSurname" id="userSurname" />
           </Col>
@@ -34,6 +34,7 @@ export default class Example extends React.Component {
         </FormGroup>
         <FormGroup row>
           <Label for="exampleSelect" sm={2}>Level</Label>
+          <option>1</option>
           <Col sm={3}>
             <Input type="select" name="userLevel" id="userLevel" />
           </Col>
@@ -43,7 +44,7 @@ export default class Example extends React.Component {
             <Button>Change</Button>
           </Col>
         </FormGroup>
-  </Form>
+      </Form>
     );
   }
 }

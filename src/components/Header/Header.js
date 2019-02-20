@@ -5,9 +5,9 @@ import './Header.css';
 class Header extends Component {
     render() {
         return (
-            <div className="Header row">
+            <div className="Header">
                 <div>
-                    <h3 className="Header__title">Brand Name</h3>
+                    <h3 className="Header__title">QUIZ GAME</h3>
                 </div>
                 <div className="Header__links">
                     <NavLink className="Header__link" activeClassName="active" to="/"  >QUIZZES</NavLink>

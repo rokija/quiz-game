@@ -1,17 +1,18 @@
-import React from "react";
+import React, { Component } from "react";
 import "./App.css";
-import Header from "./components/Header/Header";
-import UserEdit from "./components/UserEdit/UserEdit"
-class App extends React.Component {
+import MainLayout from "./components/MainLayout/MainLayout";
+
+class App extends Component {
   render() {
     return (
-      // <React.Fragment>
-      //   <Header />
-      // </React.Fragment>
-      <UserEdit />
-
-    )
+      <div className="App">
+        <MainLayout>
+          {/* --------------------------------
+          There goes a content!
+          -------------------------------- */}
+        </MainLayout>
+      </div>
+    );
   }
 }
-
 export default App;
