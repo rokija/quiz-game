@@ -12,7 +12,7 @@ class ResultItem extends Component {
                         <img className="ResultItem__img" src={image} alt="question" />
                     </div>
                     <div className="col-sm-10">
-                        <h2 className="ResultItem__h2">{name}</h2>
+                        <h2 className="ResultItem__title">{name}</h2>
                         <p className="ResultItem__desc">{description}</p>
                         <p className="ResultItem__score">Score: {score}</p>
                     </div>

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './Results.css';
-import ListofResults from './ListofResults/ListofResults';
-import ListofmyQuizResults from './ListofmyQuizResults/ListofmyQuizResults';
+import ListOfResults from './ListOfResults/ListOfResults';
+import ListOfMyQuizResults from './ListOfMyQuizResults/ListOfMyQuizResults';
 
 export class Results extends Component {
     render() {
@@ -9,10 +9,10 @@ export class Results extends Component {
             <div className="Results" >
                 <div className="Results__body">
                     <div className="Results__group" >
-                        <ListofResults />
+                        <ListOfResults />
                     </div>
                     <div className="Results__group" >
-                        <ListofmyQuizResults />
+                        <ListOfMyQuizResults />
                     </div>
                 </div>
             </div >

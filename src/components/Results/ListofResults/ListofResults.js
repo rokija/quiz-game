@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import Pagination from 'pagination-component';
-import './ListofResults.css';
+import './ListOfResults.css';
 import ResultItem from "../ResultItem/ResultItem";
 import questionImg from "../../../assets/question3.jpg";
 
@@ -25,21 +24,11 @@ const ListofQuizzes = [
     },
 ]
 
-export class ListofResults extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            activePage: 1
-        };
-    }
-    handlePageChange(pageNumber) {
-        this.setState({ activePage: pageNumber });
-    }
-
+export class ListOfResults extends Component {
     render() {
         return (
             <div className="ListOfResults">
-                <h1 className="ListofResults__h1">My results</h1>
+                <h1 className="ListOfResults__title">My results</h1>
                 {ListofQuizzes.map(function (quiz) {
                     return (
                         <ResultItem
@@ -50,11 +39,10 @@ export class ListofResults extends Component {
                             image={quiz.image}
                         />
                     )
-                    // {onclick = "GotoListofQuestions(quizId)"}
                 })}
             </div>
         );
     }
 }
 
-export default ListofResults;
+export default ListOfResults;

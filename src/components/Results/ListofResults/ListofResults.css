@@ -6,13 +6,6 @@
     border-radius: 10px;
 }
 
-.ListofResults__h1{
+.ListOfResults__title{
     padding-left: 20px;
-}
-
-.ListOfResults_pagination{
-    display: flex;
-    width: 100%;
-    align-content: center;
-    align-items: center;
 }

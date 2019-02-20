@@ -18,7 +18,7 @@ const Questions = [
         userAnswers: ["Liza"]
     },
     {
-        question: "Which tools we did discused?",
+        question: "Which tools we did discussed?",
         type: "checkbox",
         answers: ["react", "github", "angular", "no one"],
         correct: ["react", "github"],
@@ -38,7 +38,7 @@ class QuestionList extends Component {
                                 question={questionItem.question}
                                 type={questionItem.type}
                                 answers={questionItem.answers}
-                                correct={questionItem.correct}
+                                correctAnswers={questionItem.correct}
                                 userAnswers={questionItem.userAnswers}
                                 number={++number}
                             />)
