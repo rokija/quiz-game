@@ -1,20 +1,18 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Link } from "react-router-dom"
+import MainLayout from './components/MainLayout/MainLayout';
 
 class App extends Component {
   render() {
     return (
-      <div>
-        <ul>
-          <li>
-            <Link to="/quizzes/create">AddQuiz</Link>
-          </li>
-        </ul>
+      <div className="App">
+        <MainLayout >
+          {/* --------------------------------
+          There goes a content!
+          -------------------------------- */}
+        </MainLayout>
       </div>
-
-    )
+    );
   }
 }
-
 export default App;
