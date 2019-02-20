@@ -5,6 +5,7 @@ class ProtectedRoute extends Component {
   constructor() {
     super();
 
+    
     this.token = true;
   }
   render() {

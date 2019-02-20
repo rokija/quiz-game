@@ -1,13 +1,12 @@
 import React, { Component } from "react";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
+import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import ReactDOM from "react-dom";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import App from "./App";
 import ManageUserContainer from "./containers/ManageUserContainer";
 import LoginContainer from "./containers/LoginContainer";
-
-
 
 class Root extends Component {
   render() {
@@ -16,8 +15,8 @@ class Root extends Component {
         <Switch>
             <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/register" component={ManageUserContainer} />
-            {/* <Route path="/*" component={App} /> */}
-            <App/>
+            <ProtectedRoute path="/*" component={App} />
+            {/* <App/> */}
         </Switch>
       
       </BrowserRouter>

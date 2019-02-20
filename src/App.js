@@ -1,29 +1,36 @@
 import React, { Component } from "react";
+import { Route } from "react-router-dom";
 import "./App.css";
 import MainLayout from "./components/MainLayout/MainLayout";
-import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute";
 import UserListContainer from "./containers/UsersListContainer";
-import QuizzContainer from "./containers/QuizzContainer";
+import AddQuizContainer from "./containers/AddQuizContainer";
+import QuizContainer from "./containers/QuizContainer";
 import QuizStatisticsContainer from "./containers/QuizStatisticsContainer";
+import ResultsContainer from "./containers/ResultsContainer";
+import QuestionContainer from "./containers/QuestionContainer";
+import QuestionsListContainer from "./containers/QuestionsListContainer";
+import ManageQuestionContainer from "./containers/ManageQuestionsContainer";
+import ManageUserContainer from "./containers/ManageUserContainer";
+import QuizResultsContainer from "./containers/QuizResultsContainer";
 
 class App extends Component {
   render() {
     return ( 
       <MainLayout>
-        <ProtectedRoute exact path="/quizzes/:quizId/edit/questions/:questionId" component={App} />
-        <ProtectedRoute exact path="/quizzes/:quizId/edit/questions/create" component={App} />
-        <ProtectedRoute exact path="/quizzes/:quizId/edit/questions" component={App} />
-        <ProtectedRoute exact path="/quizzes/:quizId/questions/:questionId" component={App} />
-        <ProtectedRoute exact path="/quizzes/:quizId/edit/" component={App} />
-        <ProtectedRoute exact path="/quizzes/create" component={App} />
-        <ProtectedRoute exact path="/quizzes" component={QuizzContainer} />
-        <ProtectedRoute exact path="/results/statistics/quizzes/:quizId" component={App} />
-        <ProtectedRoute exact path="/results/my/quizzes/:quizId" component={App} />
-        <ProtectedRoute exact path="/results/statistics" component={QuizStatisticsContainer} />
-        <ProtectedRoute exact path="/results" component={App} />
-        <ProtectedRoute exact path="/users/:userId" component={App} />
-        <ProtectedRoute exact path="/users" component={UserListContainer} />
-        <ProtectedRoute exact path="/profile" component={App} />
+        <Route exact path="/quizzes/:quizId/edit/questions/:questionId" component={ManageQuestionContainer} />
+        <Route exact path="/quizzes/:quizId/edit/questions/create" component={ManageQuestionContainer} />
+        <Route exact path="/quizzes/:quizId/edit/questions" component={QuestionsListContainer} />
+        <Route exact path="/quizzes/:quizId/questions/:questionId" component={QuestionContainer} />
+        <Route exact path="/quizzes/:quizId/edit/" component={AddQuizContainer} />
+        <Route exact path="/quizzes/create" component={AddQuizContainer} />
+        <Route exact path="/quizzes" component={QuizContainer} />
+        <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
+        <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
+        <Route exact path="/results/statistics" component={QuizStatisticsContainer} /> 
+        <Route exact path="/results" component={ResultsContainer} />
+        <Route exact path="/users/:userId" component={ManageUserContainer} />
+        <Route exact path="/users" component={UserListContainer} />
+        <Route exact path="/profile" component={ManageUserContainer} />
       </MainLayout>
     );
   }
