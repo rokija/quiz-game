@@ -8,7 +8,7 @@ class App extends React.Component {
       // <React.Fragment>
       //   <Header />
       // </React.Fragment>
-      <UserEdit/>
+      <UserEdit />
 
     )
   }

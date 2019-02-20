@@ -3,12 +3,9 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./Registration.css";
 
-
-
 class Registration extends Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       username: "",
@@ -19,35 +16,30 @@ class Registration extends Component {
       passwordVerification: "",
       message: "",
     };
-    this.submitData = this.submitData.bind(this);
+
   }
 
   onInputChange = e => {
     this.setState({ [e.target.name]: e.target.value });
   };
 
-  
-  
-
-
   inputPassword = event => {
     this.setState({ password: event.target.value });
   };
- 
+
   confirmPassword = event => {
     this.setState({ passwordVerification: event.target.value });
   };
 
-  submitData(event) {
+  submitData = (event) => {
     event.preventDefault();
     const { password, passwordVerification } = this.state;
     const matches = (password === passwordVerification)
-    matches ? alert("MATCHED") : alert("NO MATCH");
+    matches ? console.log("MATCHED") : console.log("NO MATCH");
   }
 
   render() {
-    const { email, password, username, name, surname, dateOfBirth, passwordVerification} = this.state;
-
+    const { email, password, username, name, surname, dateOfBirth, passwordVerification } = this.state;
     return (
       <div className="Register">
         <div className="Register__content">
@@ -64,45 +56,31 @@ class Registration extends Component {
                 value={username}
               />
             </div>
-
             <div className="form-group">
               <label>Please enter your email</label>
               <input
-                // onChange={this.onInputChange}
                 className="form-control"
                 type="email"
                 name="email"
               />
             </div>
-
             <div className="form-group">
               <label>Please enter your password</label>
               <input
-                // onChange={this.onInputChange}
                 className="form-control"
                 type="password"
                 name="password"
                 onChange={this.inputPassword}
-                // minlength="8"
                 maxlength="12"
-                 required
+                required
                 value={password}
               />
             </div>
-
-            
-
-
-{/* --------------- Need to compare if passwords match with the if statement. Dunno yet how to do that.---------------- */}
-
-
             <div className="form-group">
               <label>Please repeat the password</label>
               <input
-                // onChange={this.onInputChange}
                 className="form-control"
                 type="password"
-                // minlength="8" 
                 maxlength="12"
                 required
                 name="passwordVerification"
@@ -110,7 +88,6 @@ class Registration extends Component {
                 value={passwordVerification}
               />
             </div>
-
             <div className="form-group">
               <label>Please enter your name</label>
               <input
@@ -121,7 +98,6 @@ class Registration extends Component {
                 value={name}
               />
             </div>
-
             <div className="form-group">
               <label>Please enter your surname</label>
               <input
@@ -131,17 +107,16 @@ class Registration extends Component {
                 name="surname"
                 value={surname}
               />
-
               <div className="form-group">
-              <label>Please enter your birth date</label>
-              <input  
-                onChange={this.onInputChange}
-                className="form-control"
-                type="date"
-                name="dateOfBirth"
-                value={dateOfBirth}
-              />
-            </div>
+                <label>Please enter your birth date</label>
+                <input
+                  onChange={this.onInputChange}
+                  className="form-control"
+                  type="date"
+                  name="dateOfBirth"
+                  value={dateOfBirth}
+                />
+              </div>
             </div>
             <Button type="submit"
               // onClick={() =>
