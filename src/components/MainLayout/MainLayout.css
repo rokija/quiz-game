@@ -1,0 +1,15 @@
+.MainLayout{
+    padding-top: 60px;
+    padding-bottom: 90px;
+    margin-top: 50px;   
+}
+
+.MainLayout__content{
+  width: 80%;
+  max-width: 1000px;
+  overflow: scroll;
+  border: 3px solid #8b9dc3;
+  margin: auto;
+  
+}
+ 
