@@ -1,18 +1,40 @@
-import React, { Component } from 'react';
-import Login from '../components/Login/Login';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import Login from "../components/Login/Login";
+import { login } from "../redux/actions/userActions";
 
-export class LoginContainer extends Component {
-  onLogin = (email, password) => {
-    if (!email || !password) {
-      return alert('Wrong password or Email');
-    };
-    // add functionality from Redux
-    this.props.history.push("/")
+class LoginContainer extends Component {
+  onLogin = (username, password, e) => {
+    e.preventDefault();
+    if (!username || !password) {
+      return;
+    }
+    this.props
+      .login(username, password)
+      .then(() => {
+        this.props.history.push("/quizzes");
+      })
+      .catch(e => {
+        console.error(e);
+      });
   };
-  render() {
-    return <Login onLogin={this.onLogin} />
 
+  render() {
+    return <Login onLogin={this.onLogin} />;
   }
 }
 
-export default LoginContainer;
+const mapStateToProps = state => {
+  return {
+    isLoggedIn: state.loginReducer.isLoggedIn
+  };
+};
+
+const mapDispatchToProps = {
+  login
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(LoginContainer);

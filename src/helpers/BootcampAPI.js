@@ -1,36 +1,36 @@
 import axios from "axios";
 
 class APIClass {
-    constructor() {
-        this.instance = axios.create({
-            baseURL: "https://quiz-game-api.herokuapp.com/api/v1/",
-            timeout: 1000
-        });
-    }
+  constructor() {
+    this.instance = axios.create({
+      baseURL: "https://quiz-game-api.herokuapp.com/api/v1/",
+      timeout: 1000
+    });
+  }
 
-    getDefaultHeaders() {
-        return {
-            Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
-            responseType: "application/json"
-        };
-    }
+  getDefaultHeaders() {
+    return {
+      Authorization: `Bearer ${localStorage.getItem("jwtToken")}`,
+      responseType: "application/json"
+    };
+  }
 
-    get(url) {
-        return this.instance.get(url, {
-            headers: this.getDefaultHeaders()
-        });
-    }
+  get(url) {
+    return this.instance.get(url, {
+      headers: this.getDefaultHeaders()
+    });
+  }
 
-    post(url, data) {
-        return this.call("post", url, data);
-    }
+  post(url, data) {
+    return this.call("post", url, data);
+  }
 
-    call(method, url, data) {
-        return this.instance[method](url, data, {
-            method,
-            headers: this.getDefaultHeaders()
-        });
-    }
+  call(method, url, data) {
+    return this.instance[method](url, data, {
+      method,
+      headers: this.getDefaultHeaders()
+    });
+  }
 }
 
 const API = new APIClass();

@@ -18,7 +18,7 @@ class Quiz extends Component {
   onStartQuiz = () => console.log("Start quiz");
 
   render() {
-    const { title, description, user, ownerId, onAddQuiz, onDeleteQuiz } = this.props;
+    const { title, description, user, ownerId, onDeleteQuiz } = this.props;
     const { showContent } = this.state;
 
     return (
