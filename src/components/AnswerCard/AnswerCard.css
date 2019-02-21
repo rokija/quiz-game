@@ -1,0 +1,9 @@
+.AnswerCard{
+    text-align: left;
+    font-size: 20px;
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    
+}

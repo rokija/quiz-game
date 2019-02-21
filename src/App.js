@@ -6,7 +6,7 @@ import AddQuizContainer from "./containers/AddQuizContainer";
 import QuizContainer from "./containers/QuizContainer";
 import QuizStatisticsContainer from "./containers/QuizStatisticsContainer";
 import ResultsContainer from "./containers/ResultsContainer";
-import QuestionContainer from "./containers/QuestionContainer";
+import QuestionContainer from "./containers/QuestionContainer/QuestionContainer";
 import QuestionsListContainer from "./containers/QuestionsListContainer";
 import ManageQuestionsContainer from "./containers/ManageQuestionsContainer";
 import ManageUserContainer from "./containers/ManageUserContainer";
