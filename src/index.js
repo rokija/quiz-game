@@ -11,7 +11,7 @@ import App from "./App";
 import ManageUserContainer from "./containers/ManageUserContainer";
 import LoginContainer from "./containers/LoginContainer";
 
-import rootReducer from "./redux"
+import rootReducer from "./redux";
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(
@@ -23,8 +23,9 @@ const store = createStore(
 class Root extends Component {
   render() {
     return (
-      <BrowserRouter>
-        <Switch>
+      <Provider store={store}>
+        <BrowserRouter>
+          <Switch>
             <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/register" component={ManageUserContainer} />
             <ProtectedRoute path="/*" component={App} />
