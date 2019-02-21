@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import { Button } from "reactstrap";
 import "./Login.css";
 
@@ -7,7 +8,7 @@ class Login extends Component {
     super(props);
 
     this.state = {
-      email: "",
+      username: "",
       password: ""
     };
   }
@@ -17,7 +18,8 @@ class Login extends Component {
   };
 
   render() {
-    const { email, password } = this.state;
+    console.log(this.props.onLogin);
+    const { username, password } = this.state;
 
     return (
       <div className="Login">
@@ -25,13 +27,13 @@ class Login extends Component {
           <h2>Login</h2>
           <form>
             <div className="form-group">
-              <label>Email</label>
+              <label>Username</label>
               <input
                 onChange={this.onInputChange}
                 className="form-control"
-                type="email"
-                name="email"
-                value={email}
+                type="username"
+                name="username"
+                value={username}
               />
             </div>
 
@@ -46,13 +48,23 @@ class Login extends Component {
               />
             </div>
             <div className="buttons">
-              <Button className="Login-button" color="dark">
+              <Button
+                className="Login-button"
+                onClick={e => {
+                  this.props.onLogin(
+                    this.state.username,
+                    this.state.password,
+                    e
+                  );
+                }}
+                color="dark"
+              >
                 Login
-            </Button>
+              </Button>
 
-              <Button color="dark">
-                Register
-            </Button>
+              <Link to="/register">
+                <Button color="dark">Register</Button>
+              </Link>
             </div>
           </form>
         </div>
