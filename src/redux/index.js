@@ -1,13 +1,11 @@
 import { combineReducers } from "redux";
-import {getQuestionsReducer, nextQuestionReducer} from "./questionReducer/questionReducer"
-import {getQuizzReducer } from "./";
-/* Reducers to create for questions
-getQuestionsReducer, nextQuestionReducer
-*/
+import { getQuestionsReducer, nextQuestionReducer } from "./reducers/questionReducer"
+import { getQuizesReducer } from "./reducers/quizReducer";
+ 
 const rootReducer = combineReducers({
     getQuestionsReducer: getQuestionsReducer,
-    nextQuestionReducer: nextQuestionReducer
-
+    nextQuestionReducer: nextQuestionReducer,
+    getQuizesReducer: getQuizesReducer,
 });
 
 export default rootReducer;

@@ -2,6 +2,7 @@
     background-color: rgb(188, 188, 190);
     width:100%;
     margin-top: 15px;
+    border-radius: 10px
 }
 
 .Quiz__header{
@@ -11,6 +12,7 @@
     border: 2px solid black;
     cursor: pointer;
     text-align: center;
+    border-radius: 10px
 }
 
 .Quiz__header:hover{

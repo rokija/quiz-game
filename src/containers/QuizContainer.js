@@ -12,10 +12,14 @@ export class QuizContainer extends Component {
   }
 }
 
-
+const mapStateToProps = state => {
+  return {
+      quizzes: state.getQuizzReducer.quizzes
+  };
+}
 const mapDispatchToProps = {
   getQuiz
 };
 
 
-export default connect(null, mapDispatchToProps)(QuizContainer); 
+export default connect(mapStateToProps, mapDispatchToProps)(QuizContainer); 
