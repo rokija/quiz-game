@@ -4,16 +4,21 @@ import { Button, Form, FormGroup, Label, Input } from 'reactstrap';
 
 export default class Example extends React.Component {
   state = {
-    "value":null, 
-    "answers": []
+    "type":null, 
+    "answers": [],
+    "question": "",
+    "correct":[],
+    correctAnswers: []
+
   };
   handleChange = (event) => {
+
     console.log(event.target.name, event.target.value)
-    this.setState({value: event.target.value}); 
+    this.setState({type: event.target.value}); 
   }
 
-renderTextInput = () => {
-  return <Input type="input" name="newinput" />
+renderTextInput = (i) => {
+  return <Input type="input" onChange={(e) => this.onAnswerChange(e,i)}  name="newinput" />
 }
 renderCheckboxInput = () => {
   return <Label><Input type="checkbox" name="newinput" />CheckBox</Label>
@@ -35,15 +40,16 @@ renderInput = () => {
       return this.renderRadioInput()
     case "textbox":
       return this.renderTextareaInput()
-    case '':
+    case '': 
     default:
     return null 
   }
 }
 
-onAddAnswer = () => {
+onAddAnswer = (e) => {
+  e.preventDefault()
   let answers = [...this.state.answers]
-  answers.push(answers.length)
+  answers.push("")
   this.setState({"answers": answers}); 
 }
 
@@ -55,13 +61,55 @@ onRemoveAnswer = (index=0,e) => {
 
 }
 
+onAddQuestion = (e) => {
+  let correct = []
+  this.state.correct.forEach((x,i) => {
+    if (x) correct.push(x)
+  })
+  console.log({
+    question: this.state.question,
+    answers: this.state.answers,
+    correct: correct,
+    type: this.state.type,   
+  });
+}
+
+onQuestionInput = (e) => {
+  console.log({
+    question: this.state.question,
+    type: this.state.type,
+  });
+  this.setState({question: e.target.value}); 
+}
+
+
+onAnswerChange = (e, i) => {
+let answers = [...this.state.answers]
+answers[i] = e.target.value
+ this.setState({answers}); 
+}
+
+onMarkAsCorrect = (i, x) => {
+  console.log("MARK", x, this.state.correct[i])
+  let correct = [...this.state.correct]
+  correct[i] = !correct[i]
+  this.setState({correct}); 
+
+  if(correct[i]) {
+    this.setState({ correctAnswers: [...this.state.correctAnswers, x] })
+  } else {
+    this.setState({ correctAnswers: this.state.correctAnswers.filter(el => el !== x) })
+  }
+}
+
   render() {
     return (
 
         <Form>
         <FormGroup>
           <Label for="addQuestion">Add Question: </Label>
-          <Input type="question" name="question" id="addQuestion" placeholder="Text" />
+          <Input onChange={ this.onQuestionInput }
+          type="question" name="question" id="addQuestion" placeholder="Text" />
         </FormGroup>
         
         <FormGroup tag="fieldset">
@@ -92,11 +140,20 @@ onRemoveAnswer = (index=0,e) => {
           </FormGroup>
         </FormGroup>
         {this.renderInput()}
-       <Button color="primary">Add Question</Button>{' '}
+       <Button color="primary" onClick={this.onAddQuestion}>Add Question</Button>{' '}
       <Button color="secondary" onClick={this.onAddAnswer}>Add Answer</Button>{' '}
-      {this.state.answers.map((x, i) => 
-      <div key={i}> {i+1}. {this.renderTextInput()} 
-      <Button onClick={(e)=>this.onRemoveAnswer(i, e)} close /> </div>)}
+      {
+        this.state.answers.map((x, i) => 
+          <div key={i}> 
+            {i+1}. {this.renderTextInput(i)} 
+            <Button onClick={(e)=>this.onRemoveAnswer(i, e)} close />
+             <Button onClick={()=>this.onMarkAsCorrect(i, x)}>
+             {this.state.correct[i] ? 'true' : 'false'}
+             </Button>
+          </div>
+        )
+      }
+
       </Form>
     );
   }
