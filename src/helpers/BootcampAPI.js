@@ -1,9 +1,12 @@
 import axios from "axios";
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 class APIClass {
     constructor() {
         this.instance = axios.create({
-            baseURL: process.env.REACT_APP_APIURL,
+            baseURL: 'https://quiz-game-api.herokuapp.com/api/v1/',
             timeout: 1000
         });
     }

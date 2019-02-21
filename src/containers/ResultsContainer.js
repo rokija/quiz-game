@@ -1,61 +1,50 @@
 import React, { Component } from 'react'
-// import { getResults } from '../redux/actions/ResultsActions';
-// import { Spinner } from 'reactstrap';
-// import { connect } from 'react-redux';
+import { getResults, getQuizzes } from '../redux/actions/resultsActions';
+import { Spinner } from 'reactstrap';
+import { connect } from 'react-redux';
 import Results from '../components/Results/Results';
 
 export class ResultsContainer extends Component {
     componentDidMount() {
-        //this.props.getResults(); //from ResultsActions
-        // export const getResults = () => {
-        //   return dispatch => {
-        //       return BootcampAPI.get(API.GET_RESULTS)
-        //           .then(res => dispatch(getResultsSuccess(res)))
-        //           .catch(err => {
-        //               console.error(err);
-        //               dispatch(getResultsError());
-        //           });
-        //     };
-        //  };
+        this.props.getResults();
+        this.props.getQuizzes();
     }
     render() {
-        return (
-            <Results />
-            //       const { results } = this.props;
-            // if (!results) {
-            //   return (
-            //     <div>
-            //       <Spinner color="success" />
-            //       loading...
-            //                 </div>
-            //   )
-            // }
-            // // console.log(posts)
-            // return <Results results={results} />
-        )
+        const { results, quizzes } = this.props;
+
+        if (!results || !quizzes) {
+            return (
+                <div>
+                    <Spinner />
+                    <div>loading...</div>
+                </div>
+            )
+        }
+        const userResults = []
+        for (let i = 0; i < results.length; i++) {
+            for (let j = 0; j < quizzes.length; j++) {
+                if (results[i].quizId === quizzes[j].id) userResults.push(quizzes[j])
+                console.log(userResults)
+            }
+        }
+        const userQuizzes = []
+        for (let j = 0; j < quizzes.length; j++) {
+            if (results[0].userId === quizzes[j].ownerId) userQuizzes.push(quizzes[j])
+        }
+        return <Results userResults={userResults} userQuizzes={userQuizzes} />
     }
 }
 
-// const mapDispatchToProps = {
-//   getResults
-// }
+const mapDispatchToProps = {
+    getResults,
+    getQuizzes
+}
 
-// const mapStateToProps = state => {
-//   return (
-//     // results: state.getResultsReducer.results
-//     // export const getResultsReducer = (state = defaultState, action) => {
-//     //   switch (action.type) {
-//     //       case GET_RESULTS_SUCCESS:
-//     //           return { ...state, results: action.payload };
-//     //  
-//     //       case GET_RESULTS_ERROR:
-//     //           return state;
-//     //       default:
-//     //           return state;
-//     //   }
-//   )
+const mapStateToProps = state => {
+    return {
+        results: state.getResultsReducer.results,
+        quizzes: state.getResultsReducer.quizzes
+    }
+}
 
-// }
-
-// export default connect(mapStateToProps, mapDispatchToProps)(ResultsContainer);
-export default ResultsContainer;
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsContainer);

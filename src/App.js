@@ -25,7 +25,7 @@ class App extends Component {
           <Route exact path="/quizzes/:quizId/edit/" component={AddQuizContainer} />
           <Route exact path="/quizzes/create" component={AddQuizContainer} />
           <Route exact path="/quizzes" component={QuizContainer} />
-          <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
+          <Route exact path="/results/statistics/quizzes" component={QuizStatisticsContainer} />
           <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
           <Route exact path="/results/statistics" component={QuizStatisticsContainer} />
           <Route exact path="/results" component={ResultsContainer} />

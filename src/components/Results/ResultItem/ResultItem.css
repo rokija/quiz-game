@@ -26,3 +26,7 @@
 .ResultItem__title{
         padding-top: 10px;
 }
+.ResultItem__title:hover{
+        text-decoration: underline;
+        cursor: pointer;
+}

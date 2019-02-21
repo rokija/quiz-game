@@ -26,17 +26,16 @@ const ListOfMyQuizzes = [
 
 export class ListOfMyQuizResults extends Component {
     render() {
+        const { userQuizzes } = this.props
         return (
             <div className="ListofmyQuizResults">
                 <h1 className="ListofmyQuizResults_title">My quizzes results</h1>
-                {ListOfMyQuizzes.map(function (quiz) {
+                {ListOfMyQuizzes.map(function (quiz) { // change on userQuizzes
                     return (
                         < MyQuizResultItem
                             key={quiz.id}
                             name={quiz.name}
                             description={quiz.description}
-                            averageScore={quiz.averageScore}
-                            usersCount={quiz.usersCount}
                         />
                     )
                 })}
