@@ -1,0 +1,14 @@
+.QuestionCard__card-title {
+    font-weight: 700;
+    font-size: 40px;
+}
+.QuestionCard{
+    text-align: left;
+    background-color: rgb(243, 243, 243);
+
+    display: inline;
+    
+}
+.Submit_button{
+    margin: 2%; 
+}
