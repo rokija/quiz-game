@@ -1,8 +1,9 @@
 import React, { Component } from "react";
+import Quizzes from "../components/Quizzes/Quizzes";
 
 export class QuizContainer extends Component {
   render() {
-    return <div>This is QuizContainer!</div>;
+    return <Quizzes/>
   }
 }
 
