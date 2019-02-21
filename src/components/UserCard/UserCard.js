@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./UserCard.css";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class UserCard extends Component {
   render() {
@@ -10,11 +10,11 @@ class UserCard extends Component {
       <div className="UserCard">
         <div className="UserCard__head">
           <div className="UserCard__username">{username}</div>
-          <NavLink to="/users/:userid">
+          <Link to="/users/:userid">
             <button className="UserCard__edit-button btn btn-secondary">
               Edit
             </button>
-          </NavLink>
+          </Link>
         </div>
         <ul className="UserCard__content">
           <li className="UserCard__content__email">Email: {email}</li>

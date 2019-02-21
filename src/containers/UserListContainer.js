@@ -3,7 +3,7 @@ import UserList from "../components/UserList/UserList";
 import { Spinner } from "reactstrap";
 
 
-export class UsersListContainer extends Component {
+export class UserListContainer extends Component {
   constructor() {
     super();
     this.state = {
@@ -76,4 +76,4 @@ export class UsersListContainer extends Component {
   }
 }
 
-export default UsersListContainer;
+export default UserListContainer;
