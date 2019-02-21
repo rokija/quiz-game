@@ -8,12 +8,14 @@ class ResultItem extends Component {
         return (
             <div className="ResultItem container-fluid">
                 <div className="row">
-                    <div className="col-sm-2">
+                    <div className="col-sm-3">
                         <img className="ResultItem__img" src={image} alt="question" />
                     </div>
-                    <div className="col-sm-10">
+                    <div className="col-sm-6">
                         <h2 className="ResultItem__title">{name}</h2>
                         <p className="ResultItem__desc">{description}</p>
+                    </div>
+                    <div className="col-sm-3">
                         <p className="ResultItem__score">Score: {score}</p>
                     </div>
                 </div>
