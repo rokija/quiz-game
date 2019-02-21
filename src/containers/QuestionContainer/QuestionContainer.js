@@ -10,19 +10,19 @@ class QuestionContainer extends Component {
     super(props);
 
     this.state = {
-      selectedCount: 0,
+      selectedCount: 1,
     };
   }
 
-  onNextButtonClick = (selectedAnswers) => {
+  onNextButtonClick = (selectedAnswers, nextIndex) => {
     const { selectedCount } = this.state;
-    const { id } = this.props.questions;
+    const { id } = this.props.questions[nextIndex];
 
     if (selectedCount) {
+      console.log(id)
       this.props.history.push(`/quizzes/:quizId/questions/${id}`)
-      return <Redirect to={`/quizzes/:quizId/questions/${id}`} />
     }
-    console.log(id)
+
 
   }
 
@@ -48,7 +48,7 @@ class QuestionContainer extends Component {
     }
 
 
-    for (var index = 0; index < questions.length; index++) {
+    for (let index = 0; index <= questions.length; index++) {
 
       if (index === questions.length - 1) {
         return console.log('>>>>>>>>') //<Redirect to="/results" />
@@ -57,7 +57,7 @@ class QuestionContainer extends Component {
       if (questionId === questions[index].questionId) {
         return console.log(questionId) //<Question onNextButtonClick={this.onNextButtonClick} />
       }
-      return <Question question={this.props.questions[index]} onNextButtonClick={this.onNextButtonClick} />
+      return <Question question={questions[index]} nextIndex={index + 1} onNextButtonClick={this.onNextButtonClick} />
     }
     // while waiting for questions show spinner
     //if (!question) {

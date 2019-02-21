@@ -11,7 +11,7 @@ class Question extends Component {
 
     const { question } = this.props
     console.log(question)
-    const { onNextButtonClick } = this.props
+    const { onNextButtonClick, nextIndex } = this.props
     return (
       <div className="Question">
 
@@ -22,6 +22,7 @@ class Question extends Component {
           progress={"Question: " + 1 + " of " + 3}
           onNextButtonClick={onNextButtonClick}
           answers={question.answers}
+          nextIndex={nextIndex}
         />
 
 

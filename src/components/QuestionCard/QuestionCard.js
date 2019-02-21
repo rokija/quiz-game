@@ -32,7 +32,7 @@ class QuestionCard extends Component {
     }
 
     render() {
-        const { progress, question, answers, onNextButtonClick } = this.props;
+        const { progress, question, answers, onNextButtonClick, nextIndex } = this.props;
         const { selectedAnswers } = this.state;
         return (
             <div className="QuestionCard mb-5">
@@ -57,7 +57,7 @@ class QuestionCard extends Component {
                         </div>
                         <Button>Go Back</Button>
                         <Button className="Submit_button"
-                            onClick={() => onNextButtonClick(selectedAnswers)}>
+                            onClick={() => onNextButtonClick(selectedAnswers, nextIndex)}>
                             Next
                         </Button>
                     </CardBody>
