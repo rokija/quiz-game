@@ -5,11 +5,9 @@
 }
 
 .MainLayout__content{
+  padding:20px;
   width: 80%;
   max-width: 1000px;
-  overflow: scroll;
-  border: 3px solid #8b9dc3;
+  border: 3px solid #b3b7c0;
   margin: auto;
-  
 }
- 

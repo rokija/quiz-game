@@ -1,0 +1,40 @@
+.Quiz{
+    background-color: rgb(188, 188, 190);
+    width:100%;
+    margin-top: 15px;
+}
+
+.Quiz__header{
+    height: 50px ;
+    width: 100%;
+    background-color: rgb(154, 155, 165);
+    border: 2px solid black;
+    cursor: pointer;
+    text-align: center;
+}
+
+.Quiz__header:hover{
+    background-color: rgb(188, 188, 201);
+}
+
+.Quiz__content{
+    width: 100%;  
+    text-align: center;
+}
+
+.Quiz__content__buttons{
+    margin-top: 30px;
+    margin-bottom: 10px;    
+}
+
+.Quiz__content__buttons__edit-button{
+    margin-right: 15px;
+}
+
+.Quiz__content__description{
+    font-size: 20px;
+}
+
+.Quiz__content__buttons__add-button{
+    margin-right: 15px;
+}
