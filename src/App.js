@@ -12,6 +12,7 @@ import ManageQuestionsContainer from "./containers/ManageQuestionsContainer";
 import ManageUserContainer from "./containers/ManageUserContainer";
 import QuizResultsContainer from "./containers/QuizResultsContainer";
 import "./App.css";
+import Quizzes from "./components/Quizzes/Quizzes";
 
 class App extends Component {
   render() {
@@ -24,7 +25,7 @@ class App extends Component {
               <Route exact path="/quizzes/:quizId/questions/:questionId" component={QuestionContainer} />
               <Route exact path="/quizzes/:quizId/edit/" component={AddQuizContainer} />
               <Route exact path="/quizzes/create" component={AddQuizContainer} />
-              <Route exact path="/quizzes" component={QuizContainer} />
+              <Route exact path="/quizzes" component={Quizzes} />
               <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
               <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
               <Route exact path="/results/statistics" component={QuizStatisticsContainer} /> 
