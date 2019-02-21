@@ -11,29 +11,30 @@ import QuestionsListContainer from "./containers/QuestionsListContainer";
 import ManageQuestionsContainer from "./containers/ManageQuestionsContainer";
 import ManageUserContainer from "./containers/ManageUserContainer";
 import QuizResultsContainer from "./containers/QuizResultsContainer";
+import QuizStatistics from "./components/Statistics/QuizStatistics/QuizStatistics";
 import "./App.css";
 
 class App extends Component {
   render() {
-    return ( 
+    return (
       <MainLayout>
         <Switch>
-              <Route exact path="/quizzes/:quizId/edit/questions/create" component={ManageQuestionsContainer} />
-              <Route exact path="/quizzes/:quizId/edit/questions/:questionId" component={ManageQuestionsContainer} />
-              <Route exact path="/quizzes/:quizId/edit/questions" component={QuestionsListContainer} />
-              <Route exact path="/quizzes/:quizId/questions/:questionId" component={QuestionContainer} />
-              <Route exact path="/quizzes/:quizId/edit/" component={AddQuizContainer} />
-              <Route exact path="/quizzes/create" component={AddQuizContainer} />
-              <Route exact path="/quizzes" component={QuizContainer} />
-              <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
-              <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
-              <Route exact path="/results/statistics" component={QuizStatisticsContainer} /> 
-              <Route exact path="/results" component={ResultsContainer} />
-              <Route exact path="/users/:userId" component={ManageUserContainer} />
-              <Route exact path="/users" component={UserListContainer} />
-              <Route exact path="/profile" component={ManageUserContainer} />
+          <Route exact path="/quizzes/:quizId/edit/questions/create" component={ManageQuestionsContainer} />
+          <Route exact path="/quizzes/:quizId/edit/questions/:questionId" component={ManageQuestionsContainer} />
+          <Route exact path="/quizzes/:quizId/edit/questions" component={QuestionsListContainer} />
+          <Route exact path="/quizzes/:quizId/questions/:questionId" component={QuestionContainer} />
+          <Route exact path="/quizzes/:quizId/edit/" component={AddQuizContainer} />
+          <Route exact path="/quizzes/create" component={AddQuizContainer} />
+          <Route exact path="/quizzes" component={QuizContainer} />
+          <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
+          <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
+          <Route exact path="/results/statistics" component={QuizStatistics} />
+          <Route exact path="/results" component={ResultsContainer} />
+          <Route exact path="/users/:userId" component={ManageUserContainer} />
+          <Route exact path="/users" component={UserListContainer} />
+          <Route exact path="/profile" component={ManageUserContainer} />
         </Switch>
-      </MainLayout>  
+      </MainLayout>
     );
   }
 }
