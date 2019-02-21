@@ -58,7 +58,7 @@ class Quiz extends Component {
             )}
             {hasAccessLevel(user, USER) && (
               <div className="Quiz__content__buttons">
-                <Button onClick={() => this.onStartQuiz()} color="secondary">
+                <Button onClick={() => this.onStartQuiz()} color="success">
                   Start quiz
                 </Button>
               </div>

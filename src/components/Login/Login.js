@@ -18,9 +18,8 @@ class Login extends Component {
   };
 
   render() {
-    console.log(this.props.onLogin);
     const { username, password } = this.state;
-
+    const { onLogin } = this.props;
     return (
       <div className="Login">
         <div className="Login__content">
@@ -51,11 +50,7 @@ class Login extends Component {
               <Button
                 className="Login-button"
                 onClick={e => {
-                  this.props.onLogin(
-                    this.state.username,
-                    this.state.password,
-                    e
-                  );
+                  onLogin(this.state.username, this.state.password, e);
                 }}
                 color="dark"
               >
