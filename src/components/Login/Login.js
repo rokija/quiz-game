@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import "./Login.css";
 
 
@@ -52,11 +52,11 @@ class Login extends Component {
                 Login
               </Button>
 
-              <NavLink to="/register">
+              <Link to="/register">
                 <Button color="dark">
                   Register
                 </Button>
-              </NavLink>
+              </Link>
             </div>
           </form>
         </div>
