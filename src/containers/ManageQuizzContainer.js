@@ -9,6 +9,7 @@ class ManageQuizzContainer extends Component {
             description:'',
         };
     }
+
     onTitleInputChange = (e) => this.setState({ title: e.target.value });
     onDescriptionInputChange = (e) => this.setState({ description: e.target.value });
     submitForm = () => {
@@ -19,7 +20,6 @@ class ManageQuizzContainer extends Component {
     };
     goHome = () => this.props.history.push("/quizzes");
 
-    onDeleteQuiz = () => console.log("Delete quiz");
 
     render() {
         const  { match: { params: { quizId } } } = this.props;
@@ -42,4 +42,5 @@ class ManageQuizzContainer extends Component {
     }
 }
 
-export default ManageQuizzContainer;
+
+export default  ManageQuizzContainer;

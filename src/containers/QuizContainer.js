@@ -1,9 +1,21 @@
 import React, { Component } from "react";
+import Quizzes from "../components/Quizzes/Quizzes";
+import { getQuiz } from "../redux/actions/quizActions";
+import { connect } from "react-redux";
 
 export class QuizContainer extends Component {
+  componentDidMount() {
+    this.props.getQuiz();
+  }
   render() {
-    return <div>This is QuizContainer!</div>;
+    return <Quizzes quizzes={this.props.quizzes}/>
   }
 }
 
-export default QuizContainer;
+
+const mapDispatchToProps = {
+  getQuiz
+};
+
+
+export default connect(null, mapDispatchToProps)(QuizContainer); 
