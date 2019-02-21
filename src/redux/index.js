@@ -3,8 +3,9 @@ import {
   getQuestionsReducer,
   nextQuestionReducer
 } from "./reducers/questionReducer";
+import { getQuizesReducer } from "./reducers/quizReducer";
 
-import { loginReducer } from "./reducers/userReducer";
+import { loginReducer, getUsersReducer } from "./reducers/userReducer";
 
 /* Reducers to create for questions
 getQuestionsReducer, nextQuestionReducer
@@ -12,7 +13,9 @@ getQuestionsReducer, nextQuestionReducer
 const rootReducer = combineReducers({
   getQuestionsReducer: getQuestionsReducer,
   nextQuestionReducer: nextQuestionReducer,
-  loginReducer: loginReducer
+  loginReducer: loginReducer,
+  getUsersReducer: getUsersReducer,
+  getQuizesReducer: getQuizesReducer
 });
 
 export default rootReducer;
