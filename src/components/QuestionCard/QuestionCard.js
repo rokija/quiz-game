@@ -32,7 +32,7 @@ class QuestionCard extends Component {
     }
 
     render() {
-        const { progress, question, answers, onNextButtonClick, nextIndex } = this.props;
+        const { progress, question, answers, onNextButtonClick, onGoBackButtonClick, Index, length } = this.props;
         const { selectedAnswers } = this.state;
         return (
             <div className="QuestionCard mb-5">
@@ -55,10 +55,15 @@ class QuestionCard extends Component {
                                 </FormGroup>
                             ))}
                         </div>
-                        <Button>Go Back</Button>
+                        {Index === 1 && (
+                            <Button
+                                onClick={() => onGoBackButtonClick()}>
+                                Go Back</Button>
+                        )}
+
                         <Button className="Submit_button"
-                            onClick={() => onNextButtonClick(selectedAnswers, nextIndex)}>
-                            Next
+                            onClick={() => onNextButtonClick(selectedAnswers)}>
+                            {Index === length ? "Submit" : "Next"}
                         </Button>
                     </CardBody>
                 </Card>

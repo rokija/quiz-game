@@ -1,12 +1,12 @@
 import {
-    NEXT_QUESTION_ERROR,
-    NEXT_QUESTION_SUCCESS,
+    STORE_ANSWERS_ERROR,
+    STORE_ANSWERS_SUCCESS,
     GET_QUESTIONS_SUCCESS,
     GET_QUESTIONS_ERROR
 } from "../../constants";
 
 const defaultState = {
-    isSelected: false,
+    selectedAnswers: [],
     questions: [{
         "questionId": "1",
         "question": "Question 1",
@@ -29,12 +29,11 @@ const defaultState = {
 
 // If question is selected set flag to true so we can
 // press next button and make our way to the next question
-export const nextQuestionReducer = (state = defaultState, action) => {
+export const storeAnswersReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case NEXT_QUESTION_SUCCESS:
-            return { ...state, isSelected: true };
-        case NEXT_QUESTION_ERROR:
-            return { ...state, isSelected: false };
+        case STORE_ANSWERS_SUCCESS:
+            return { ...state, selectedAnswers: [...state.selectedAnswers, action.selectedAnswers] };
+        case STORE_ANSWERS_ERROR:
         default:
             return state;
     }
@@ -44,7 +43,6 @@ export const nextQuestionReducer = (state = defaultState, action) => {
 export const getQuestionsReducer = (state = defaultState, action) => {
     switch (action.type) {
         case GET_QUESTIONS_SUCCESS:
-            console.log(action.data)
             return { ...state, questions: action.data };
         case GET_QUESTIONS_ERROR:
             return console.log('err');

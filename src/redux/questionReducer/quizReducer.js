@@ -1,8 +1,6 @@
 import {
     GET_QUIZ_SUCCESS,
     GET_QUIZ_ERROR,
-    SUBMIT_QUIZ_SUCCESS,
-    SUBMIT_QUIZ_ERROR,
     QUIZ_FILLED_ERROR,
     QUIZ_FILLED_SUCCESS
 } from "../../constants";

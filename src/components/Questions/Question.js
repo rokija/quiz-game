@@ -8,21 +8,19 @@ import QuestionCard from "../QuestionCard/QuestionCard";
 class Question extends Component {
 
   render() {
-
-    const { question } = this.props
-    console.log(question)
-    const { onNextButtonClick, nextIndex } = this.props
+    const { onNextButtonClick, Index, question, onGoBackButtonClick, length } = this.props
     return (
       <div className="Question">
 
 
         <QuestionCard
-          key={1}
+          length={length}
+          Index={Index}
           question={question.question}
-          progress={"Question: " + 1 + " of " + 3}
+          progress={"Question: " + Index + " of " + length}
           onNextButtonClick={onNextButtonClick}
           answers={question.answers}
-          nextIndex={nextIndex}
+          onGoBackButtonClick={onGoBackButtonClick}
         />
 
 

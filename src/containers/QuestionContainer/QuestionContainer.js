@@ -1,64 +1,73 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getQuestions, nextQuestion } from "../../redux/actions/questionActions";
+import { getQuestions, storeAnswers } from "../../redux/actions/questionActions";
 import Question from "../../components/Questions/Question";
 //import { Spinner } from "reactstrap";
-import { Redirect } from "react-router-dom";
+
 
 class QuestionContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      selectedCount: 1,
+      currentIndex: 0,
     };
   }
 
-  onNextButtonClick = (selectedAnswers, nextIndex) => {
-    const { selectedCount } = this.state;
-    const { id } = this.props.questions[nextIndex];
+  onGoBackButtonClick = () => {
+    this.props.history.push("/quizzes");
+  }
 
-    if (selectedCount) {
-      console.log(id)
-      this.props.history.push(`/quizzes/:quizId/questions/${id}`)
+  onNextButtonClick = selectedAnswers => {
+    const { currentIndex } = this.state;
+    const { questions, storeAnswers } = this.props;
+
+    if (selectedAnswers.length) {
+      this.setState(prevState => ({
+        currentIndex: prevState.currentIndex + 1
+      }));
+      storeAnswers(selectedAnswers);
+
+      if (questions.length > currentIndex + 1) {
+        const { id } = this.props.questions[currentIndex + 1];
+        this.props.history.push(`/quizzes/:quizId/questions/${id}`);
+      } else {
+        this.props.history.push("/results");
+      }
     }
 
 
   }
 
   componentDidMount() {
-    this.props.getQuestions();
-    console.log(this.props)
+    this.props.getQuestionByIDd();
   }
 
   render() {
-    const { questions, match: { params: { questionId } } } = this.props;
+    const { questions,
+     /* match: { params: { questionId } }*/ } = this.props;
 
-    console.log(questionId);
 
     if (!questions) {
       return <div>loading...</div>
     }
 
-    if (!questionId) {
-      const { quiz } = this.props;
-      const id = questions[0].id;
+    //if (!questionId) {
+    //const { quiz } = this.props;
+    //const id = questions[0].id;
+    //
+    //    return <Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
+    //}
 
-      return <Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
-    }
 
 
-    for (let index = 0; index <= questions.length; index++) {
-
-      if (index === questions.length - 1) {
-        return console.log('>>>>>>>>') //<Redirect to="/results" />
-      }
-
-      if (questionId === questions[index].questionId) {
-        return console.log(questionId) //<Question onNextButtonClick={this.onNextButtonClick} />
-      }
-      return <Question question={questions[index]} nextIndex={index + 1} onNextButtonClick={this.onNextButtonClick} />
-    }
+    return (<Question
+      length={questions.length}
+      question={questions[this.state.currentIndex]}
+      Index={this.state.currentIndex + 1}
+      onNextButtonClick={this.onNextButtonClick}
+      onGoBackButtonClick={this.onGoBackButtonClick} />
+    )
     // while waiting for questions show spinner
     //if (!question) {
     //  return <div>loading...</div>
@@ -95,7 +104,8 @@ const mapStateToProps = state => {
 };
 
 const mapDispatchToProps = {
-  getQuestions
+  getQuestions,
+  storeAnswers
 };
 
 export default connect(
