@@ -3,6 +3,8 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./ManageUser.css";
 
+
+
 class ManageUser extends Component {
 
   constructor(props) {
@@ -26,9 +28,18 @@ class ManageUser extends Component {
 
   submitData = (event) => {
     event.preventDefault();
-    const { password, passwordVerification } = this.state;
+    const { email, password, username, name, surname, dateOfBirth, passwordVerification } = this.state;
     const matches = (password === passwordVerification)
-    matches ? console.log("PASSWORD MATCHED") : console.log("PASSWORD DIDN'T MATCH");
+    const user = {
+      name,
+      username,
+      surname,
+      password,
+      email,
+      dateOfBirth,
+    }
+    matches ? this.props.onRegister(user) : console.log("PASSWORD DIDN'T MATCH");
+
   }
 
   render() {
@@ -38,7 +49,7 @@ class ManageUser extends Component {
       <div className="ManageUser">
         <div className="ManageUser__content">
           {/* {isUserRegister ? <h2>Registration</h2> : <h2>edit user</h2>} */}
-          {email}
+          {/* {email} */}
           <form onSubmit={this.submitData} >
             {isUserRegister ? <h2>Registration</h2> : <h2>Change data</h2>}
             <div className="form-group">
@@ -57,36 +68,35 @@ class ManageUser extends Component {
               <label>Please enter your email</label>
               <input
                 className="form-control"
+                onChange={this.onInputChange}
                 type="email"
                 name="email"
               />
             </div>
-            {isUserRegister && (
-              <React.Fragment>
-                <div className="form-group">
-                  <label>Please enter your password</label>
-                  <input
-                    className="form-control"
-                    type="password"
-                    name="password"
-                    onChange={this.onInputChange}
-                    maxlength="12"
-                    required
-                    value={password}
-                  />
-                </div>
-                <div className="form-group">
-                  <label>Please repeat the password</label>
-                  <input
-                    className="form-control"
-                    type="password"
-                    maxlength="12"
-                    required
-                    name="passwordVerification"
-                    onChange={this.onInputChange}
-                    value={passwordVerification}
-                  />
-                </div></React.Fragment>)}
+            <div className="form-group">
+              <label>Please enter your password</label>
+              <input
+                className="form-control"
+                type="password"
+                name="password"
+                onChange={this.onInputChange}
+                maxLength="12"
+                required
+                value={password}
+              />
+            </div>
+            <div className="form-group">
+              <label>Please repeat the password</label>
+              <input
+                className="form-control"
+                type="password"
+                maxLength="12"
+                required
+                name="passwordVerification"
+                onChange={this.onInputChange}
+                value={passwordVerification}
+              />
+            </div>
             <div className="form-group">
               <label>Please enter your name</label>
               <input

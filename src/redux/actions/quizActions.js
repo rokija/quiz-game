@@ -4,16 +4,16 @@ import {
     GET_QUESTIONS_ERROR,
     GET_QUESTIONS_SUCCESS
 
-} from "../../constants";
+} from "../../constants/index";
 
 /* Define actions here */
 
 const getQuestionsSuccess = () => {
-    GET_QUESTIONs_SUCCESS
+    GET_QUESTIONS_SUCCESS
 }
 
 const getQuestionsError = () => {
-    GET_QUESTIONs_ERROR
+    GET_QUESTIONS_ERROR
 }
 
 /* Define action creaters here */

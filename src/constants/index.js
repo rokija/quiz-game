@@ -1,6 +1,6 @@
 export const API = {
     LOGIN: "auth/session",
-    REGISTER: "auth/users",
+    REGISTER: "auth/register",
     USER_INFO: "users/self",
     GET_QUESTIONS: "path",
     GET_ANSWERS: "path",
