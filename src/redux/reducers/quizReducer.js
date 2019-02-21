@@ -13,7 +13,7 @@ const defaultState = {
 
 // If question is selected set flag to true so we can
 // press next button and make our way to the next question
-export const getQuizesReducer = (state = defaultState, action) => {
+export const getQuizzesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case GET_QUIZ_SUCCESS:
             return { ...state, quizzes: action.data };

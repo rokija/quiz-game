@@ -14,7 +14,6 @@ class Quiz extends Component {
   }
 
   toggleContent = () => this.setState({ showContent: !this.state.showContent });
-  onAddQuiz = () => console.log("Add quiz");
   onDeleteQuiz = () => console.log("Delete quiz");
   onStartQuiz = () => console.log("Start quiz");
 
@@ -40,13 +39,14 @@ class Quiz extends Component {
                     Edit quiz
                   </Button>
                 </Link>
-                <Button
-                  className="Quiz__content__buttons__add-button"
-                  onClick={onAddQuiz}
-                  color="secondary"
-                >
-                  Add question
-                </Button>
+                <Link to="/quizzes/create">
+                  <Button
+                    className="Quiz__content__buttons__add-button"
+                    color="secondary"
+                  >
+                    Add question
+                  </Button>
+                </Link>
                 <Button
                   className="Quiz__content__buttons__delete-button"
                     onClick={onDeleteQuiz}

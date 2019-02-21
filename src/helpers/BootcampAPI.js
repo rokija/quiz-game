@@ -3,7 +3,7 @@ import axios from "axios";
 class APIClass {
     constructor() {
         this.instance = axios.create({
-            baseURL: process.env.REACT_APP_APIURL,
+            baseURL: "https://quiz-game-api.herokuapp.com/api/v1/",
             timeout: 1000
         });
     }

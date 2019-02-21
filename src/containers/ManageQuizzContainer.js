@@ -16,7 +16,7 @@ class ManageQuizzContainer extends Component {
         //This will be used with Redux, when integrated.
         // const { title, description } = this.state;
         // this.props.submitQuizz(title, description);
-        this.props.history.push("/quizzes");
+        // this.props.history.push("/quizzes");
     };
     goHome = () => this.props.history.push("/quizzes");
 
@@ -41,6 +41,5 @@ class ManageQuizzContainer extends Component {
         }
     }
 }
-
 
 export default  ManageQuizzContainer;

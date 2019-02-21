@@ -8,13 +8,16 @@ export class QuizContainer extends Component {
     this.props.getQuiz();
   }
   render() {
+    if(!this.props.quizzes) {
+      return <div>loading...</div>
+    }
     return <Quizzes quizzes={this.props.quizzes}/>
   }
 }
 
 const mapStateToProps = state => {
   return {
-      quizzes: state.getQuizzReducer.quizzes
+      quizzes: state.getQuizzesReducer.quizzes
   };
 }
 const mapDispatchToProps = {
