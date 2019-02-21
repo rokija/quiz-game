@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./Quiz.css";
 import { Button } from "reactstrap";
-import { hasAccessLevel, MODERATOR, USER } from "../../constants";
+import { hasAccessLevel, MODERATOR, USER } from "../../AccessControl/index";
 
 class Quiz extends Component {
   constructor() {
