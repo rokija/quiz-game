@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import MainLayout from "./components/MainLayout/MainLayout";
-import UserListContainer from "./containers/UsersListContainer";
+import UserListContainer from "./containers/UserListContainer";
 import AddQuizContainer from "./containers/AddQuizContainer";
 import QuizContainer from "./containers/QuizContainer";
 import QuizStatisticsContainer from "./containers/QuizStatisticsContainer";
