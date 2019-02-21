@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
-import "./Registration.css";
+import "./ManageUser.css";
 
-class Registration extends Component {
+class ManageUser extends Component {
+
   constructor(props) {
     super(props);
     this.state = {
@@ -27,28 +28,31 @@ class Registration extends Component {
     event.preventDefault();
     const { password, passwordVerification } = this.state;
     const matches = (password === passwordVerification)
-    matches ? console.log("MATCHED") : console.log("NO MATCH");
+    matches ? console.log("PASSWORD MATCHED") : console.log("PASSWORD DIDN'T MATCH");
   }
 
   render() {
     const { email, password, username, name, surname, dateOfBirth, passwordVerification } = this.state;
+    const { isUserEdit, isUserRegister } = this.props
     return (
-      <div className="Register">
-        <div className="Register__content">
-          <h2>Registration</h2>
+      <div className="ManageUser">
+        <div className="ManageUser__content">
+          {/* {isUserRegister ? <h2>Registration</h2> : <h2>edit user</h2>} */}
           {email}
           <form onSubmit={this.submitData} >
+            {isUserRegister ? <h2>Registration</h2> : <h2>Change data</h2>}
             <div className="form-group">
               <label>Please enter your username</label>
               <input
-
                 onChange={this.onInputChange}
                 className="form-control"
                 type="text"
                 name="username"
                 value={username}
+                disabled={isUserEdit ? true : false}
               />
             </div>
+
             <div className="form-group">
               <label>Please enter your email</label>
               <input
@@ -57,30 +61,32 @@ class Registration extends Component {
                 name="email"
               />
             </div>
-            <div className="form-group">
-              <label>Please enter your password</label>
-              <input
-                className="form-control"
-                type="password"
-                name="password"
-                onChange={this.onInputChange}
-                maxlength="12"
-                required
-                value={password}
-              />
-            </div>
-            <div className="form-group">
-              <label>Please repeat the password</label>
-              <input
-                className="form-control"
-                type="password"
-                maxlength="12"
-                required
-                name="passwordVerification"
-                onChange={this.onInputChange}
-                value={passwordVerification}
-              />
-            </div>
+            {isUserRegister && (
+              <React.Fragment>
+                <div className="form-group">
+                  <label>Please enter your password</label>
+                  <input
+                    className="form-control"
+                    type="password"
+                    name="password"
+                    onChange={this.onInputChange}
+                    maxlength="12"
+                    required
+                    value={password}
+                  />
+                </div>
+                <div className="form-group">
+                  <label>Please repeat the password</label>
+                  <input
+                    className="form-control"
+                    type="password"
+                    maxlength="12"
+                    required
+                    name="passwordVerification"
+                    onChange={this.onInputChange}
+                    value={passwordVerification}
+                  />
+                </div></React.Fragment>)}
             <div className="form-group">
               <label>Please enter your name</label>
               <input
@@ -112,19 +118,18 @@ class Registration extends Component {
               </div>
             </div>
             <Button type="submit"
-
               color="dark"
             >
-              Register
+              {isUserEdit ? "Submit" : "Register"}
             </Button>
           </form>
-          <div className="Register__content__link">
+          <div className="ManageUser__content__link">
             <Link to="/login">Already registered?</Link>
           </div>
         </div>
-      </div>
+      </div >
     );
   }
 }
 
-export default Registration;
+export default ManageUser;

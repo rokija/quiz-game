@@ -29,7 +29,7 @@ class App extends Component {
           <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
           <Route exact path="/results/statistics" component={QuizStatisticsContainer} />
           <Route exact path="/results" component={ResultsContainer} />
-          <Route exact path="/users/:userId" component={ManageUserContainer} />
+          <Route exact path="/users/:userId" render={() => <ManageUserContainer isUserEdit={true} />} />
           <Route exact path="/users" component={UserListContainer} />
           <Route exact path="/profile" component={ManageUserContainer} />
         </Switch>

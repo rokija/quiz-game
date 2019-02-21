@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Button } from "reactstrap";
 import "./Login.css";
+import { Link } from "react-router-dom";
 
 class Login extends Component {
   constructor(props) {
@@ -49,10 +50,9 @@ class Login extends Component {
               <Button className="Login-button" color="dark">
                 Login
             </Button>
-
-              <Button color="dark">
-                Register
-            </Button>
+              <div >
+                <Link to="/register">Already registered?</Link>
+              </div>
             </div>
           </form>
         </div>

@@ -1,25 +1,35 @@
 import React, { Component } from 'react'
-import UserEdit from '../components/UserEdit/UserEdit';
+import ManageUser from "../components/ManageUser/ManageUser";
+import { Redirect } from "react-router-dom"
+
 
 
 const user =
 {
-  username: "Kostya",
-  name: "Konstantins",
-  surname: "luka",
-  email: "k@k.com",
-  dateOfBirth: "11",
+  username: "Sunny",
+  name: "SanoR",
+  surname: "MarkO",
+  email: "sm@sanor.com",
+  dateOfBirth: "01/02/1995",
   level: "admin",
 }
 
 export class ManageUserContainer extends Component {
   render() {
-    return (
-      <div>
-        <UserEdit user={user} />
-      </div>
-    )
+    const { isUserRegister, isUserEdit } = this.props;
+    console.log(isUserRegister, isUserEdit)
+    return <ManageUser isUserRegister={isUserRegister} isUserEdit={isUserEdit} />
+
   }
 }
 
-export default ManageUserContainer
+export default ManageUserContainer;
+
+
+// <div>
+//   <UserEdit user={user} isRegister={isRegister}  />
+// onRegister={this.onRegister}
+// </div>
+
+
+

@@ -14,7 +14,7 @@ class Root extends Component {
       <BrowserRouter>
         <Switch>
           <Route exact path="/login" component={Login} />
-          <Route exact path="/register" component={ManageUserContainer} />
+          <Route exact path="/register" render={() => <ManageUserContainer isUserRegister={true} />} />
           <ProtectedRoute path="/*" component={App} />
         </Switch>
       </BrowserRouter>

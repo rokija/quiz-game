@@ -1,4 +1,4 @@
-.Register {
+.ManageUser {
     height: 100vh;
     background-color: #dfe3ee;
 
@@ -7,17 +7,17 @@
     align-items: center;
 }
 
-.Register__content {
+.ManageUser__content {
     width: 30%;
     background-color: #f7f7f7;
     padding: 20px;
     border-radius: 10px;
 }
 
-.Register__content__link {
+.ManageUser__content__link {
     margin-top: 10px;
 }
 
-.Register__content h2 {
+.ManageUser__content h2 {
     padding-bottom: 2em;
 }
