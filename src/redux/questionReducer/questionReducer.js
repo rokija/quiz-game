@@ -1,8 +1,8 @@
 import {
     QUIZ_FILLED_ERROR,
     QUIZ_FILLED_SUCCESS,
-    NEXT_QUESTION_FAILED,
-    NEXT_QUESTION_SUCCESSFUL,
+    NEXT_QUESTION_ERROR,
+    NEXT_QUESTION_SUCCESS,
     GET_QUESTIONS_SUCCESS,
     GET_QUESTIONS_ERROR
 } from "../../constants";
@@ -16,9 +16,9 @@ const defaultState = {
 // press next button and make our way to the next question
 export const nextQuestionReducer = (state = defaultState, action) => {
     switch (action.type) {
-        case NEXT_QUESTION_SUCCESSFUL:
+        case NEXT_QUESTION_SUCCESS:
             return { ...state, isSelected: true };
-        case NEXT_QUESTION_FAILED:
+        case NEXT_QUESTION_ERROR:
             return { ...state, isSelected: false };
         default:
             return state;

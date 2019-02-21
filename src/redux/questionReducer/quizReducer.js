@@ -16,11 +16,8 @@ const defaultState = {
 export const getQuizesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case GET_QUIZ_SUCCESS:
-            return { ...state, quizes: action.payload.reverse() };
-        case SUBMIT_QUIZ_SUCCESS:
-            return { ...state, quizes: [action.payload, ...state.quizes] };
+            return { ...state, quiz: action.payload };
         case GET_QUIZ_ERROR:
-        case SUBMIT_QUIZ_ERROR:
         default:
             return state;
     }
