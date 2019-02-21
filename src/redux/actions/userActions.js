@@ -19,7 +19,7 @@ export const login = (username, password) => {
   return dispatch => {
     return BootcampAPI.post(API.LOGIN, {
       username: username,
-      hashedPassword: CryptoJS.SHA256(password).toString()
+      hashedPassword: password.toString() //CryptoJS.SHA256(password).toString()
     })
       .then(res => {
         const token = res.data.payload.token;
@@ -28,6 +28,7 @@ export const login = (username, password) => {
         dispatch(loginSuccess(token));
       })
       .catch(e => {
+        console.error("ERRROROR", e);
         dispatch(loginError());
         throw e;
       });
