@@ -2,10 +2,10 @@ import React, { Component } from "react";
 import UserList from "../components/UserList/UserList";
 import { Spinner } from "reactstrap";
 
-
 export class UserListContainer extends Component {
   constructor() {
     super();
+    
     this.state = {
       users: [
         {
@@ -56,13 +56,13 @@ export class UserListContainer extends Component {
       ]
     };
   }
-// Enable when redux is created
-//   componentDidMount(){
-//     this.props.getUsers();
-//   }
+  // Enable when redux is created
+  //   componentDidMount(){
+  //     this.props.getUsers();
+  //   }
 
   render() {
-    const { users } = this.state; 
+    const { users } = this.state;
     if (!users) {
       return (
         <div>
