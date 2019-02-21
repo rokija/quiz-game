@@ -1,38 +1,33 @@
 import React, { Component } from "react";
 import QuestionCard from "../QuestionCard/QuestionCard";
-import AnswerCard from "../AnswerCard/AnswerCard";
+
 
 
 
 
 class Question extends Component {
+
   render() {
-    return(
+
+    const { question } = this.props
+    console.log(question)
+    const { onNextButtonClick } = this.props
+    return (
       <div className="Question">
-      {/*{this.props.questions &&
-            this.props.questions.map((question, index) => (*/}
-        
-        <QuestionCard 
-        key={"index"} 
-        question={"Question"/*question.question*/}
-        progress={"Question: 1 of 10"}
-         >
-            <AnswerCard
-              key={"index"}
-              answers={
-                [
-                  "1.answer ",
-                  "2.answer ", 
-                  "3.answer ",
-                  "4.answer "
-                ] /*question.answer */}
-            />
-        </QuestionCard>
-          
-        
+
+
+        <QuestionCard
+          key={1}
+          question={question.question}
+          progress={"Question: " + 1 + " of " + 3}
+          onNextButtonClick={onNextButtonClick}
+          answers={question.answers}
+        />
+
+
       </div>
-    );  
-  } 
+    );
+  }
 }
 
 export default Question;

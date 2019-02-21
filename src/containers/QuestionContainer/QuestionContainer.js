@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { getQuestions, nextQuestion } from "../../redux/actions/questionActions";
 import Question from "../../components/Questions/Question";
-import { Spinner } from "reactstrap";
+//import { Spinner } from "reactstrap";
 import { Redirect } from "react-router-dom";
-import AnswerCard from "../../components/AnswerCard/AnswerCard"
 
 class QuestionContainer extends Component {
   constructor(props) {
@@ -15,36 +14,77 @@ class QuestionContainer extends Component {
     };
   }
 
-  nextQuestion = () => {
+  onNextButtonClick = (selectedAnswers) => {
     const { selectedCount } = this.state;
-    const { quiz, question } = this.props;
+    const { id } = this.props.questions;
 
     if (selectedCount) {
-      this.props.history.push(`/quizzes/${quiz.quizId}/questions/${question.questionId}`)
+      this.props.history.push(`/quizzes/:quizId/questions/${id}`)
+      return <Redirect to={`/quizzes/:quizId/questions/${id}`} />
     }
+    console.log(id)
+
   }
 
   componentDidMount() {
     this.props.getQuestions();
+    console.log(this.props)
   }
 
   render() {
-    const { question, match: { params: { questionId } } } = this.props;
+    const { questions, match: { params: { questionId } } } = this.props;
 
-    // while waiting for questions show spinner
-    if (!question) {
+    console.log(questionId);
+
+    if (!questions) {
       return <div>loading...</div>
     }
 
-    // if it is the first question 
     if (!questionId) {
       const { quiz } = this.props;
-      const id = question[0].id;
+      const id = questions[0].id;
 
       return <Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
     }
 
-    return <Question />
+
+    for (var index = 0; index < questions.length; index++) {
+
+      if (index === questions.length - 1) {
+        return console.log('>>>>>>>>') //<Redirect to="/results" />
+      }
+
+      if (questionId === questions[index].questionId) {
+        return console.log(questionId) //<Question onNextButtonClick={this.onNextButtonClick} />
+      }
+      return <Question question={this.props.questions[index]} onNextButtonClick={this.onNextButtonClick} />
+    }
+    // while waiting for questions show spinner
+    //if (!question) {
+    //  return <div>loading...</div>
+    //}
+
+    // if it is the first question 
+    /*if (!questionId) {
+      const { quiz } = this.props;
+      const id = questions[0].id;
+
+      return console.log('>>>>>>>>') //<Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
+    }*/
+
+    /*return questions.find((question, index) => {
+      if (index === question.length - 1) {
+        return console.log('>>>>>>>>') //<Redirect to="/results" />
+      }
+
+      if (questionId === question.id) {
+        return console.log(questions) //<Question onNextButtonClick={this.onNextButtonClick} />
+      }
+
+      return <Question question={this.props.questions[0]} />
+    })*/
+
+
   }
 }
 

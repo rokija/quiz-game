@@ -4,7 +4,7 @@ import {
   API,
   NEXT_QUESTION_SUCCESS,
   NEXT_QUESTION_ERROR,
-  GET_QUESTIONS_ERROR,
+  //GET_QUESTIONS_ERROR,
   GET_QUESTIONS_SUCCESS
 
 } from "../../constants";
@@ -35,11 +35,11 @@ const getQuestionsSuccess = () => {
   };
 }
 
-const getQuestionsError = () => {
-  return {
-    type: GET_QUESTIONS_ERROR
-  }
-}
+//const getQuestionsError = () => {
+//  return {
+//    type: GET_QUESTIONS_ERROR
+//  }
+//}
 
 const nextQuestionSuccess = () => {
   return {
@@ -76,8 +76,6 @@ export const correctAnswer = (correctanswers) => {
 
 export const getQuestions = () => {
   return dispatch => {
-    return BootcampAPI.get(API.GET_QUESTIONS)
-      .then(res => dispatch(getQuestionsSuccess(res)))
-      .catch(() => dispatch(getQuestionsError()));
+    return dispatch(getQuestionsSuccess())
   };
 };
