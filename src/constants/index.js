@@ -1,16 +1,16 @@
 export const API = {
-    LOGIN: "auth/session",
-    REGISTER: "auth/users",
-    USER_INFO: "users/self",
-    GET_QUESTIONS: "path",
-    GET_ANSWERS: "path",
-    SUBMIT_ANSWER: "path",
-    GET_USERS: "path",
+  LOGIN: "auth/login",
+  REGISTER: "auth/users",
+  USER_INFO: "users/self",
+  GET_QUESTIONS: "path",
+  GET_ANSWERS: "path",
+  SUBMIT_ANSWER: "path",
+  GET_USERS: "path",
 
-    NEXT_QUESTION_SUCCESS: "path",
-    NEXT_QUESTION_ERROR: "path",
-    CHECK_CORRECT_ANSWER_FAILED: "path",
-    CHECK_CORRECT_ANSWER_SUCESS: "path"
+  NEXT_QUESTION_SUCCESS: "path",
+  NEXT_QUESTION_ERROR: "path",
+  CHECK_CORRECT_ANSWER_FAILED: "path",
+  CHECK_CORRECT_ANSWER_SUCESS: "path"
 };
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
