@@ -47,10 +47,12 @@ onAddAnswer = () => {
   this.setState({"answers": answers}); 
 }
 
-onRemoveAnswer = () => {
+onRemoveAnswer = (index=0,e) => {
+  e.preventDefault()
   let answers = [...this.state.answers]
-  answers.slice()
+  answers.splice(index,1)
   this.setState({"answers":answers})
+
 }
 
   render() {
@@ -92,9 +94,9 @@ onRemoveAnswer = () => {
         {this.renderInput()}
        <Button color="primary">Add Question</Button>{' '}
       <Button color="secondary" onClick={this.onAddAnswer}>Add Answer</Button>{' '}
-      <Button color="danger" onClick={this.onRemoveAnswer}>Remove Question</Button>{' '}
-      {this.state.answers.map(x => 
-      <div key={x}> {x+1}. {this.renderTextInput()} </div>)}
+      {this.state.answers.map((x, i) => 
+      <div key={i}> {i+1}. {this.renderTextInput()} 
+      <Button onClick={(e)=>this.onRemoveAnswer(i, e)} close /> </div>)}
       </Form>
     );
   }
