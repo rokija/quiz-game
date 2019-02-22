@@ -41,6 +41,16 @@ export const storeAnswersReducer = (state = defaultState, action) => {
     }
 };
 
+export const getQuestionsReducer = (state = defaultState, action) => {
+    switch (action.type) {
+        case GET_QUESTIONS_SUCCESS:
+            return { ...state, questions: action.data };
+        case GET_QUESTIONS_ERROR:
+            return console.log('err');
+        default:
+            return state;
+    }
+}
 
 export const getQuestionsReducer = (state = defaultState, action) => {
     switch (action.type) {
