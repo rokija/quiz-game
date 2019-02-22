@@ -1,15 +1,13 @@
-import BootcampAPI from "../../helpers/BootcampAPI";
-
 import {
   API,
-  NEXT_QUESTION_SUCCESS,
-  NEXT_QUESTION_ERROR,
+  STORE_ANSWERS_SUCCESS,
+  //STORE_ANSWERS_ERROR,
   GET_QUESTIONS_ERROR,
   GET_QUESTIONS_SUCCESS,
   POST_QUESTION_ERROR,
   POST_QUESTION_SUCCESS,
 } from "../../constants";
-
+import BootcampAPI from "../../helpers/BootcampAPI"
 /* Define actions here */
 
 const getQuestionsSuccess = res => {
@@ -25,19 +23,19 @@ const getQuestionsError = () => {
   };
 };
 
-const nextQuestionSuccess = () => {
+const storeAnswersSuccess = (selectedAnswers) => {
   return {
-    type: NEXT_QUESTION_SUCCESS,
-    isSelected: true
+    type: STORE_ANSWERS_SUCCESS,
+    selectedAnswers
   };
 };
 
-const nextQuestionError = () => {
+/*const storeAnswersError = () => {
   return {
-    type: NEXT_QUESTION_ERROR,
+    type: STORE_ANSWERS_ERROR,
     isSelected: false
   };
-};
+};*/
 
 const postQuestionError = (res) => {
   console.log(res)
@@ -57,16 +55,14 @@ const postQuestionSuccess = () => {
 /* Define action creaters here */
 // question indexes are defined by .map
 
-export const nextQuestion = () => {
+export const storeAnswers = (selectedAnswers) => {
   return dispatch => {
-    return BootcampAPI.post(API.NEXT_QUESTION_SUCCESS, {})
-      .then(() => dispatch(nextQuestionSuccess()))
-      .catch(() => dispatch(nextQuestionError()));
+    return dispatch(storeAnswersSuccess(selectedAnswers))
   };
 };
 
 export const correctAnswer = correctanswers => {
-  return dispatch => {};
+  return dispatch => { };
 };
 
 export const postQuestion = (question) => {

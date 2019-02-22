@@ -1,8 +1,6 @@
 import {
   GET_QUIZZES_SUCCESS,
   GET_QUIZZES_ERROR,
-  SUBMIT_QUIZ_SUCCESS,
-  SUBMIT_QUIZ_ERROR,
   QUIZ_FILLED_ERROR,
   QUIZ_FILLED_SUCCESS
 } from "../../constants/index";
@@ -16,7 +14,7 @@ const defaultState = {
 export const getQuizesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_QUIZZES_SUCCESS:
-      return { ...state, quiz: action.payload };
+      return { ...state, quizzes: action.payload.quizzes };
     case GET_QUIZZES_ERROR:
     default:
       return state;
