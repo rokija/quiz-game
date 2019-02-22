@@ -22,3 +22,10 @@ export const getQuizzes = () => {
       .catch(() => dispatch(getQuizzesError()));
   };
 };
+
+// When API is connected uncomment
+// export const submitQuizz = (title, description) => {
+//     return dispatch => { 
+//         return console.log('Submit?');
+//     }
+// }
