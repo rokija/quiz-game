@@ -42,14 +42,14 @@ class ManageUser extends Component {
   render() {
     const { email, password, username, name, surname, dateOfBirth, passwordVerification } = this.state;
 
-    const { userId } = this.props
-
+    const { user } = this.props
+    console.log(user.id)
     return (
 
       < div className="ManageUser" >
         <div className="ManageUser__content">
           <form onSubmit={this.submitData} >
-            {!userId ? <h2>Registration</h2> : <h2>Change data</h2>}
+            {!user._id ? <h2>Registration</h2> : <h2>Change data</h2>}
             <div className="form-group">
               <label>Please enter your username</label>
               <input
@@ -58,7 +58,7 @@ class ManageUser extends Component {
                 type="text"
                 name="username"
                 value={username || (this.props.user && this.props.user.username)}
-                disabled={userId ? true : false}
+                disabled={!user._id ? true : false}
               />
             </div>
 
@@ -129,7 +129,7 @@ class ManageUser extends Component {
             <Button type="submit"
               color="dark"
             >
-              {userId ? "EDIT" : "Register"}
+              {!user._id ? "EDIT" : "Register"}
             </Button>
           </form>
           <div className="ManageUser__content__link">
