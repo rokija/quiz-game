@@ -1,44 +1,19 @@
 export const API = {
-  LOGIN: "auth/session",
-  REGISTER: "auth/users",
-  USER_INFO: "users/self",
-  GET_QUIZZES: "quizes",
-  GET_QUESTIONS: "path",
-  GET_ANSWERS: "path",
-  GET_RESULTS: "results",
-  GET_QUIZ_STATISTICS: "statistics/quizzes/:quizId",
-  GET_RESULTS_QUESTIONS: "path",
-  GET_USERS: "path",
-  LOGIN: "auth/login",
-  REGISTER: "auth/users",
-  USER_INFO: "users/self",
-  GET_QUESTIONS: "questions",
-  GET_ANSWERS: "path",
-  GET_RECORDS: "records",
-  SUBMIT_ANSWER: "path",
-  GET_USERS: "users",
-  GET_QUIZZES: "quizzes",
-  QUIZ_FILLED: "quiz/filled",
-
-  NEXT_QUESTION_SUCCESS: "path",
-  NEXT_QUESTION_ERROR: "path",
-  CHECK_CORRECT_ANSWER_FAILED: "path",
-  CHECK_CORRECT_ANSWER_SUCESS: "path"
     LOGIN: "auth/login",
-  REGISTER: "auth/register",
-  USER_INFO: "users/self",
-  GET_QUESTIONS: "questions",
-  GET_ANSWERS: "path",
-  SUBMIT_ANSWER: "path",
-  GET_USERS: "users",
-  GET_QUIZZES: "quizzes",
-  QUIZ_FILLED: "quiz/filled",
-
-  NEXT_QUESTION_SUCCESS: "path",
-  NEXT_QUESTION_ERROR: "path",
-  CHECK_CORRECT_ANSWER_FAILED: "path",
-  CHECK_CORRECT_ANSWER_SUCESS: "path"
+    REGISTER: "auth/users",
+    USER_INFO: "users/self",
+    GET_QUESTIONS: "questions",
+    GET_ANSWERS: "path",
+    SUBMIT_ANSWER: "path",
+    GET_USERS: "users",
+    GET_QUIZZES: "quizzes",
+    QUIZ_FILLED: "quiz/filled",
 };
+
+export const STORE_ANSWERS_SUCCESS = "STORE_ANSWERS_SUCCESS";
+export const STORE_ANSWERS_ERROR = "STORE_ANSWERS_ERROR";
+export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
+export const CHECK_CORRECT_ANSWER_SUCESS = "CHECK_CORRECT_ANSWER_SUCESS";
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";
 export const REGISTER_ERROR = "REGISTER_ERROR";
@@ -70,8 +45,8 @@ export const GET_RECORDS_ERROR = "GET_RECORDS_ERROR";
 export const QUIZ_FILLED_SUCCESS = "QUIZ_FILLED_SUCCESS";
 export const QUIZ_FILLED_ERROR = " QUIZ_FILLED_ERROR";
 
-export const NEXT_QUESTION_SUCCESS = "NEXT_QUESTION_SUCCESS";
-export const NEXT_QUESTION_ERROR = "NEXT_QUESTION_ERROR";
+export const STORE_ANSWERS_SUCCESS = "STORE_ANSWERS_SUCCESS";
+export const STORE_ANSWERS_ERROR = "STORE_ANSWERS_ERROR";
 
 export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
 export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";

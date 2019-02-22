@@ -4,23 +4,24 @@ import { API, GET_QUIZZES_ERROR, GET_QUIZZES_SUCCESS } from "../../constants";
 /* Define actions here */
 
 const getQuizzesSuccess = res => {
-  console.log(res);
-  return {
-    type: GET_QUIZZES_SUCCESS
-  };
+    console.log(res);
+    return {
+        type: GET_QUIZZES_SUCCESS,
+        payload: res.data.payload
+    };
 };
 
 const getQuizzesError = () => {
-  return {
-    type: GET_QUIZZES_ERROR
-  };
+    return {
+        type: GET_QUIZZES_ERROR
+    };
 };
 export const getQuizzes = () => {
-  return dispatch => {
-    return BootcampAPI.get(API.GET_QUIZZES)
-      .then(res => dispatch(getQuizzesSuccess(res)))
-      .catch(() => dispatch(getQuizzesError()));
-  };
+    return dispatch => {
+        return BootcampAPI.get(API.GET_QUIZZES)
+            .then(res => dispatch(getQuizzesSuccess(res)))
+            .catch(() => dispatch(getQuizzesError()));
+    };
 };
 
 // When API is connected uncomment

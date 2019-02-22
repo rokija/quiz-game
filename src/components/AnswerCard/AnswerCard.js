@@ -8,17 +8,25 @@ class AnswerCard extends Component {
         super(props);
 
         this.state = {
-            isSelected: false,
             selectedCount: 0,
+            selectedAnswers: []
         };
     }
 
     onAnswerSelect = (e, el) => {
         console.log(e.target.checked);
         if (e.target.checked) {
-            this.setState({ selectedCount: this.state.selectedCount + 1 })
+            this.setState({
+                selectedCount: this.state.selectedCount + 1,
+                selectedAnswers: [...this.state.selectedAnswers, el]
+            })
         } else {
-            this.setState({ selectedCount: this.state.selectedCount - 1 })
+            const arr = this.state.selectedAnswers.filter(a => a !== el)
+
+            this.setState({
+                selectedCount: this.state.selectedCount - 1,
+                selectedAnswers: arr
+            })
         }
     }
 
