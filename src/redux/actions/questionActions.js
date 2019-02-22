@@ -5,7 +5,9 @@ import {
   NEXT_QUESTION_SUCCESS,
   NEXT_QUESTION_ERROR,
   GET_QUESTIONS_ERROR,
-  GET_QUESTIONS_SUCCESS
+  GET_QUESTIONS_SUCCESS,
+  POST_QUESTION_ERROR,
+  POST_QUESTION_SUCCESS,
 } from "../../constants";
 
 /* Define actions here */
@@ -37,6 +39,21 @@ const nextQuestionError = () => {
   };
 };
 
+const postQuestionError = (res) => {
+  console.log(res)
+  return {
+    type: POST_QUESTION_ERROR,
+    payload: 'data'
+  };
+};
+
+const postQuestionSuccess = () => {
+  return {
+    type: POST_QUESTION_SUCCESS,
+  };
+};
+
+
 /* Define action creaters here */
 // question indexes are defined by .map
 
@@ -51,6 +68,16 @@ export const nextQuestion = () => {
 export const correctAnswer = correctanswers => {
   return dispatch => {};
 };
+
+export const postQuestion = (question) => {
+  return dispatch => {
+    return BootcampAPI.post(API.POST_QUESTION, question)
+      .then(res => {
+        dispatch(postQuestionSuccess(res))
+      })
+      .catch(() => dispatch(postQuestionError()))
+  }
+}
 
 export const getQuestions = () => {
   return dispatch => {

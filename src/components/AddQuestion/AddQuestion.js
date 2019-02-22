@@ -66,7 +66,9 @@ onAddQuestion = (e) => {
   this.state.correct.forEach((x,i) => {
     if (x) correct.push(x)
   })
-  console.log({
+
+  this.props.postQuestion({
+    quizId: this.props.quizId,
     question: this.state.question,
     answers: this.state.answers,
     correct: correct,
@@ -104,8 +106,7 @@ onMarkAsCorrect = (i, x) => {
 
   render() {
     return (
-
-        <Form>
+      <Form>
         <FormGroup>
           <Label for="addQuestion">Add Question: </Label>
           <Input onChange={ this.onQuestionInput }
@@ -140,10 +141,9 @@ onMarkAsCorrect = (i, x) => {
           </FormGroup>
         </FormGroup>
         {this.renderInput()}
-       <Button color="primary" onClick={this.onAddQuestion}>Add Question</Button>{' '}
-      <Button color="secondary" onClick={this.onAddAnswer}>Add Answer</Button>{' '}
-      {
-        this.state.answers.map((x, i) => 
+  
+        <Button color="secondary" onClick={this.onAddAnswer}>Add Answer</Button>{' '}
+        {this.state.answers.map((x, i) => 
           <div key={i}> 
             {i+1}. {this.renderTextInput(i)} 
             <Button onClick={(e)=>this.onRemoveAnswer(i, e)} close />
@@ -151,9 +151,11 @@ onMarkAsCorrect = (i, x) => {
              {this.state.correct[i] ? 'true' : 'false'}
              </Button>
           </div>
-        )
-      }
-
+        )}
+        <div></div>
+        <div>
+          <Button color="primary" onClick={this.onAddQuestion}>Add Question</Button>{' '}
+        </div>
       </Form>
     );
   }

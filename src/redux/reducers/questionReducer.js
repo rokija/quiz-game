@@ -4,7 +4,9 @@ import {
     NEXT_QUESTION_ERROR,
     NEXT_QUESTION_SUCCESS,
     GET_QUESTIONS_SUCCESS,
-    GET_QUESTIONS_ERROR
+    GET_QUESTIONS_ERROR,
+    POST_QUESTION_SUCCESS,
+    POST_QUESTION_ERROR,
 } from "../../constants";
 
 const defaultState = {
@@ -36,3 +38,14 @@ export const getQuestionsReducer = (state = defaultState, action) => {
     }
 }
 
+
+
+export const postQuestionsReducer = (state = defaultState, action) => {
+    switch (action.type) {
+        case POST_QUESTION_SUCCESS:
+            return { ...state, questions: action.payload };
+        case POST_QUESTION_ERROR:
+        default:
+            return state;
+    }
+}

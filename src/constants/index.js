@@ -8,6 +8,7 @@ export const API = {
     GET_USERS: "users",
     GET_QUIZZES: "quizzes",
     QUIZ_FILLED: "quiz/filled",
+    POST_QUESTION: "questions",
 
     NEXT_QUESTION_SUCCESS: "path",
     NEXT_QUESTION_ERROR: "path",
@@ -42,3 +43,5 @@ export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";
 export const GET_QUIZ_SUCCESS ="GET_QUIZ_SUCCESS";
 export const GET_QUIZ_ERROR ="GET_QUIZ_ERROR";
 
+export const POST_QUESTION_SUCCESS ="POST_QUESTION_SUCCESS";
+export const POST_QUESTION_ERROR ="POST_QUESTION_ERROR";
