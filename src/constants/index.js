@@ -8,14 +8,27 @@ export const API = {
   GET_RESULTS: "results",
   GET_QUIZ_STATISTICS: "statistics/quizzes/:quizId",
   GET_RESULTS_QUESTIONS: "path",
-  SUBMIT_ANSWER: "path",
   GET_USERS: "path",
   LOGIN: "auth/login",
   REGISTER: "auth/users",
   USER_INFO: "users/self",
   GET_QUESTIONS: "questions",
   GET_ANSWERS: "path",
-  GET_RECORDS: "records"
+  GET_RECORDS: "records",
+  SUBMIT_ANSWER: "path",
+  GET_USERS: "users",
+  GET_QUIZZES: "quizzes",
+  QUIZ_FILLED: "quiz/filled",
+
+  NEXT_QUESTION_SUCCESS: "path",
+  NEXT_QUESTION_ERROR: "path",
+  CHECK_CORRECT_ANSWER_FAILED: "path",
+  CHECK_CORRECT_ANSWER_SUCESS: "path"
+    LOGIN: "auth/login",
+  REGISTER: "auth/register",
+  USER_INFO: "users/self",
+  GET_QUESTIONS: "questions",
+  GET_ANSWERS: "path",
   SUBMIT_ANSWER: "path",
   GET_USERS: "users",
   GET_QUIZZES: "quizzes",
@@ -62,3 +75,7 @@ export const NEXT_QUESTION_ERROR = "NEXT_QUESTION_ERROR";
 
 export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
 export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";
+
+export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
+export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
+
