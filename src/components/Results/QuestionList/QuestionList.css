@@ -1,9 +1,8 @@
 .QuestionList{
-    display: flex;
-    background-image: url("../../../assets/photo-pic.jpg");
     border-color: grey;
-    width: 100vw;
+    width: 100%;
     align-content: center;
+    border-radius: 10px;
 }
 
 .QuestionList__body{

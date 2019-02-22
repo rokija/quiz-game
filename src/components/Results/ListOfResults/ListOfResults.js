@@ -6,6 +6,7 @@ import questionImg from "../../../assets/question3.jpg";
 export class ListOfResults extends Component {
     render() {
         const { userResults } = this.props
+        console.log('userResults ', userResults)
         return (
             <div className="ListOfResults">
                 <h1 className="ListOfResults__title">My results</h1>
@@ -16,6 +17,7 @@ export class ListOfResults extends Component {
                             name={quiz.name}
                             description={quiz.description}
                             image={questionImg}
+                            quizId={quiz.id}
                         />
                     )
                 })}

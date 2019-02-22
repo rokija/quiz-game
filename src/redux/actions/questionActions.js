@@ -49,7 +49,7 @@ export const nextQuestion = () => {
 };
 
 export const correctAnswer = correctanswers => {
-  return dispatch => {};
+  return dispatch => { };
 };
 
 export const getQuestions = () => {

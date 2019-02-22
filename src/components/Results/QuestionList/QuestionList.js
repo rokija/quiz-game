@@ -32,6 +32,7 @@ class QuestionList extends Component {
         this.state = { name: "Test Your knowledge" };
     }
     render() {
+        const { questionList } = this.props
         return (
             < div className="QuestionList" >
                 <div className="QuestionList__body">
@@ -39,7 +40,7 @@ class QuestionList extends Component {
                         <h1>{this.state.name}</h1>
                     </div>
                     <div className="QuestionList__item" >
-                        {Questions.map((questionItem, number) => {
+                        {questionList.map((questionItem, number) => {
                             return (<QuestionItem
                                 key={questionItem.id}
                                 question={questionItem.question}

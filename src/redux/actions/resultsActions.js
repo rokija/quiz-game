@@ -1,5 +1,17 @@
 import BootcampAPI from "../../helpers/BootcampAPI";
-import { API, GET_RESULTS_SUCCESS, GET_RESULTS_ERROR, GET_QUIZZES_SUCCESS, GET_QUIZZES_ERROR, GET_MYQUIZZES_SUCCESS, GET_MYQUIZZES_ERROR } from "../../constants";
+import {
+    API,
+    GET_RESULTS_SUCCESS,
+    GET_RESULTS_ERROR,
+    GET_RECORDS_SUCCESS,
+    GET_RECORDS_ERROR,
+    GET_QUIZZES_SUCCESS,
+    GET_QUIZZES_ERROR,
+    GET_MYQUIZZES_SUCCESS,
+    GET_MYQUIZZES_ERROR,
+    GET_RES_QUESTIONS_SUCCESS,
+    GET_RES_QUESTIONS_ERROR
+} from "../../constants";
 
 const results = [
     {
@@ -7,7 +19,7 @@ const results = [
         "recordIds": [
             "string"
         ],
-        "userId": "string",
+        "userId": "user1",
         "quizId": "1"
     },
     {
@@ -15,7 +27,7 @@ const results = [
         "recordIds": [
             "string"
         ],
-        "userId": "string",
+        "userId": "user1",
         "quizId": "2"
     },
     {
@@ -23,7 +35,7 @@ const results = [
         "recordIds": [
             "string"
         ],
-        "userId": "string",
+        "userId": "uesr1",
         "quizId": "3"
     },
     {
@@ -31,7 +43,7 @@ const results = [
         "recordIds": [
             "string"
         ],
-        "userId": "string",
+        "userId": "user1",
         "quizId": "4"
     }
 ]
@@ -55,12 +67,53 @@ const myquizzes = [
         ]
     },
 ]
+const Questions = [
+    {
+        question: "What is your name?",
+        type: "text",
+        answers: [],
+        correct: ["John"],
+        userAnswers: ["John"]
+    },
+    {
+        question: "What is group leader's name?",
+        type: "radio",
+        answers: ["Liza", "Kitija", "John", "Janis"],
+        correct: ["Janis"],
+        userAnswers: ["Liza"]
+    },
+    {
+        question: "Which tools we did discussed?",
+        type: "checkbox",
+        answers: ["react", "github", "angular", "no one"],
+        correct: ["react", "github"],
+        userAnswers: ["github"]
+    }
+]
+
+const records = [
+    {
+        id: "1",
+        questionId: "1",
+        answers: ["0"]
+    },
+    {
+        id: "2",
+        questionId: "2",
+        answers: ["1"]
+    },
+    {
+        id: "3",
+        questionId: "3",
+        answers: ["0", "2"]
+    }
+]
 
 const quizzes = [
     {
         "id": "1",
         "description": "Description of quiz",
-        "ownerId": "string",
+        "ownerId": "user1",
         "name": "1.quiz",
         "questions": [
             "string"
@@ -69,7 +122,7 @@ const quizzes = [
     {
         "id": "2",
         "description": "Description of quiz",
-        "ownerId": "string",
+        "ownerId": "user1",
         "name": "2.quiz",
         "questions": [
             "string"
@@ -78,7 +131,7 @@ const quizzes = [
     {
         "id": "3",
         "description": "Description of quiz",
-        "ownerId": "string",
+        "ownerId": "user2",
         "name": "3.quiz",
         "questions": [
             "string"
@@ -87,19 +140,33 @@ const quizzes = [
     {
         "id": "4",
         "description": "Description of quiz",
-        "ownerId": "string",
-        "name": "3.quiz",
+        "ownerId": "user3",
+        "name": "4.quiz",
         "questions": [
             "string"
         ]
     }
 ]
+const getResultsQuestionsSuccess = res => {
+    return {
+        type: GET_RES_QUESTIONS_SUCCESS,
+        // payload: res.data.payload
+        payload: Questions
+    };
+};
+
+const getResultsQuestionsError = () => {
+    return {
+        type: GET_RES_QUESTIONS_ERROR
+    };
+};
 
 const getResultsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
     return {
         type: GET_RESULTS_SUCCESS,
         payload: results
+        // payload: res.data.payload
     }
 }
 
@@ -115,6 +182,7 @@ const getQuizzesSuccess = res => {
     return {
         type: GET_QUIZZES_SUCCESS,
         payload: quizzes
+        // payload: res.data.payload
     }
 }
 
@@ -129,8 +197,8 @@ const getRecordsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
     return {
         type: GET_RECORDS_SUCCESS,
-        payload: myquizzes
-
+        payload: records
+        // payload: res.data.payload
     }
 }
 
@@ -177,6 +245,17 @@ export const getRecords = () => {
         //     .catch(err => {
         //         dispatch(getRecordsError());
         //     });
+    };
+};
+
+export const getResultsQuestions = () => {
+    return dispatch => {
+        return dispatch(getResultsQuestionsSuccess())
+        //   return BootcampAPI.get(API.GET_QUESTIONS)
+        //     .then(res => {
+        //       dispatch(getResultsQuestionsSuccess(res));
+        //     })
+        //     .catch(() => dispatch(getResultsQuestionsError()));
     };
 };
 
