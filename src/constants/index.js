@@ -1,18 +1,18 @@
 export const API = {
-  LOGIN: "auth/login",
-  REGISTER: "auth/users",
-  USER_INFO: "users/self",
-  GET_QUESTIONS: "questions",
-  GET_ANSWERS: "path",
-  SUBMIT_ANSWER: "path",
-  GET_USERS: "users",
-  GET_QUIZZES: "quizzes",
-  QUIZ_FILLED: "quiz/filled",
+    LOGIN: "auth/login",
+    REGISTER: "auth/register",
+    USER_INFO: "users/self",
+    GET_QUESTIONS: "questions",
+    GET_ANSWERS: "path",
+    SUBMIT_ANSWER: "path",
+    GET_USERS: "users",
+    GET_QUIZZES: "quizzes",
+    QUIZ_FILLED: "quiz/filled",
 
-  NEXT_QUESTION_SUCCESS: "path",
-  NEXT_QUESTION_ERROR: "path",
-  CHECK_CORRECT_ANSWER_FAILED: "path",
-  CHECK_CORRECT_ANSWER_SUCESS: "path"
+    NEXT_QUESTION_SUCCESS: "path",
+    NEXT_QUESTION_ERROR: "path",
+    CHECK_CORRECT_ANSWER_FAILED: "path",
+    CHECK_CORRECT_ANSWER_SUCESS: "path"
 };
 
 export const REGISTER_SUCCESS = "REGISTER_SUCCESS";

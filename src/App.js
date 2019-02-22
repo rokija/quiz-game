@@ -12,7 +12,7 @@ import ManageUserContainer from "./containers/ManageUserContainer";
 import QuizResultsContainer from "./containers/QuizResultsContainer";
 import "./App.css";
 import QuizzesContainer from "./containers/QuizzesContainer";
-import QuestionsListContainer from "./containers/QuestionsListContainer";
+
 
 class App extends Component {
   render() {
