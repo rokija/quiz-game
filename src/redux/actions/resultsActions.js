@@ -170,12 +170,12 @@ const getResultsSuccess = res => {
     }
 }
 
-const getResultsError = () => {
-    return {
-        type: GET_RESULTS_ERROR,
+// const getResultsError = () => {
+//     return {
+//         type: GET_RESULTS_ERROR,
 
-    }
-}
+//     }
+// }
 
 const getQuizzesSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
@@ -186,12 +186,12 @@ const getQuizzesSuccess = res => {
     }
 }
 
-const getQuizzesError = () => {
-    return {
-        type: GET_QUIZZES_ERROR,
+// const getQuizzesError = () => {
+//     return {
+//         type: GET_QUIZZES_ERROR,
 
-    }
-}
+//     }
+// }
 
 const getRecordsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
@@ -202,12 +202,12 @@ const getRecordsSuccess = res => {
     }
 }
 
-const getRecordsError = () => {
-    return {
-        type: GET_RECORDS_ERROR,
+// const getRecordsError = () => {
+//     return {
+//         type: GET_RECORDS_ERROR,
 
-    }
-}
+//     }
+// }
 
 export const getResults = () => {
     return dispatch => {

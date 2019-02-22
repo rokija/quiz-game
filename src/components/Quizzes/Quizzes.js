@@ -16,22 +16,24 @@ const user = {
 
 class Quizzes extends Component {
   render() {
-    const {quizzes}=this.props;
+    const { quizzes, onStartQuizClick } = this.props;
     return (
       <div>
         <div className="Quizzes">
-        <div className="Quizzes_createNewQuizzContainer">
-          <Button className="Quizzes__createNewQuizz" color="success">
-            Create New Quiz
+          <div className="Quizzes_createNewQuizzContainer">
+            <Button className="Quizzes__createNewQuizz" color="success">
+              Create New Quiz
           </Button>
-        </div>
+          </div>
           <div className="Quizzes__content">
             {quizzes.map((quiz, i) => (
               <Quiz
-                key={i}
-                title={quiz.title}
+                key={quiz._id}
+                id={quiz._id}
+                title={quiz.name}
                 description={quiz.description}
                 user={user}
+                onStartQuizClick={onStartQuizClick}
               />
             ))}
           </div>

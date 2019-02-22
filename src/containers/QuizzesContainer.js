@@ -9,6 +9,14 @@ export class QuizzesContainer extends Component {
     this.props.getQuizzes();
   }
 
+  onStartQuizClick = (quizId) => {
+    for (let q of this.props.quizzes) {
+      if (q._id === quizId)
+        this.props.history.push(`/quizzes/${quizId}/questions/${q.questions[0]}`);
+        return
+    }
+  }
+
   render() {
     if (!this.props.quizzes) {
       return (
@@ -16,13 +24,13 @@ export class QuizzesContainer extends Component {
           <Spinner />
         </div>)
     }
-    return <Quizzes quizzes={this.props.quizzes} />
+    return <Quizzes onStartQuizClick={this.onStartQuizClick} quizzes={this.props.quizzes} />
   }
 }
 
 const mapStateToProps = state => {
   return {
-    posts: state.getQuizesReducer.quizzes
+    quizzes: state.quizesReducer.quizzes
   };
 };
 

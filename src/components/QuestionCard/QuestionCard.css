@@ -12,3 +12,13 @@
 .Submit_button{
     margin: 2%; 
 }
+
+.QuestionCard_answers{
+    text-align: left;
+    font-size: 20px;
+
+    display: inline;
+    justify-content: center;
+    align-items: center;
+    
+}
