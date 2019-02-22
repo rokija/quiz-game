@@ -7,24 +7,7 @@ import {
 
 const defaultState = {
     selectedAnswers: [],
-    questions: [{
-        "questionId": "1",
-        "question": "Question 1",
-        "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-        "type": "input"
-    },
-    {
-        "questionId": "2",
-        "question": "Question 2",
-        "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-        "type": "input"
-    },
-    {
-        "questionId": "3",
-        "question": "Question 3",
-        "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-        "type": "input"
-    }]
+    questions: []
 };
 
 // If question is selected set flag to true so we can
@@ -43,7 +26,8 @@ export const storeAnswersReducer = (state = defaultState, action) => {
 export const getQuestionsReducer = (state = defaultState, action) => {
     switch (action.type) {
         case GET_QUESTIONS_SUCCESS:
-            return { ...state, questions: action.data };
+            console.log(action.payload)
+            return { ...state, questions: [...action.payload] };
         case GET_QUESTIONS_ERROR:
             return console.log('err');
         default:

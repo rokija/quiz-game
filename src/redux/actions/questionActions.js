@@ -50,6 +50,7 @@ export const correctAnswer = correctanswers => {
 
 export const getQuestions = () => {
   return dispatch => {
+    console.log(">>>>>>>>>>>>>>>>>>>>>>")
     return BootcampAPI.get(API.GET_QUESTIONS)
       .then(res => {
         dispatch(getQuestionsSuccess(res));

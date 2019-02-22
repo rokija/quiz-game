@@ -1,6 +1,6 @@
 export const API = {
     LOGIN: "auth/login",
-    REGISTER: "auth/users",
+    REGISTER: "auth/register",
     USER_INFO: "users/self",
     GET_QUESTIONS: "questions",
     GET_ANSWERS: "path",
@@ -39,6 +39,6 @@ export const STORE_ANSWERS_ERROR = "STORE_ANSWERS_ERROR";
 export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
 export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";
 
-export const GET_QUIZ_SUCCESS ="GET_QUIZ_SUCCESS";
-export const GET_QUIZ_ERROR ="GET_QUIZ_ERROR";
+export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
+export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
 

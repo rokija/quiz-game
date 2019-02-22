@@ -33,6 +33,7 @@ class Quizzes extends Component {
                 description={quiz.description}
                 user={user}
                 onStartQuizClick={onStartQuizClick}
+                index={i}
               />
             ))}
           </div>

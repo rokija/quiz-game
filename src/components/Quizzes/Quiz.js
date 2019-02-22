@@ -19,7 +19,7 @@ class Quiz extends Component {
 
 
   render() {
-    const { title, description, user, ownerId, onDeleteQuiz, onStartQuizClick } = this.props;
+    const { title, description, user, ownerId, onDeleteQuiz, onStartQuizClick, index } = this.props;
     const { showContent } = this.state;
 
     return (
@@ -59,7 +59,7 @@ class Quiz extends Component {
             )}
             {hasAccessLevel(user, USER) && (
               <div className="Quiz__content__buttons">
-                <Button onClick={onStartQuizClick} color="success">
+                <Button onClick={() => onStartQuizClick(index)} color="success">
                   Start quiz
                 </Button>
               </div>

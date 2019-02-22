@@ -20,21 +20,22 @@ class QuestionContainer extends Component {
 
   onNextButtonClick = selectedAnswers => {
     const { currentIndex } = this.state;
-    const { questions, storeAnswers } = this.props;
+    const { questions, storeAnswers, match: { params: { quizId } } } = this.props;
 
-    if (selectedAnswers.length) {
-      this.setState(prevState => ({
-        currentIndex: prevState.currentIndex + 1
-      }));
-      storeAnswers(selectedAnswers);
+    //if (selectedAnswers.length) {
+    this.setState(prevState => ({
+      currentIndex: prevState.currentIndex + 1
+    }));
+    storeAnswers(selectedAnswers);
 
-      if (questions.length > currentIndex + 1) {
-        const { id } = this.props.questions[currentIndex + 1];
-        this.props.history.push(`/quizzes/:quizId/questions/${id}`);
-      } else {
-        this.props.history.push("/results");
-      }
+    if (questions.length > currentIndex + 1) {
+      const { _id } = this.props.questions[currentIndex + 1];
+      console.log(_id)
+      this.props.history.push(`/quizzes/${quizId}/questions/${_id}`);
+    } else {
+      this.props.history.push("/results");
     }
+    //}
 
 
   }
@@ -44,11 +45,10 @@ class QuestionContainer extends Component {
   }
 
   render() {
-    const { questions,
-     /* match: { params: { questionId } }*/ } = this.props;
+    const { questions } = this.props;
 
-
-    if (!questions) {
+    console.log(questions.length)
+    if (!questions || questions.length < 1) {
       return <div>loading...</div>
     }
 

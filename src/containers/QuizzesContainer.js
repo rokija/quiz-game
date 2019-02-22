@@ -9,8 +9,10 @@ export class QuizzesContainer extends Component {
     this.props.getQuizzes();
   }
 
-  onStartQuizClick = () => {
-    this.props.history.push("/quizzes/:quizId/questions/:questionId");
+  onStartQuizClick = index => {
+    const { _id } = this.props.quizzes[index]
+    console.log(_id);
+    this.props.history.push(`/quizzes/${_id}/questions/:questionId`);
   }
 
   render() {
