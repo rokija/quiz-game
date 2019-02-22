@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import "./Quiz.css";
 import { Button } from "reactstrap";
 import { hasAccessLevel, MODERATOR, USER } from "../../AccessControl/index";
+import { Link } from "react-router-dom";
 
 class Quiz extends Component {
   constructor() {
@@ -13,14 +14,11 @@ class Quiz extends Component {
   }
 
   toggleContent = () => this.setState({ showContent: !this.state.showContent });
-  onButtonClick = () => console.log("i click a button");
-  onEdittQuiz = () => console.log("Edit quiz");
-  onAddtQuiz = () => console.log("Add quiz");
-  onDeletetQuiz = () => console.log("Delete quiz");
+  onDeleteQuiz = () => console.log("Delete quiz");
   onStartQuiz = () => console.log("Start quiz");
 
   render() {
-    const { title, description, user, ownerId } = this.props;
+    const { title, description, user, ownerId, onDeleteQuiz } = this.props;
     const { showContent } = this.state;
 
     return (
@@ -33,23 +31,25 @@ class Quiz extends Component {
             <div className="Quiz__content__description">{description}</div>
             {(hasAccessLevel(user, MODERATOR) || user.id === ownerId) && (
               <div className="Quiz__content__buttons">
-                <Button
-                  onClick={() => this.onEdittQuiz()}
-                  color="secondary"
-                  className="Quiz__content__buttons__edit-button"
-                >
-                  Edit quiz
-                </Button>
-                <Button
-                  className="Quiz__content__buttons__add-button"
-                  onClick={() => this.onAddtQuiz()}
-                  color="secondary"
-                >
-                  Add question
-                </Button>
+                <Link to="/quizzes/create">
+                  <Button
+                    color="secondary"
+                    className="Quiz__content__buttons__edit-button"
+                  >
+                    Edit quiz
+                  </Button>
+                </Link>
+                <Link to="/quizzes/create">
+                  <Button
+                    className="Quiz__content__buttons__add-button"
+                    color="secondary"
+                  >
+                    Add question
+                  </Button>
+                </Link>
                 <Button
                   className="Quiz__content__buttons__delete-button"
-                  onClick={() => this.onDeletetQuiz()}
+                    onClick={onDeleteQuiz}
                   color="secondary"
                 >
                   Delete quiz
