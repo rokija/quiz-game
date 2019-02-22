@@ -14,7 +14,7 @@ const defaultState = {
 export const getQuizesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_QUIZZES_SUCCESS:
-      return { ...state, quiz: action.payload };
+      return { ...state, quizzes: action.payload.quizzes };
     case GET_QUIZZES_ERROR:
     default:
       return state;

@@ -1,42 +1,25 @@
 import {
+  API,
   STORE_ANSWERS_SUCCESS,
   //STORE_ANSWERS_ERROR,
   GET_QUESTIONS_ERROR,
-  GET_QUESTIONS_SUCCESS,
-  API
+  GET_QUESTIONS_SUCCESS
 } from "../../constants";
 import BootcampAPI from "../../helpers/BootcampAPI"
 /* Define actions here */
 
-const getQuestionsSuccess = () => {
+const getQuestionsSuccess = res => {
   return {
     type: GET_QUESTIONS_SUCCESS,
-    data: [{
-      "id": "1",
-      "question": "Question 1",
-      "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-      "type": "input"
-    },
-    {
-      "id": "2",
-      "question": "Question 2",
-      "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-      "type": "input"
-    },
-    {
-      "id": "3",
-      "question": "Question 3",
-      "answers": ["1.answer", "2.answer", "3.answer", "4.answer"],
-      "type": "input"
-    }]
+    payload: res.data.payload
   };
-}
+};
 
 const getQuestionsError = () => {
   return {
     type: GET_QUESTIONS_ERROR
-  }
-}
+  };
+};
 
 const storeAnswersSuccess = (selectedAnswers) => {
   return {
@@ -52,10 +35,8 @@ const storeAnswersSuccess = (selectedAnswers) => {
   };
 };*/
 
-
 /* Define action creaters here */
-// question indexes are defined by .map 
-
+// question indexes are defined by .map
 
 export const storeAnswers = (selectedAnswers) => {
   return dispatch => {
@@ -63,11 +44,16 @@ export const storeAnswers = (selectedAnswers) => {
   };
 };
 
+export const correctAnswer = correctanswers => {
+  return dispatch => { };
+};
 
 export const getQuestions = () => {
   return dispatch => {
     return BootcampAPI.get(API.GET_QUESTIONS)
-      .then(res => dispatch(getQuestionsSuccess(res)))
+      .then(res => {
+        dispatch(getQuestionsSuccess(res));
+      })
       .catch(() => dispatch(getQuestionsError()));
   };
 };

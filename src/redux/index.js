@@ -12,11 +12,11 @@ import { loginReducer, getUsersReducer } from "./reducers/userReducer";
 getQuestionsReducer, nextQuestionReducer
 */
 const rootReducer = combineReducers({
-    getQuestionsReducer: getQuestionsReducer,
-    storeAnswersReducer: storeAnswersReducer,
-    loginReducer: loginReducer,
-    getUsersReducer: getUsersReducer,
-    getQuizesReducer: getQuizesReducer
+    getQuestionsReducer,
+    storeAnswersReducer,
+    loginReducer,
+    getUsersReducer,
+    getQuizesReducer
 });
 
 export default rootReducer;
