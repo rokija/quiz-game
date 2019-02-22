@@ -14,7 +14,7 @@ class UserList extends Component {
               username={user.username}
               email={user.email}
               level={user.level}
-              id={user.id}
+              id={user._id}
             />
           ))}
       </div>

@@ -20,6 +20,7 @@ export class UserListContainer extends Component {
       );
     }
 
+    console.log(users)
     return <UserList users={users} />;
   }
 }

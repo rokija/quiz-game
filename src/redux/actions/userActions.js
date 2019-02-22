@@ -73,7 +73,8 @@ export const login = (username, password) => {
   return dispatch => {
     return BootcampAPI.post(API.LOGIN, {
       username: username,
-      hashedPassword: password.toString() //CryptoJS.SHA256(password).toString()
+      // hashedPassword: CryptoJS.SHA256(password).toString()
+      hashedPassword: password.toString()
     })
       .then(res => {
         const token = res.data.payload.token;

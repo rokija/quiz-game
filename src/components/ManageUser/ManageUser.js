@@ -41,12 +41,15 @@ class ManageUser extends Component {
 
   render() {
     const { email, password, username, name, surname, dateOfBirth, passwordVerification } = this.state;
-    const { isUserEdit, isUserRegister } = this.props
+
+    const { userId } = this.props
+
     return (
-      <div className="ManageUser">
+
+      < div className="ManageUser" >
         <div className="ManageUser__content">
           <form onSubmit={this.submitData} >
-            {isUserRegister ? <h2>Registration</h2> : <h2>Change data</h2>}
+            {!userId ? <h2>Registration</h2> : <h2>Change data</h2>}
             <div className="form-group">
               <label>Please enter your username</label>
               <input
@@ -54,8 +57,8 @@ class ManageUser extends Component {
                 className="form-control"
                 type="text"
                 name="username"
-                value={username}
-                disabled={isUserEdit ? true : false}
+                value={username || (this.props.user && this.props.user.username)}
+                disabled={userId ? true : false}
               />
             </div>
 
@@ -64,7 +67,7 @@ class ManageUser extends Component {
               <input
                 className="form-control"
                 onChange={this.onInputChange}
-                value={email}
+                value={email || (this.props.user && this.props.user.email)}
                 type="email"
                 name="email"
               />
@@ -78,7 +81,7 @@ class ManageUser extends Component {
                 onChange={this.onInputChange}
                 maxLength="12"
                 required
-                value={password}
+                value={password || (this.props.user && this.props.user.password)}
               />
             </div>
             <div className="form-group">
@@ -100,7 +103,7 @@ class ManageUser extends Component {
                 className="form-control"
                 type="text"
                 name="name"
-                value={name}
+                value={name || (this.props.user && this.props.user.name)}
               />
             </div>
             <div className="form-group">
@@ -110,7 +113,7 @@ class ManageUser extends Component {
                 className="form-control"
                 type="text"
                 name="surname"
-                value={surname}
+                value={surname || (this.props.user && this.props.user.surname)}
               />
               <div className="form-group">
                 <label>Please enter your birth date</label>
@@ -119,14 +122,14 @@ class ManageUser extends Component {
                   className="form-control"
                   type="date"
                   name="dateOfBirth"
-                  value={dateOfBirth}
+                  value={dateOfBirth || (this.props.user && this.props.user.dateOfBirth)}
                 />
               </div>
             </div>
             <Button type="submit"
               color="dark"
             >
-              {isUserEdit ? "Submit" : "Register"}
+              {userId ? "EDIT" : "Register"}
             </Button>
           </form>
           <div className="ManageUser__content__link">
