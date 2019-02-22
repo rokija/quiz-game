@@ -15,6 +15,7 @@ export const API = {
   USER_INFO: "users/self",
   GET_QUESTIONS: "questions",
   GET_ANSWERS: "path",
+  GET_RECORDS: "records"
   SUBMIT_ANSWER: "path",
   GET_USERS: "users",
   GET_QUIZZES: "quizzes",
@@ -49,6 +50,9 @@ export const GET_QUESTIONS_ERROR = "GET_QUESTIONS_ERROR";
 
 export const GET_QUIZZES_SUCCESS = "GET_QUIZZES_SUCCESS";
 export const GET_QUIZZES_ERROR = "GET_QUIZZES_ERROR";
+
+export const GET_RECORDS_SUCCESS = "GET_RECORDS_SUCCESS";
+export const GET_RECORDS_ERROR = "GET_RECORDS_ERROR";
 
 export const QUIZ_FILLED_SUCCESS = "QUIZ_FILLED_SUCCESS";
 export const QUIZ_FILLED_ERROR = " QUIZ_FILLED_ERROR";

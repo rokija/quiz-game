@@ -125,17 +125,18 @@ const getQuizzesError = () => {
     }
 }
 
-const getMyQuizzesSuccess = res => {
+const getRecordsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
     return {
-        type: GET_MYQUIZZES_SUCCESS,
+        type: GET_RECORDS_SUCCESS,
         payload: myquizzes
+
     }
 }
 
-const getMyQuizzesError = () => {
+const getRecordsError = () => {
     return {
-        type: GET_MYQUIZZES_ERROR,
+        type: GET_RECORDS_ERROR,
 
     }
 }
@@ -146,10 +147,8 @@ export const getResults = () => {
         // return BootcampAPI.get(API.GET_RESULTS)
         //     .then(res => {
         //         dispatch(getResultsSuccess(res))
-        //         console.log('results ', res)
         //     })
         //     .catch(err => {
-        //         console.error("ERROR", err);
         //         dispatch(getResultsError());
         //     });
     };
@@ -160,14 +159,25 @@ export const getQuizzes = () => {
         return dispatch(getQuizzesSuccess())
         // return BootcampAPI.get(API.GET_QUIZZES)
         //     .then(res => {
-        //         console.log('quizzes ', res)
         //         dispatch(getQuizzesSuccess(res))
         //     })
-
         //     .catch(err => {
-        //         console.error("ERROR", err);
         //         dispatch(getQuizzesError());
         //     });
     };
 };
+
+export const getRecords = () => {
+    return dispatch => {
+        return dispatch(getRecordsSuccess())
+        // return BootcampAPI.get(API.GET_RECORDS)
+        //     .then(res => {
+        //         dispatch(getRecordsSuccess(res))
+        //     })
+        //     .catch(err => {
+        //         dispatch(getRecordsError());
+        //     });
+    };
+};
+
 

@@ -20,7 +20,6 @@ const rootReducer = combineReducers({
 
   getQuestionsReducer: getQuestionsReducer,
   nextQuestionReducer: nextQuestionReducer,
-  loginReducer: loginReducer
   loginReducer: loginReducer,
   getUsersReducer: getUsersReducer,
   getQuizesReducer: getQuizesReducer
