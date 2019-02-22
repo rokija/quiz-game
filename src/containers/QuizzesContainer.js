@@ -5,7 +5,6 @@ import { getQuizzes } from "../redux/actions/quizActions";
 
 export class QuizContainer extends Component {
   componentDidMount() {
-    console.log("Quiz");
     this.props.getQuizzes();
   }
 

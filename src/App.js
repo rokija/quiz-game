@@ -12,6 +12,7 @@ import ManageUserContainer from "./containers/ManageUserContainer";
 import QuizResultsContainer from "./containers/QuizResultsContainer";
 import "./App.css";
 import QuizzesContainer from "./containers/QuizzesContainer";
+import QuestionsListContainer from "./containers/QuestionsListContainer";
 
 class App extends Component {
   render() {
@@ -63,6 +64,7 @@ class App extends Component {
           <Route exact path="/results" component={ResultsContainer} />
           <Route exact path="/users/:userId" component={ManageUserContainer} />
           <Route exact path="/users" component={UserListContainer} />
+          <Route exact path="/questions" component={QuestionsListContainer} />
           <Route exact path="/profile" component={ManageUserContainer} />
         </Switch>
       </MainLayout>
