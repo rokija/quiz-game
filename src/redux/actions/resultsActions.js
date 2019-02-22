@@ -1,5 +1,11 @@
-import BootcampAPI from "../../helpers/BootcampAPI";
-import { API, GET_RESULTS_SUCCESS, GET_RESULTS_ERROR, GET_QUIZZES_SUCCESS, GET_QUIZZES_ERROR, GET_MYQUIZZES_SUCCESS, GET_MYQUIZZES_ERROR } from "../../constants";
+import {
+  GET_RECORDS_SUCCESS,
+  // GET_RECORDS_ERROR ,
+  GET_RESULTS_SUCCESS,
+  // GET_RESULTS_ERROR,
+  GET_QUIZZES_SUCCESS,
+  // GET_QUIZZES_ERROR
+} from "../../constants";
 
 const results = [
     {
@@ -103,12 +109,12 @@ const getResultsSuccess = res => {
     }
 }
 
-const getResultsError = () => {
-    return {
-        type: GET_RESULTS_ERROR,
+// const getResultsError = () => {
+//     return {
+//         type: GET_RESULTS_ERROR,
 
-    }
-}
+//     }
+// }
 
 const getQuizzesSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
@@ -118,12 +124,12 @@ const getQuizzesSuccess = res => {
     }
 }
 
-const getQuizzesError = () => {
-    return {
-        type: GET_QUIZZES_ERROR,
+// const getQuizzesError = () => {
+//     return {
+//         type: GET_QUIZZES_ERROR,
 
-    }
-}
+//     }
+// }
 
 const getRecordsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);
@@ -134,12 +140,12 @@ const getRecordsSuccess = res => {
     }
 }
 
-const getRecordsError = () => {
-    return {
-        type: GET_RECORDS_ERROR,
+// const getRecordsError = () => {
+//     return {
+//         type: GET_RECORDS_ERROR,
 
-    }
-}
+//     }
+// }
 
 export const getResults = () => {
     return dispatch => {

@@ -52,15 +52,6 @@ class QuestionContainer extends Component {
       return <div>loading...</div>
     }
 
-    //if (!questionId) {
-    //const { quiz } = this.props;
-    //const id = questions[0].id;
-    //
-    //    return <Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
-    //}
-
-
-
     return (<Question
       length={questions.length}
       question={questions[this.state.currentIndex]}
@@ -68,38 +59,12 @@ class QuestionContainer extends Component {
       onNextButtonClick={this.onNextButtonClick}
       onGoBackButtonClick={this.onGoBackButtonClick} />
     )
-    // while waiting for questions show spinner
-    //if (!question) {
-    //  return <div>loading...</div>
-    //}
-
-    // if it is the first question 
-    /*if (!questionId) {
-      const { quiz } = this.props;
-      const id = questions[0].id;
-
-      return console.log('>>>>>>>>') //<Redirect to={`/quizzes/${quiz.quizId}/questions/${id}`} />
-    }*/
-
-    /*return questions.find((question, index) => {
-      if (index === question.length - 1) {
-        return console.log('>>>>>>>>') //<Redirect to="/results" />
-      }
-
-      if (questionId === question.id) {
-        return console.log(questions) //<Question onNextButtonClick={this.onNextButtonClick} />
-      }
-
-      return <Question question={this.props.questions[0]} />
-    })*/
-
-
   }
 }
 
 const mapStateToProps = state => {
   return {
-    questions: state.getQuestionsReducer.questions,
+    questions: state.questionsReducer.questions,
   };
 };
 

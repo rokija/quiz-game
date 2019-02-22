@@ -4,16 +4,16 @@ import { API, GET_QUIZZES_ERROR, GET_QUIZZES_SUCCESS, POST_QUIZ_SUCCESS, POST_QU
 /* Define actions here */
 
 const getQuizzesSuccess = res => {
-    return {
-        type: GET_QUIZZES_SUCCESS,
-        payload: res.data.payload
-    };
+  return {
+    type: GET_QUIZZES_SUCCESS,
+    payload: res.data.payload
+  };
 };
 
 const getQuizzesError = () => {
-    return {
-        type: GET_QUIZZES_ERROR
-    };
+  return {
+    type: GET_QUIZZES_ERROR
+  };
 };
 
 const postQuizSuccess = res => {
@@ -32,8 +32,12 @@ const postQuizError = () => {
 export const getQuizzes = () => {
   return dispatch => {
     return BootcampAPI.get(API.QUIZZES)
-      .then(res => dispatch(getQuizzesSuccess(res)))
-      .catch(() => dispatch(getQuizzesError()));
+      .then(res => {
+        dispatch(getQuizzesSuccess(res))
+      })
+      .catch(() => {
+        dispatch(getQuizzesError())
+      });
   };
 };
 

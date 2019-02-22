@@ -3,7 +3,7 @@ import './myQuizResultItem.css';
 
 class MyQuizResultItem extends Component {
     render() {
-        const { name, description, averageScore, usersCount } = this.props;
+        const { name, description, /* averageScore, usersCount*/ } = this.props;
         return (
             <div>
                 <div className="myQuizResultItem">

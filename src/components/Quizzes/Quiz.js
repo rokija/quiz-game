@@ -19,7 +19,7 @@ class Quiz extends Component {
 
 
   render() {
-    const { title, description, user, ownerId, onDeleteQuiz, onStartQuizClick } = this.props;
+    const { title, description, user, ownerId, onDeleteQuiz, onStartQuizClick, id} = this.props;
     const { showContent } = this.state;
 
     return (
@@ -32,7 +32,7 @@ class Quiz extends Component {
             <div className="Quiz__content__description">{description}</div>
             {(hasAccessLevel(user, MODERATOR) || user.id === ownerId) && (
               <div className="Quiz__content__buttons">
-                <Link to="/quizzes/create">
+                <Link to={`/quizzes/${id}/edit`} >
                   <Button
                     color="secondary"
                     className="Quiz__content__buttons__edit-button"
@@ -40,7 +40,7 @@ class Quiz extends Component {
                     Edit quiz
                   </Button>
                 </Link>
-                <Link to="/quizzes/create">
+                <Link to={`/quizzes/${id}/edit/questions/create`} >
                   <Button
                     className="Quiz__content__buttons__add-button"
                     color="secondary"
@@ -59,7 +59,7 @@ class Quiz extends Component {
             )}
             {hasAccessLevel(user, USER) && (
               <div className="Quiz__content__buttons">
-                <Button onClick={onStartQuizClick} color="success">
+                <Button onClick={() => onStartQuizClick(id)} color="success">
                   Start quiz
                 </Button>
               </div>
