@@ -61,7 +61,6 @@ class Login extends Component {
               <Link to="/register">
                 <Button color="dark">Register</Button>
               </Link>
-              <div className="isLoggedIn" />
             </div>
           </form>
         </div>
