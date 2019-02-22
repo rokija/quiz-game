@@ -2,6 +2,7 @@
     background-color: rgb(188, 188, 190);
     width:100%;
     margin-top: 15px;
+    border-radius: 10px
 }
 
 .Quiz__header{
@@ -11,6 +12,7 @@
     border: 2px solid black;
     cursor: pointer;
     text-align: center;
+    border-radius: 10px
 }
 
 .Quiz__header:hover{
@@ -33,4 +35,8 @@
 
 .Quiz__content__description{
     font-size: 20px;
+}
+
+.Quiz__content__buttons__add-button{
+    margin-right: 15px;
 }

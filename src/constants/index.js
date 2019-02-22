@@ -1,5 +1,5 @@
 export const API = {
-    LOGIN: "auth/session",
+    LOGIN: "auth/login",
     REGISTER: "auth/users",
     USER_INFO: "users/self",
     GET_QUESTIONS: "path",
