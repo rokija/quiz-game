@@ -1,45 +1,57 @@
 import React, { Component } from "react";
 import ManageQuiz from "../components/ManageQuiz/ManageQuiz";
+import { connect } from "react-redux";
+import { submitQuizz } from "../redux/actions/quizActions";
 
 class ManageQuizzContainer extends Component {
-    constructor(){
+    constructor() {
         super();
-        this.state={
-            title:'',
-            description:'',
+        this.state = {
+            title: '',
+            description: '',
         };
     }
 
-    onTitleInputChange = (e) => this.setState({ title: e.target.value });
-    onDescriptionInputChange = (e) => this.setState({ description: e.target.value });
-    submitForm = () => {
-        //This will be used with Redux, when integrated.
-        // const { title, description } = this.state;
-        // this.props.submitQuizz(title, description);
-        // this.props.history.push("/quizzes");
+    onInputChange = (e) => this.setState({ [e.target.name]: [e.target.value] });
+
+    submitForm = (e) => {
+        e.preventDefault()
+        const { title, description } = this.state;
+        this.props.submitQuizz(title, description);
+        console.log(this.state);
+        this.props.history.push("/quizzes");
     };
+
     goHome = () => this.props.history.push("/quizzes");
 
 
     render() {
-        const  { match: { params: { quizId } } } = this.props;
-        console.log(this.props.location, this.props.match.params);
-            if(!quizId){
-                return(
+        const { match: { params: { quizId } } } = this.props;
+        if (!quizId) {
+            return (
                 <ManageQuiz
                     labelValue={'Create Quiz'}
                     btnValue={'Add'}
-            />
+                    submitForm={this.submitForm}
+                    onInputChange={this.onInputChange}
+                />
             )
-        }else{
-            return(
+        } else {
+            return (
                 <ManageQuiz
                     labelValue={'Edit Quiz'}
                     btnValue={'Edit'}
-            />
+                    submitForm={this.submitForm}
+                    onInputChange={this.onInputChange}
+                />
             )
         }
     }
 }
 
-export default  ManageQuizzContainer;
+const mapDispatchToProps = {
+    submitQuizz
+};
+
+export default connect(null, mapDispatchToProps)(ManageQuizzContainer);
+

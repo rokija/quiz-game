@@ -17,8 +17,9 @@ class Quiz extends Component {
   onDeleteQuiz = () => console.log("Delete quiz");
   onStartQuiz = () => console.log("Start quiz");
 
+
   render() {
-    const { title, description, user, ownerId, onDeleteQuiz } = this.props;
+    const { title, description, user, ownerId, onDeleteQuiz, onStartQuizClick, id} = this.props;
     const { showContent } = this.state;
 
     return (
@@ -31,7 +32,7 @@ class Quiz extends Component {
             <div className="Quiz__content__description">{description}</div>
             {(hasAccessLevel(user, MODERATOR) || user.id === ownerId) && (
               <div className="Quiz__content__buttons">
-                <Link to="/quizzes/create">
+                <Link to={`/quizzes/${id}/edit`} >
                   <Button
                     color="secondary"
                     className="Quiz__content__buttons__edit-button"
@@ -39,7 +40,7 @@ class Quiz extends Component {
                     Edit quiz
                   </Button>
                 </Link>
-                <Link to="/quizzes/create">
+                <Link to={`/quizzes/${id}/edit/questions/create`} >
                   <Button
                     className="Quiz__content__buttons__add-button"
                     color="secondary"
@@ -49,7 +50,7 @@ class Quiz extends Component {
                 </Link>
                 <Button
                   className="Quiz__content__buttons__delete-button"
-                    onClick={onDeleteQuiz}
+                  onClick={onDeleteQuiz}
                   color="secondary"
                 >
                   Delete quiz
@@ -58,7 +59,7 @@ class Quiz extends Component {
             )}
             {hasAccessLevel(user, USER) && (
               <div className="Quiz__content__buttons">
-                <Button onClick={() => this.onStartQuiz()} color="success">
+                <Button onClick={() => onStartQuizClick(id)} color="success">
                   Start quiz
                 </Button>
               </div>

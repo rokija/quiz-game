@@ -34,6 +34,7 @@ class App extends Component {
           <Route exact path="/users" component={UserListContainer} />
           <Route exact path="/questions" component={QuestionsListContainer} />
           <Route exact path="/profile" component={ManageUserContainer} />
+          <Route path="/*" component={QuizzesContainer} />
         </Switch>
       </MainLayout>
     );

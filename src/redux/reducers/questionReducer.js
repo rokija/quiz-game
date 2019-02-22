@@ -1,36 +1,16 @@
 import {
-    QUIZ_FILLED_ERROR,
-    QUIZ_FILLED_SUCCESS,
-    NEXT_QUESTION_ERROR,
-    NEXT_QUESTION_SUCCESS,
-    GET_QUESTIONS_SUCCESS,
-    GET_QUESTIONS_ERROR
+  GET_QUESTIONS_SUCCESS,
+  GET_QUESTIONS_ERROR
 } from "../../constants";
 
-const defaultState = {
-    isSelected: false,
-    questions: null,
-};
-
-// If question is selected set flag to true so we can
-// press next button and make our way to the next question
-export const nextQuestionReducer = (state = defaultState, action) => {
-    switch (action.type) {
-        case NEXT_QUESTION_SUCCESS:
-            return { ...state, isSelected: true };
-        case NEXT_QUESTION_ERROR:
-            return { ...state, isSelected: false };
-        default:
-            return state;
-    }
-};
-
-
-export const getQuestionsReducer = (state = defaultState, action) => {
+export const questionsReducer = (state = {
+  questions: []
+}, action) => {
     switch (action.type) {
         case GET_QUESTIONS_SUCCESS:
-            return { ...state, questions: action.payload };
+            return { ...state, questions: action.data };
         case GET_QUESTIONS_ERROR:
+            return console.log('err');
         default:
             return state;
     }
