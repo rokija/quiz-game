@@ -1,8 +1,6 @@
 import { combineReducers } from "redux";
-import {
-    getQuestionsReducer,
-    storeAnswersReducer
-} from "./reducers/questionReducer";
+import { getQuestionsReducer, storeAnswersReducer } from "./questionReducer/questionReducer"
+import { getResultsReducer } from "./resultsReducer/resultsReducer"
 import { getQuizesReducer } from "./reducers/quizReducer";
 import { registerReducer } from "./reducers/userReducer"
 import { loginReducer, getUsersReducer } from "./reducers/userReducer";
@@ -12,12 +10,13 @@ import { loginReducer, getUsersReducer } from "./reducers/userReducer";
 getQuestionsReducer, nextQuestionReducer
 */
 const rootReducer = combineReducers({
-    getQuestionsReducer: getQuestionsReducer,
-    storeAnswersReducer: storeAnswersReducer,
-    loginReducer: loginReducer,
-    getUsersReducer: getUsersReducer,
-    registerReducer: registerReducer,
-    getQuizesReducer: getQuizesReducer
+    getResultsReducer,
+    storeAnswersReducer,
+    getQuestionsReducer,
+    loginReducer,
+    getUsersReducer,
+    registerReducer,
+    getQuizesReducer
 });
 
 export default rootReducer;

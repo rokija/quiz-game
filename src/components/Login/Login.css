@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     background-image: url("../../assets/photo-pic.jpg");
+    background-size: cover;
 }
 
 .Login__content {
