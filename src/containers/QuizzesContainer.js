@@ -22,7 +22,7 @@ export class QuizzesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    posts: state.getQuizesReducer.quizzes
+    quizzes: state.QuizesReducer.quizzes
   };
 };
 

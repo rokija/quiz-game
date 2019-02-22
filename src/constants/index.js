@@ -6,8 +6,8 @@ export const API = {
   GET_ANSWERS: "path",
   SUBMIT_ANSWER: "path",
   GET_USERS: "users",
-  GET_QUIZZES: "quizzes",
-  QUIZ_FILLED: "quiz/filled",
+  QUIZZES: "quizzes",
+
 
   NEXT_QUESTION_SUCCESS: "path",
   NEXT_QUESTION_ERROR: "path",
@@ -39,6 +39,9 @@ export const NEXT_QUESTION_ERROR = "NEXT_QUESTION_ERROR";
 export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
 export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";
 
-export const GET_QUIZ_SUCCESS ="GET_QUIZ_SUCCESS";
-export const GET_QUIZ_ERROR ="GET_QUIZ_ERROR";
+export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
+export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
+
+export const POST_QUIZ_SUCCESS = "POST_QUIZ_SUCCESS";
+export const POST_QUIZ_ERROR = "POST_QUIZ_ERROR";
 
