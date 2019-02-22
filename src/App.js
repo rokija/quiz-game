@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import { Route, Switch } from "react-router-dom";
 import MainLayout from "./components/MainLayout/MainLayout";
 import UserListContainer from "./containers/UserListContainer";
-import QuizContainer from "./containers/QuizContainer";
 import ManageQuizzContainer from "./containers/ManageQuizzContainer";
 import QuizStatisticsContainer from "./containers/QuizStatisticsContainer";
 import ResultsContainer from "./containers/ResultsContainer";
@@ -12,7 +11,7 @@ import ManageQuestionsContainer from "./containers/ManageQuestionsContainer";
 import ManageUserContainer from "./containers/ManageUserContainer";
 import QuizResultsContainer from "./containers/QuizResultsContainer";
 import "./App.css";
-
+import QuizzesContainer from "./containers/QuizzesContainer";
 
 class App extends Component {
   render() {
@@ -25,7 +24,7 @@ class App extends Component {
           <Route exact path="/quizzes/:quizId/questions/:questionId" component={QuestionContainer} />
           <Route exact path="/quizzes/:quizId/edit/" component={ManageQuizzContainer} />
           <Route exact path="/quizzes/create" component={ManageQuizzContainer} />
-          <Route exact path="/quizzes" component={QuizContainer} />
+          <Route exact path="/quizzes" component={QuizzesContainer} />
           <Route exact path="/results/statistics/quizzes/:quizId" component={QuizStatisticsContainer} />
           <Route exact path="/results/my/quizzes/:quizId" component={QuizResultsContainer} />
           <Route exact path="/results/statistics" component={QuizStatisticsContainer} />
