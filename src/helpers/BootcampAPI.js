@@ -7,7 +7,7 @@ class APIClass {
   constructor() {
     this.instance = axios.create({
       baseURL: "https://quiz-game-api.herokuapp.com/api/v1/",
-      timeout: 1000
+      timeout: 10000
     });
   }
 
