@@ -6,17 +6,17 @@ import {
 } from "../../constants/index";
 
 const defaultState = {
-  quizes: null
+  quizzes: null
 };
 
 // If question is selected set flag to true so we can
 // press next button and make our way to the next question
-export const QuizesReducer = (state = defaultState, action) => {
+export const quizesReducer = (state = defaultState, action) => {
   switch (action.type) {
     case GET_QUIZZES_SUCCESS:
-      return { ...state, quizes: action.payload.reverse() };
+      return { ...state, quizzes: action.payload.quizzes };
     case POST_QUIZ_SUCCESS:
-      return { ...state, quizes: [action.payload, ...state.quizes] };
+      return { ...state, quizzes: [action.payload, ...state.quizzes] };
     case GET_QUIZZES_ERROR:
     case POST_QUIZ_ERROR:
     default:
