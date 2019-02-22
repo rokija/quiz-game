@@ -40,7 +40,7 @@ class QuestionContainer extends Component {
   }
 
   componentDidMount() {
-    this.props.getQuestionByIDd();
+    this.props.getQuestions();
   }
 
   render() {

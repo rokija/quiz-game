@@ -1,11 +1,11 @@
 import {
   STORE_ANSWERS_SUCCESS,
   //STORE_ANSWERS_ERROR,
-  //GET_QUESTIONS_ERROR,
+  GET_QUESTIONS_ERROR,
   GET_QUESTIONS_SUCCESS,
-
+  API
 } from "../../constants";
-
+import BootcampAPI from "../../helpers/BootcampAPI"
 /* Define actions here */
 
 const getQuestionsSuccess = () => {
@@ -32,11 +32,11 @@ const getQuestionsSuccess = () => {
   };
 }
 
-//const getQuestionsError = () => {
-//  return {
-//    type: GET_QUESTIONS_ERROR
-//  }
-//}
+const getQuestionsError = () => {
+  return {
+    type: GET_QUESTIONS_ERROR
+  }
+}
 
 const storeAnswersSuccess = (selectedAnswers) => {
   return {
@@ -66,6 +66,8 @@ export const storeAnswers = (selectedAnswers) => {
 
 export const getQuestions = () => {
   return dispatch => {
-    return dispatch(getQuestionsSuccess())
+    return BootcampAPI.get(API.GET_QUESTIONS)
+      .then(res => dispatch(getQuestionsSuccess(res)))
+      .catch(() => dispatch(getQuestionsError()));
   };
 };

@@ -1,6 +1,12 @@
 //import CryptoJS from "crypto-js";
 import BootcampAPI from "../../helpers/BootcampAPI";
-import { API, LOGIN_ERROR, LOGIN_SUCCESS } from "../../constants";
+import {
+  API,
+  LOGIN_ERROR,
+  LOGIN_SUCCESS,
+  GET_USERS_SUCCESS,
+  GET_USERS_ERROR
+} from "../../constants";
 
 const loginSuccess = token => {
   return {
@@ -12,6 +18,19 @@ const loginSuccess = token => {
 const loginError = () => {
   return {
     type: LOGIN_ERROR
+  };
+};
+
+const getUsersSuccess = res => {
+  return {
+    type: GET_USERS_SUCCESS,
+    payload: res.data.payload
+  };
+};
+
+const getUsersError = () => {
+  return {
+    type: GET_USERS_ERROR
   };
 };
 
@@ -31,6 +50,18 @@ export const login = (username, password) => {
         console.error("ERRROROR", e);
         dispatch(loginError());
         throw e;
+      });
+  };
+};
+
+export const getUsers = () => {
+  return dispatch => {
+    return BootcampAPI.get(API.GET_USERS)
+      .then(res => {
+        dispatch(getUsersSuccess(res));
+      })
+      .catch(err => {
+        dispatch(getUsersError());
       });
   };
 };
