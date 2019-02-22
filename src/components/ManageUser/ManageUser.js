@@ -3,12 +3,10 @@ import { Button } from "reactstrap";
 import { Link } from "react-router-dom";
 import "./ManageUser.css";
 
-
-
 class ManageUser extends Component {
-
   constructor(props) {
     super(props);
+
     this.state = {
       email: "",
       username: "",
@@ -19,7 +17,6 @@ class ManageUser extends Component {
       passwordVerification: "",
       message: "",
     };
-
   }
 
   onInputChange = e => {
@@ -38,8 +35,8 @@ class ManageUser extends Component {
       email,
       dateOfBirth,
     }
-    matches ? this.props.onRegister(user) : console.log("PASSWORD DIDN'T MATCH");
 
+    matches ? this.props.onRegister(user) : console.log("PASSWORD DIDN'T MATCH");
   }
 
   render() {
@@ -48,8 +45,6 @@ class ManageUser extends Component {
     return (
       <div className="ManageUser">
         <div className="ManageUser__content">
-          {/* {isUserRegister ? <h2>Registration</h2> : <h2>edit user</h2>} */}
-          {/* {email} */}
           <form onSubmit={this.submitData} >
             {isUserRegister ? <h2>Registration</h2> : <h2>Change data</h2>}
             <div className="form-group">
@@ -69,6 +64,7 @@ class ManageUser extends Component {
               <input
                 className="form-control"
                 onChange={this.onInputChange}
+                value={email}
                 type="email"
                 name="email"
               />
