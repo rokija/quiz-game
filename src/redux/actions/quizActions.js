@@ -4,15 +4,16 @@ import { API, GET_QUIZZES_ERROR, GET_QUIZZES_SUCCESS, POST_QUIZ_SUCCESS, POST_QU
 /* Define actions here */
 
 const getQuizzesSuccess = res => {
-  return {
-    type: GET_QUIZZES_SUCCESS
-  };
+    return {
+        type: GET_QUIZZES_SUCCESS,
+        payload: res.data.payload
+    };
 };
 
 const getQuizzesError = () => {
-  return {
-    type: GET_QUIZZES_ERROR
-  };
+    return {
+        type: GET_QUIZZES_ERROR
+    };
 };
 
 const postQuizSuccess = res => {

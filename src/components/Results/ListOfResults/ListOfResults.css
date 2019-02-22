@@ -1,0 +1,11 @@
+.ListOfResults{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 20px 0px;
+    border-radius: 10px;
+}
+
+.ListOfResults__title{
+    padding-left: 20px;
+}

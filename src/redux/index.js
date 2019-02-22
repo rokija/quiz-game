@@ -6,6 +6,8 @@ import {
 import { QuizesReducer } from "./reducers/quizReducer";
 import { registerReducer } from "./reducers/userReducer"
 import { loginReducer, getUsersReducer } from "./reducers/userReducer";
+import { getResultsReducer } from "./resultsReducer/resultsReducer";
+import { getQuizesReducer } from "./reducers/quizReducer";
 
 const rootReducer = combineReducers({
   getQuestionsReducer,
@@ -13,7 +15,9 @@ const rootReducer = combineReducers({
   loginReducer,
   getUsersReducer,
   QuizesReducer,
-  registerReducer
+  registerReducer,
+  getQuizesReducer,
+  getResultsReducer
   
 });
 
