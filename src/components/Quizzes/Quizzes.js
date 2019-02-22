@@ -3,30 +3,6 @@ import Quiz from "./Quiz";
 import { Button } from "reactstrap";
 import "./Quizzes.css";
 
-const quizzes = [
-  {
-    title: "First Quiz",
-    description: "Description about quiz",
-    isAdmin: false
-  },
-  {
-    title: "Second Quiz",
-    description: "Description about quiz",
-    isAdmin: true
-  },
-  {
-    title: "Third Quiz",
-    description: "Description about quiz",
-    isAdmin: false
-  },
-  {
-    title: "Fourth Quiz",
-    description: "Description about quiz",
-    isAdmin: true
-  },
-  { title: "Fifth Quiz", description: "Description about quiz", isAdmin: false }
-];
-
 const user = {
   username: "lalal",
   email: "emai",
@@ -40,9 +16,9 @@ const user = {
 
 class Quizzes extends Component {
   render() {
+    const {quizzes}=this.props;
     return (
       <div>
-        
         <div className="Quizzes">
         <div className="Quizzes_createNewQuizzContainer">
           <Button className="Quizzes__createNewQuizz" color="success">

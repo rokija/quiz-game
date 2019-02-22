@@ -1,13 +1,39 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { getQuestions } from "../redux/actions/questionActions";
+import QuestionsList from "../components/Questions/Question";
+import { Spinner } from "reactstrap";
 
 export class QuestionsListContainer extends Component {
+  componentDidMount() {
+    this.props.getQuestions();
+  }
+
   render() {
-    return (
-      <div>
-        This is QuestionsListContainer!
-      </div>
-    )
+    const { questions } = this.props;
+    if (!questions) {
+      return (
+        <div>
+          <Spinner color="warning" />
+          loading
+        </div>
+      );
+    }
+
+    return <QuestionsList questions={questions} />;
   }
 }
+const mapStateToProps = state => {
+  return {
+    questions: state.getQuestionsReducer.questions
+  };
+};
 
-export default QuestionsListContainer
+const mapDispatchToProps = {
+  getQuestions
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(QuestionsListContainer);

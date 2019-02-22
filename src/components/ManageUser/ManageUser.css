@@ -1,0 +1,23 @@
+.ManageUser {
+    height: 100vh;
+    background-color: #dfe3ee;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ManageUser__content {
+    width: 30%;
+    background-color: #f7f7f7;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.ManageUser__content__link {
+    margin-top: 10px;
+}
+
+.ManageUser__content h2 {
+    padding-bottom: 2em;
+}
