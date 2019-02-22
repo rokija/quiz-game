@@ -30,9 +30,10 @@ const loginSuccess = token => {
   };
 };
 
-const loginError = () => {
+const loginError = message => {
   return {
-    type: LOGIN_ERROR
+    type: LOGIN_ERROR,
+    payload: message
   };
 };
 
@@ -51,8 +52,16 @@ const getUsersError = () => {
 
 /* ---- action creators ----- */
 
-export const register = (user) => {
-  const { email, username, password, name, surname, dateOfBirth, message } = user
+export const register = user => {
+  const {
+    email,
+    username,
+    password,
+    name,
+    surname,
+    dateOfBirth,
+    message
+  } = user;
   return dispatch => {
     return BootcampAPI.post(API.REGISTER, {
       email: email,
@@ -68,7 +77,6 @@ export const register = (user) => {
   };
 };
 
-
 export const login = (username, password) => {
   return dispatch => {
     return BootcampAPI.post(API.LOGIN, {
@@ -82,8 +90,8 @@ export const login = (username, password) => {
         dispatch(loginSuccess(token));
       })
       .catch(e => {
-        console.error("ERRROROR", e);
-        dispatch(loginError());
+        console.log(`error ${JSON.stringify(e.response.data.error)}`);
+        dispatch(loginError(JSON.stringify(e.response.data.error)));
         throw e;
       });
   };
