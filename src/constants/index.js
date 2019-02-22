@@ -1,13 +1,16 @@
 export const API = {
-    LOGIN: "auth/login",
-    REGISTER: "auth/users",
-    USER_INFO: "users/self",
-    GET_QUESTIONS: "questions",
-    GET_ANSWERS: "path",
-    SUBMIT_ANSWER: "path",
-    GET_USERS: "users",
-    GET_QUIZZES: "quizzes",
-    QUIZ_FILLED: "quiz/filled",
+  LOGIN: "auth/login",
+  REGISTER: "auth/users",
+  USER_INFO: "users/self",
+  GET_QUESTIONS: "questions",
+  GET_ANSWERS: "path",
+  SUBMIT_ANSWER: "path",
+  GET_USERS: "users",
+  QUIZZES: "quizzes",
+  NEXT_QUESTION_SUCCESS: "path",
+  NEXT_QUESTION_ERROR: "path",
+  CHECK_CORRECT_ANSWER_FAILED: "path",
+  CHECK_CORRECT_ANSWER_SUCESS: "path"
 };
 
 export const STORE_ANSWERS_SUCCESS = "STORE_ANSWERS_SUCCESS";
@@ -53,4 +56,10 @@ export const CHECK_CORRECT_ANSWER_SUCCESS = "CHECK_CORRECT_ANSWER_SUCCESS";
 
 export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
 export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
+<<<<<<< HEAD
+
+export const POST_QUIZ_SUCCESS = "POST_QUIZ_SUCCESS";
+export const POST_QUIZ_ERROR = "POST_QUIZ_ERROR";
+=======
+>>>>>>> 13f37905bea99d20329d378e996de41b94e778dd
 

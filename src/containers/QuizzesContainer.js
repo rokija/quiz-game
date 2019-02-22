@@ -26,7 +26,7 @@ export class QuizzesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    quizzes: state.getQuizesReducer.quizzes
+    quizzes: state.QuizesReducer.quizzes
   };
 };
 

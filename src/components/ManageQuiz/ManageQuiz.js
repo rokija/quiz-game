@@ -4,7 +4,7 @@ import "./ManageQuiz.css";
 
 class ManageQuiz extends Component {
     render() {
-        const { onTitleInputChange, onDescriptionInputChange, goHome, submitForm, labelValue, btnValue } = this.props;
+        const { onInputChange,  goHome, submitForm, labelValue, btnValue } = this.props;
         return (
             <div className="AddQuizz">
                 <h1 className="AddQuizz__title">{labelValue}</h1>
@@ -13,20 +13,20 @@ class ManageQuiz extends Component {
                         <Label for="AddTitle">Title</Label>
                         <Input
                             type="text"
-                            name="text"
+                            name="title"
                             id="AddTitle"
                             placeholder="Quizz title here..."
-                            onChange={onTitleInputChange}
+                            onChange={onInputChange}
                         />
                     </FormGroup>
                     <FormGroup className="AddQuizz__Form_Group2">
                         <Label for="AddDescription">Description</Label>
                         <Input
                             type="textarea"
-                            name="text"
+                            name="description"
                             id="AddDescription"
                             placeholder="Quizz description here..."
-                            onChange={onDescriptionInputChange}
+                            onChange={onInputChange}
                         />
                         <Button className="AddQuizz__btn" onClick={submitForm} color="success">{btnValue}</Button>
                         <Button className="AddQuizz__btn" onClick={goHome} outline color="primary">CANCEL</Button>
