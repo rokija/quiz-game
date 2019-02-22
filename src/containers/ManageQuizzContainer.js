@@ -18,7 +18,6 @@ class ManageQuizzContainer extends Component {
         e.preventDefault()
         const { title, description } = this.state;
         this.props.submitQuizz(title, description);
-        console.log(this.state);
         this.props.history.push("/quizzes");
     };
 
