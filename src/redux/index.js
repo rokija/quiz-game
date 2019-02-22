@@ -1,4 +1,6 @@
 import { combineReducers } from "redux";
+import { getQuestionsReducer, nextQuestionReducer } from "./questionReducer/questionReducer"
+import { getResultsReducer } from "./resultsReducer/resultsReducer"
 import {
   getQuestionsReducer,
   nextQuestionReducer
@@ -11,6 +13,11 @@ import { loginReducer, getUsersReducer } from "./reducers/userReducer";
 getQuestionsReducer, nextQuestionReducer
 */
 const rootReducer = combineReducers({
+  getQuestionsReducer: getQuestionsReducer,
+  nextQuestionReducer: nextQuestionReducer,
+  getResultsReducer: getResultsReducer,
+
+
   getQuestionsReducer: getQuestionsReducer,
   nextQuestionReducer: nextQuestionReducer,
   loginReducer: loginReducer,

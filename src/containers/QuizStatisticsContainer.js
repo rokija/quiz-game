@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
+import QuizStatistics from "../components/Statistics/QuizStatistics/QuizStatistics";
 
 export class QuizStatisticsContainer extends Component {
   render() {
     return (
       <div>
-        This is QuizStatisticsContainer!
-      </div>
+        <QuizStatistics />
+      </div >
     )
   }
 }

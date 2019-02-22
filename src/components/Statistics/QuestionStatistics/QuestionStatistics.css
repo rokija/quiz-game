@@ -1,0 +1,9 @@
+.QuestionStatistics_title{
+    text-align:center;
+    padding-top: 25px;
+    padding-bottom: 10px;
+}
+
+.QuestionStatistics_chart{
+    box-shadow: 1px 3px 3px 3px grey;
+}
