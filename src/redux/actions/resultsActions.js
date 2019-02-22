@@ -1,16 +1,16 @@
-import BootcampAPI from "../../helpers/BootcampAPI";
+// import BootcampAPI from "../../helpers/BootcampAPI";
 import {
-    API,
+    // API,
     GET_RESULTS_SUCCESS,
-    GET_RESULTS_ERROR,
+    // GET_RESULTS_ERROR,
     GET_RECORDS_SUCCESS,
-    GET_RECORDS_ERROR,
+    // GET_RECORDS_ERROR,
     GET_QUIZZES_SUCCESS,
-    GET_QUIZZES_ERROR,
-    GET_MYQUIZZES_SUCCESS,
-    GET_MYQUIZZES_ERROR,
+    // GET_QUIZZES_ERROR,
+    // GET_MYQUIZZES_SUCCESS,
+    // GET_MYQUIZZES_ERROR,
     GET_RES_QUESTIONS_SUCCESS,
-    GET_RES_QUESTIONS_ERROR
+    // GET_RES_QUESTIONS_ERROR
 } from "../../constants";
 
 const results = [
@@ -47,26 +47,26 @@ const results = [
         "quizId": "4"
     }
 ]
-const myquizzes = [
-    {
-        "id": "1",
-        "description": "Description of quiz",
-        "ownerId": "string",
-        "name": "1.quiz",
-        "questions": [
-            "string"
-        ]
-    },
-    {
-        "id": "2",
-        "description": "Description of quiz",
-        "ownerId": "string",
-        "name": "2.quiz",
-        "questions": [
-            "string"
-        ]
-    },
-]
+// const myquizzes = [
+//     {
+//         "id": "1",
+//         "description": "Description of quiz",
+//         "ownerId": "string",
+//         "name": "1.quiz",
+//         "questions": [
+//             "string"
+//         ]
+//     },
+//     {
+//         "id": "2",
+//         "description": "Description of quiz",
+//         "ownerId": "string",
+//         "name": "2.quiz",
+//         "questions": [
+//             "string"
+//         ]
+//     },
+// ]
 const Questions = [
     {
         question: "What is your name?",
@@ -155,11 +155,11 @@ const getResultsQuestionsSuccess = res => {
     };
 };
 
-const getResultsQuestionsError = () => {
-    return {
-        type: GET_RES_QUESTIONS_ERROR
-    };
-};
+// const getResultsQuestionsError = () => {
+//     return {
+//         type: GET_RES_QUESTIONS_ERROR
+//     };
+// };
 
 const getResultsSuccess = res => {
     // console.log('Get posts SUCCESS ', res);

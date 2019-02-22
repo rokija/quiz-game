@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getRecords, getResults, getQuizzes, getResultsQuestions } from '../redux/actions/resultsActions';
-import { getQuestions } from '../redux/actions/questionActions';
+// import { getQuestions } from '../redux/actions/questionActions';
 import { Spinner } from 'reactstrap';
 import { connect } from 'react-redux';
 import QuestionList from "../components/Results/QuestionList/QuestionList";
@@ -37,9 +37,6 @@ export class QuizResultsContainer extends Component {
     this.props.getResultsQuestions();
   }
   render() {
-    let questionList = []
-    // const { questionList } = this.props
-
     const { results, quizzes, questions, records } = this.props;
     // const { quizId } = this.params
     let { quizId } = this.props.match.params
