@@ -19,11 +19,12 @@ class Login extends Component {
 
   render() {
     const { username, password } = this.state;
-    const { onLogin } = this.props;
+    const { onLogin, errorMessage } = this.props;
     return (
       <div className="Login">
         <div className="Login__content">
           <h2>Login</h2>
+          <div className="Login__error">{errorMessage}</div>
           <form>
             <div className="form-group">
               <label>Username</label>
@@ -60,6 +61,7 @@ class Login extends Component {
               <Link to="/register">
                 <Button color="dark">Register</Button>
               </Link>
+              <div className="isLoggedIn" />
             </div>
           </form>
         </div>
