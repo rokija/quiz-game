@@ -21,6 +21,7 @@
 
 .Login-button {
     margin-right: 15px;
+    margin-bottom: 15px;
 }
 
 @media only screen and (max-width: 800px) {
@@ -33,3 +34,12 @@
     color: red;
 }
 
+.register__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Login__title{
+   text-align: center;
+}

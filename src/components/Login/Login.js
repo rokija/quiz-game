@@ -23,9 +23,11 @@ class Login extends Component {
     return (
       <div className="Login">
         <div className="Login__content">
-          <h2>Login</h2>
+          <h2 className="Login__title">Login</h2>
           <div className="Login__error">{errorMessage}</div>
-          <form>
+          <form onSubmit= {e => {
+              onLogin(this.state.username, this.state.password, e);
+          }}>
             <div className="form-group">
               <label>Username</label>
               <input
@@ -50,19 +52,20 @@ class Login extends Component {
             <div className="buttons">
               <Button
                 className="Login-button"
-                onClick={e => {
+                onSubmit={e => {
                   onLogin(this.state.username, this.state.password, e);
                 }}
                 color="dark"
               >
                 Login
               </Button>
-
-              <Link to="/register">
-                <Button color="dark">Register</Button>
-              </Link>
             </div>
           </form>
+          <div className="register__button">
+          <Link to="/register">
+                <Button color="dark">Rrgister</Button>
+              </Link>
+              </div>
         </div>
       </div>
     );
