@@ -6,7 +6,7 @@ export const API = {
   GET_ANSWERS: "path",
   SUBMIT_ANSWER: "path",
   GET_USERS: "users",
-  GET_QUIZZES: "quizzes",
+  QUIZZES: "quizzes",
   QUIZ_FILLED: "quiz/filled",
   POST_QUESTION: "questions"
 };

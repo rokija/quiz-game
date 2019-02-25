@@ -72,7 +72,7 @@ export default class AddQuestion extends Component {
   };
 
   onAddQuestion = e => {
-    const { quizId } = this.props;
+    const { postQuestion } = this.props;
     const { question, answers, type } = this.state;
 
     let correct = [];
@@ -80,13 +80,20 @@ export default class AddQuestion extends Component {
       if (x) correct.push(x);
     });
 
-    this.props.postQuestion({
-      quizId,
+    postQuestion({
       question,
       answers,
       correct,
       type
-    });
+    }).then(() =>
+      this.setState({
+        type: null,
+        answers: [],
+        question: "",
+        correct: [],
+        correctAnswers: []
+      })
+    );
   };
 
   onQuestionInput = e => this.setState({ question: e.target.value });
@@ -111,6 +118,8 @@ export default class AddQuestion extends Component {
       });
     }
   };
+
+  submitQuiz = () => this.props.history.push("/quizzes");
 
   render() {
     return (
@@ -186,11 +195,11 @@ export default class AddQuestion extends Component {
             </Button>
           </div>
         ))}
-        <div />
-        <div>
+        <div className="mt-5">
           <Button color="primary" onClick={this.onAddQuestion}>
             Add Question
           </Button>
+          <Button onClick={this.submitQuiz}>Submit Quiz</Button>
         </div>
       </Form>
     );

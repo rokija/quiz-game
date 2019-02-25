@@ -6,7 +6,7 @@ import {
 } from "../../constants/index";
 
 const defaultState = {
-  quizzes: null
+  quizzes: []
 };
 
 // If question is selected set flag to true so we can

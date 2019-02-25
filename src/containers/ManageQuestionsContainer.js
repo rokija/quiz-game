@@ -7,12 +7,19 @@ export class ManageQuestionsContainer extends Component {
   render() {
     const {
       postQuestion,
+      history,
       match: {
         params: { quizId }
       }
     } = this.props;
 
-    return <AddQuestion quizId={quizId} postQuestion={postQuestion} />;
+    return (
+      <AddQuestion
+        history={history}
+        quizId={quizId}
+        postQuestion={postQuestion}
+      />
+    );
   }
 }
 

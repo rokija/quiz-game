@@ -1,5 +1,11 @@
 import BootcampAPI from "../../helpers/BootcampAPI";
-import { API, GET_QUIZZES_ERROR, GET_QUIZZES_SUCCESS, POST_QUIZ_SUCCESS, POST_QUIZ_ERROR } from "../../constants";
+import {
+  API,
+  GET_QUIZZES_ERROR,
+  GET_QUIZZES_SUCCESS,
+  POST_QUIZ_SUCCESS,
+  POST_QUIZ_ERROR
+} from "../../constants";
 
 /* Define actions here */
 
@@ -20,34 +26,38 @@ const postQuizSuccess = res => {
   return {
     type: POST_QUIZ_SUCCESS,
     payload: res.data.payload
-  }
-}
+  };
+};
 
 const postQuizError = () => {
   return {
-    type: POST_QUIZ_ERROR,
-  }
-}
+    type: POST_QUIZ_ERROR
+  };
+};
 
 export const getQuizzes = () => {
   return dispatch => {
     return BootcampAPI.get(API.QUIZZES)
       .then(res => {
-        dispatch(getQuizzesSuccess(res))
+        dispatch(getQuizzesSuccess(res));
       })
       .catch(() => {
-        dispatch(getQuizzesError())
+        dispatch(getQuizzesError());
       });
   };
 };
 
-export const submitQuizz = (title, description) => {
+export const submitQuizz = (name, description) => {
   return dispatch => {
     return BootcampAPI.post(API.QUIZZES, {
-      name: title,
-      description,
+      name,
+      description
     })
       .then(res => dispatch(postQuizSuccess(res)))
-      .catch(err=> dispatch(postQuizError()));
-  }
-}
+      .catch(err => {
+        console.error(err);
+        dispatch(postQuizError());
+        throw err;
+      });
+  };
+};
