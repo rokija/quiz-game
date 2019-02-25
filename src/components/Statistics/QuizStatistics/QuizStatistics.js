@@ -61,7 +61,7 @@ const answersTitles = [
 class QuizStatistics extends Component {
     validateCorrectAnswer(answerIndex, correct) {
         for (let i = 0; i < correct.length; i++) {
-            if (answerIndex == correct[i]) return true
+            if (answerIndex === correct[i]) return true
         }
         return false
     }

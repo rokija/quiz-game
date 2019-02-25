@@ -9,8 +9,12 @@ export class QuizzesContainer extends Component {
     this.props.getQuizzes();
   }
 
-  onStartQuizClick = () => {
-    this.props.history.push("/quizzes/:quizId/questions/:questionId");
+  onStartQuizClick = (quizId) => {
+    for (let q of this.props.quizzes) {
+      if (q._id === quizId)
+        this.props.history.push(`/quizzes/${quizId}/questions/${q.questions[0]}`);
+        return
+    }
   }
 
   render() {
@@ -26,7 +30,7 @@ export class QuizzesContainer extends Component {
 
 const mapStateToProps = state => {
   return {
-    quizzes: state.getQuizesReducer.quizzes
+    quizzes: state.quizesReducer.quizzes
   };
 };
 

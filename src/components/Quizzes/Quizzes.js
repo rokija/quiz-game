@@ -28,8 +28,9 @@ class Quizzes extends Component {
           <div className="Quizzes__content">
             {quizzes.map((quiz, i) => (
               <Quiz
-                key={i}
-                title={quiz.title}
+                key={quiz._id}
+                id={quiz._id}
+                title={quiz.name}
                 description={quiz.description}
                 user={user}
                 onStartQuizClick={onStartQuizClick}

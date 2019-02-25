@@ -8,7 +8,7 @@ class ResultItem extends Component {
         return <Redirect to="/results/statistics/quizzes" />
     }
     render() {
-        const { name, description, score, image } = this.props;
+        const { name, description, /* score ,*/ image } = this.props;
 
         return (
             <div className="ResultItem container-fluid">

@@ -1,18 +1,21 @@
 export const API = {
-    LOGIN: "auth/login",
-    REGISTER: "auth/users",
-    USER_INFO: "users/self",
-    GET_QUESTIONS: "questions",
-    GET_ANSWERS: "path",
-    SUBMIT_ANSWER: "path",
-    GET_USERS: "users",
-    GET_QUIZZES: "quizzes",
-    QUIZ_FILLED: "quiz/filled",
-    POST_QUESTION: "questions"
+  LOGIN: "auth/login",
+  REGISTER: "auth/users",
+  USER_INFO: "users/self",
+  GET_QUESTIONS: "questions",
+  GET_ANSWERS: "path",
+  SUBMIT_ANSWER: "path",
+  GET_USERS: "users",
+  GET_QUIZZES: "quizzes",
+  QUIZ_FILLED: "quiz/filled",
+  POST_QUESTION: "questions"
 };
 
+export const NEXT_QUESTION_SUCCESS = "NEXT_QUESTION_SUCCESS";
+export const NEXT_QUESTION_ERROR = "NEXT_QUESTION_ERROR";
 export const STORE_ANSWERS_SUCCESS = "STORE_ANSWERS_SUCCESS";
 export const STORE_ANSWERS_ERROR = "STORE_ANSWERS_ERROR";
+
 export const CHECK_CORRECT_ANSWER_FAILED = "CHECK_CORRECT_ANSWER_FAILED";
 export const CHECK_CORRECT_ANSWER_SUCESS = "CHECK_CORRECT_ANSWER_SUCESS";
 
@@ -46,5 +49,8 @@ export const QUIZ_FILLED_ERROR = " QUIZ_FILLED_ERROR";
 export const GET_QUIZ_SUCCESS = "GET_QUIZ_SUCCESS";
 export const GET_QUIZ_ERROR = "GET_QUIZ_ERROR";
 
-export const POST_QUESTION_SUCCESS ="POST_QUESTION_SUCCESS";
-export const POST_QUESTION_ERROR ="POST_QUESTION_ERROR";
+export const POST_QUESTION_SUCCESS = "POST_QUESTION_SUCCESS";
+export const POST_QUESTION_ERROR = "POST_QUESTION_ERROR";
+
+export const POST_QUIZ_SUCCESS = "POST_QUIZ_SUCCESS";
+export const POST_QUIZ_ERROR = "POST_QUIZ_ERROR";

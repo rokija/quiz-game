@@ -28,7 +28,11 @@ class Root extends Component {
           <Switch>
             <Route exact path="/login" component={LoginContainer} />
             <Route exact path="/register" component={ManageUserContainer} />
-            <ProtectedRoute path="/*" component={App} />
+            <ProtectedRoute
+              path="*"
+              redirectToPath="/login"
+              isAccessible={localStorage.getItem('jwtToken')}
+              component={App} />
           </Switch>
         </BrowserRouter>
       </Provider>

@@ -20,13 +20,21 @@ class LoginContainer extends Component {
   };
 
   render() {
-    return <Login onLogin={this.onLogin} />;
+    const { isLoggedIn, errorMessage } = this.props;
+    return (
+      <Login
+        onLogin={this.onLogin}
+        errorMessage={errorMessage}
+        isLoggedIn={isLoggedIn}
+      />
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    isLoggedIn: state.loginReducer.isLoggedIn
+    isLoggedIn: state.loginReducer.isLoggedIn,
+    errorMessage: state.loginReducer.errorMessage
   };
 };
 

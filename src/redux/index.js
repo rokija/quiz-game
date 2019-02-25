@@ -1,25 +1,17 @@
 import { combineReducers } from "redux";
-import { getQuestionsReducer, nextQuestionReducer, questionReducer } from "./reducers/questionReducer"
-import { getResultsReducer } from "./resultsReducer/resultsReducer"
-import { getQuizesReducer } from "./reducers/quizReducer";
-import { registerReducer } from "./reducers/userReducer"
+import { getResultsReducer } from "./resultsReducer/resultsReducer";
+import { questionsReducer } from "./reducers/questionReducer";
+import { registerReducer } from "./reducers/userReducer";
 import { loginReducer, getUsersReducer } from "./reducers/userReducer";
+import { quizesReducer } from "./reducers/quizReducer";
 
-
-
-
-/* Reducers to create for questions
-getQuestionsReducer, nextQuestionReducer
-*/
 const rootReducer = combineReducers({
-    getResultsReducer,
-    nextQuestionReducer,
-    getQuestionsReducer,
-    loginReducer,
-    getUsersReducer,
-    registerReducer,
-    getQuizesReducer,
-    questionReducer,
+  getResultsReducer,
+  loginReducer,
+  getUsersReducer,
+  registerReducer,
+  questionsReducer,
+  quizesReducer
 });
 
 export default rootReducer;
