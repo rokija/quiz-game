@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Quiz from "./Quiz";
 import { Button } from "reactstrap";
 import "./Quizzes.css";
+import { Link } from "react-router-dom"
 
 const user = {
   username: "lalal",
@@ -21,9 +22,11 @@ class Quizzes extends Component {
       <div>
         <div className="Quizzes">
           <div className="Quizzes_createNewQuizzContainer">
-            <Button className="Quizzes__createNewQuizz" color="success">
-              Create New Quiz
-          </Button>
+            <Link to="/quizzes/create">
+              <Button className="Quizzes__createNewQuizz" color="success">
+                Create New Quiz
+            </Button>
+            </Link>
           </div>
           <div className="Quizzes__content">
             {quizzes.map((quiz, i) => (
