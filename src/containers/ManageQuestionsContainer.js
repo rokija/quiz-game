@@ -1,13 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component } from "react";
+import AddQuestion from "../components/AddQuestion/AddQuestion.js";
+import { connect } from "react-redux";
+import { postQuestion } from "../redux/actions/questionActions";
 
 export class ManageQuestionsContainer extends Component {
   render() {
+    const {
+      postQuestion,
+      history,
+      match: {
+        params: { quizId }
+      }
+    } = this.props;
+
     return (
-      <div>
-        This is ManageQuestionsContainer!
-      </div>
-    )
+      <AddQuestion
+        history={history}
+        quizId={quizId}
+        postQuestion={postQuestion}
+      />
+    );
   }
 }
 
-export default ManageQuestionsContainer
+const mapDispatchToProps = {
+  postQuestion
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(ManageQuestionsContainer);

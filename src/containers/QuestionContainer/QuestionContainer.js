@@ -1,22 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { getQuestions, storeAnswers } from "../../redux/actions/questionActions";
+import {
+  getQuestions,
+  storeAnswers
+} from "../../redux/actions/questionActions";
 import Question from "../../components/Questions/Question";
-//import { Spinner } from "reactstrap";
-
 
 class QuestionContainer extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      currentIndex: 0,
+      currentIndex: 0
     };
   }
 
   onGoBackButtonClick = () => {
     this.props.history.push("/quizzes");
-  }
+  };
 
   onNextButtonClick = selectedAnswers => {
     const { currentIndex } = this.state;
@@ -35,36 +36,37 @@ class QuestionContainer extends Component {
         this.props.history.push("/results");
       }
     }
-
-
-  }
+  };
 
   componentDidMount() {
     this.props.getQuestions();
   }
 
   render() {
-    const { questions,
-     /* match: { params: { questionId } }*/ } = this.props;
-
+    const {
+      questions
+      /* match: { params: { questionId } }*/
+    } = this.props;
 
     if (!questions) {
-      return <div>loading...</div>
+      return <div>loading...</div>;
     }
 
-    return (<Question
-      length={questions.length}
-      question={questions[this.state.currentIndex]}
-      Index={this.state.currentIndex + 1}
-      onNextButtonClick={this.onNextButtonClick}
-      onGoBackButtonClick={this.onGoBackButtonClick} />
-    )
+    return (
+      <Question
+        length={questions.length}
+        question={questions[this.state.currentIndex]}
+        Index={this.state.currentIndex + 1}
+        onNextButtonClick={this.onNextButtonClick}
+        onGoBackButtonClick={this.onGoBackButtonClick}
+      />
+    );
   }
 }
 
 const mapStateToProps = state => {
   return {
-    questions: state.questionsReducer.questions,
+    questions: state.questionsReducer.questions
   };
 };
 
